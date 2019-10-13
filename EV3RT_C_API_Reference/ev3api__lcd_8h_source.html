@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>EV3RT C API Reference: /Users/yutaka/program/tmp/ev3rt/hrp2/sdk/common/ev3api/src/ev3api_lcd.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EV3RT C API Reference
+   &#160;<span id="projectnumber">Beta 7</span>
+   </div>
+   <div id="projectbrief">An RTOS-based development platform for LEGO Mindstorms EV3.</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ev3api__lcd_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ev3api_lcd.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="group__ev3api-lcd.html#gacfa26216c22f39c9d2861015e37b1903">   31</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="group__ev3api-lcd.html#ggacfa26216c22f39c9d2861015e37b1903a9fe43837bbb4586662d8c8a66ff6d358">   32</a></span>&#160;    <a class="code" href="group__ev3api-lcd.html#ggacfa26216c22f39c9d2861015e37b1903a9fe43837bbb4586662d8c8a66ff6d358">EV3_FONT_SMALL</a>,  </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="group__ev3api-lcd.html#ggacfa26216c22f39c9d2861015e37b1903a9724ff2a62acd060ff0df6797b2ac9e2">   33</a></span>&#160;    <a class="code" href="group__ev3api-lcd.html#ggacfa26216c22f39c9d2861015e37b1903a9724ff2a62acd060ff0df6797b2ac9e2">EV3_FONT_MEDIUM</a>, </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;} <a class="code" href="group__ev3api-lcd.html#gacfa26216c22f39c9d2861015e37b1903">lcdfont_t</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="group__ev3api-lcd.html#ga29a41d6aaa6742b6ff7841023a7781fb">   44</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="group__ev3api-lcd.html#gga29a41d6aaa6742b6ff7841023a7781fba29effcfea2a5e1a625020dd301f2512c">   45</a></span>&#160;    <a class="code" href="group__ev3api-lcd.html#gga29a41d6aaa6742b6ff7841023a7781fba29effcfea2a5e1a625020dd301f2512c">EV3_LCD_WHITE</a> = 0, </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="group__ev3api-lcd.html#gga29a41d6aaa6742b6ff7841023a7781fba2c3795c2a09dff8824a49df0bc66b467">   46</a></span>&#160;    <a class="code" href="group__ev3api-lcd.html#gga29a41d6aaa6742b6ff7841023a7781fba2c3795c2a09dff8824a49df0bc66b467">EV3_LCD_BLACK</a> = 1, </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;} <a class="code" href="group__ev3api-lcd.html#ga29a41d6aaa6742b6ff7841023a7781fb">lcdcolor_t</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="group__ev3api-lcd.html#ga63b8fc001bdc7600b8eb34809dbbbc7e">   49</a></span>&#160;<span class="preprocessor">#define EV3_LCD_WIDTH  (178) </span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="group__ev3api-lcd.html#ga956e56f606b10ab5a04882d96aaf3d97">   50</a></span>&#160;<span class="preprocessor">#define EV3_LCD_HEIGHT (128) </span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;ER <a class="code" href="group__ev3api-lcd.html#ga7e98bcaf675c46fab88afc38e90cc077">ev3_lcd_set_font</a>(<a class="code" href="group__ev3api-lcd.html#gacfa26216c22f39c9d2861015e37b1903">lcdfont_t</a> font);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;ER <a class="code" href="group__ev3api-lcd.html#gaec36b70c4609aeeb40672df567c4a41a">ev3_font_get_size</a>(<a class="code" href="group__ev3api-lcd.html#gacfa26216c22f39c9d2861015e37b1903">lcdfont_t</a> font, int32_t *p_width, int32_t *p_height);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="structimage__t.html">   92</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    int32_t   width;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    int32_t   height;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span>* data;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;} <a class="code" href="structimage__t.html">image_t</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;ER <a class="code" href="group__ev3api-lcd.html#ga9d053062bacfad3421e077c45934ce62">ev3_image_load</a>(<span class="keyword">const</span> <a class="code" href="structmemfile__t.html">memfile_t</a> *p_memfile, <a class="code" href="structimage__t.html">image_t</a> *p_image);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;ER <a class="code" href="group__ev3api-lcd.html#ga9a557b39a31afd0fa6b8dc0c1aafedfd">ev3_image_free</a>(<a class="code" href="structimage__t.html">image_t</a> *p_image);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;ER <a class="code" href="group__ev3api-lcd.html#gad9949e40456ca903ee2bdcf8b8b8effe">ev3_lcd_draw_string</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str, int32_t x, int32_t y);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;ER <a class="code" href="group__ev3api-lcd.html#ga755de913d9fc48f816f2ed5c5076c400">ev3_lcd_draw_line</a>(int32_t x0, int32_t y0, int32_t x1, int32_t y1);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;ER <a class="code" href="group__ev3api-lcd.html#gaeca9890ee5e82ad8fe48f8d50b3bd24f">ev3_lcd_fill_rect</a>(int32_t x, int32_t y, int32_t w, int32_t h, <a class="code" href="group__ev3api-lcd.html#ga29a41d6aaa6742b6ff7841023a7781fb">lcdcolor_t</a> color);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;ER <a class="code" href="group__ev3api-lcd.html#ga6d5385e6593c709c665d4a8366b6155a">ev3_lcd_draw_image</a>(<span class="keyword">const</span> <a class="code" href="structimage__t.html">image_t</a> *p_image, int32_t x, int32_t y);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">#if 0 // Legacy or not implemented</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;ER ev3_image_bitblt(<span class="keyword">const</span> <a class="code" href="structimage__t.html">image_t</a> *src, int32_t sx, int32_t sy, <a class="code" href="structimage__t.html">image_t</a> *dst, int32_t dx, int32_t dy, int32_t w, int32_t h, int32_t rop);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<a class="code" href="group__ev3api-lcd.html#ga29a41d6aaa6742b6ff7841023a7781fb">lcdcolor_t</a> ev3_image_pixel(<span class="keyword">const</span> <a class="code" href="structimage__t.html">image_t</a> *p_image, int32_t x, int32_t y);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="group__ev3api-lcd_html_gga29a41d6aaa6742b6ff7841023a7781fba29effcfea2a5e1a625020dd301f2512c"><div class="ttname"><a href="group__ev3api-lcd.html#gga29a41d6aaa6742b6ff7841023a7781fba29effcfea2a5e1a625020dd301f2512c">EV3_LCD_WHITE</a></div><div class="ttdoc">白 </div><div class="ttdef"><b>Definition:</b> ev3api_lcd.h:45</div></div>
+<div class="ttc" id="group__ev3api-lcd_html_ggacfa26216c22f39c9d2861015e37b1903a9fe43837bbb4586662d8c8a66ff6d358"><div class="ttname"><a href="group__ev3api-lcd.html#ggacfa26216c22f39c9d2861015e37b1903a9fe43837bbb4586662d8c8a66ff6d358">EV3_FONT_SMALL</a></div><div class="ttdoc">小さいサイズのフォント </div><div class="ttdef"><b>Definition:</b> ev3api_lcd.h:32</div></div>
+<div class="ttc" id="group__ev3api-lcd_html_gaec36b70c4609aeeb40672df567c4a41a"><div class="ttname"><a href="group__ev3api-lcd.html#gaec36b70c4609aeeb40672df567c4a41a">ev3_font_get_size</a></div><div class="ttdeci">ER ev3_font_get_size(lcdfont_t font, int32_t *p_width, int32_t *p_height)</div><div class="ttdoc">フォントのサイズを取得する． </div><div class="ttdef"><b>Definition:</b> ev3api_lcd.c:29</div></div>
+<div class="ttc" id="group__ev3api-lcd_html_gad9949e40456ca903ee2bdcf8b8b8effe"><div class="ttname"><a href="group__ev3api-lcd.html#gad9949e40456ca903ee2bdcf8b8b8effe">ev3_lcd_draw_string</a></div><div class="ttdeci">ER ev3_lcd_draw_string(const char *str, int32_t x, int32_t y)</div><div class="ttdoc">指定位置で文字列を描く． </div><div class="ttdef"><b>Definition:</b> ev3api_lcd.c:41</div></div>
+<div class="ttc" id="group__ev3api-lcd_html_ggacfa26216c22f39c9d2861015e37b1903a9724ff2a62acd060ff0df6797b2ac9e2"><div class="ttname"><a href="group__ev3api-lcd.html#ggacfa26216c22f39c9d2861015e37b1903a9724ff2a62acd060ff0df6797b2ac9e2">EV3_FONT_MEDIUM</a></div><div class="ttdoc">普通サイズのフォント </div><div class="ttdef"><b>Definition:</b> ev3api_lcd.h:33</div></div>
+<div class="ttc" id="group__ev3api-lcd_html_ga6d5385e6593c709c665d4a8366b6155a"><div class="ttname"><a href="group__ev3api-lcd.html#ga6d5385e6593c709c665d4a8366b6155a">ev3_lcd_draw_image</a></div><div class="ttdeci">ER ev3_lcd_draw_image(const image_t *p_image, int32_t x, int32_t y)</div><div class="ttdoc">指定座標で画像を表示する． </div><div class="ttdef"><b>Definition:</b> ev3api_lcd.c:96</div></div>
+<div class="ttc" id="group__ev3api-lcd_html_ga9a557b39a31afd0fa6b8dc0c1aafedfd"><div class="ttname"><a href="group__ev3api-lcd.html#ga9a557b39a31afd0fa6b8dc0c1aafedfd">ev3_image_free</a></div><div class="ttdeci">ER ev3_image_free(image_t *p_image)</div><div class="ttdoc">画像のオブジェクトを解放する． </div><div class="ttdef"><b>Definition:</b> ev3api_lcd.c:82</div></div>
+<div class="ttc" id="group__ev3api-lcd_html_ga7e98bcaf675c46fab88afc38e90cc077"><div class="ttname"><a href="group__ev3api-lcd.html#ga7e98bcaf675c46fab88afc38e90cc077">ev3_lcd_set_font</a></div><div class="ttdeci">ER ev3_lcd_set_font(lcdfont_t font)</div><div class="ttdoc">デフォルトのフォントを設定する． </div><div class="ttdef"><b>Definition:</b> ev3api_lcd.c:17</div></div>
+<div class="ttc" id="group__ev3api-lcd_html_gacfa26216c22f39c9d2861015e37b1903"><div class="ttname"><a href="group__ev3api-lcd.html#gacfa26216c22f39c9d2861015e37b1903">lcdfont_t</a></div><div class="ttdeci">lcdfont_t</div><div class="ttdoc">フォントを表す番号 </div><div class="ttdef"><b>Definition:</b> ev3api_lcd.h:31</div></div>
+<div class="ttc" id="group__ev3api-lcd_html_gga29a41d6aaa6742b6ff7841023a7781fba2c3795c2a09dff8824a49df0bc66b467"><div class="ttname"><a href="group__ev3api-lcd.html#gga29a41d6aaa6742b6ff7841023a7781fba2c3795c2a09dff8824a49df0bc66b467">EV3_LCD_BLACK</a></div><div class="ttdoc">黒 </div><div class="ttdef"><b>Definition:</b> ev3api_lcd.h:46</div></div>
+<div class="ttc" id="group__ev3api-lcd_html_ga755de913d9fc48f816f2ed5c5076c400"><div class="ttname"><a href="group__ev3api-lcd.html#ga755de913d9fc48f816f2ed5c5076c400">ev3_lcd_draw_line</a></div><div class="ttdeci">ER ev3_lcd_draw_line(int32_t x0, int32_t y0, int32_t x1, int32_t y1)</div><div class="ttdoc">指定座標で線を引く． </div><div class="ttdef"><b>Definition:</b> ev3api_lcd.c:114</div></div>
+<div class="ttc" id="structmemfile__t_html"><div class="ttname"><a href="structmemfile__t.html">memfile_t</a></div><div class="ttdoc">メモリファイルの構造体．メモリファイルのデータは，SDカードではなく，メモリに格納される． ...</div><div class="ttdef"><b>Definition:</b> ev3api_fs.h:30</div></div>
+<div class="ttc" id="structimage__t_html"><div class="ttname"><a href="structimage__t.html">image_t</a></div><div class="ttdoc">画像のオブジェクトの構造体． </div><div class="ttdef"><b>Definition:</b> ev3api_lcd.h:92</div></div>
+<div class="ttc" id="group__ev3api-lcd_html_gaeca9890ee5e82ad8fe48f8d50b3bd24f"><div class="ttname"><a href="group__ev3api-lcd.html#gaeca9890ee5e82ad8fe48f8d50b3bd24f">ev3_lcd_fill_rect</a></div><div class="ttdeci">ER ev3_lcd_fill_rect(int32_t x, int32_t y, int32_t w, int32_t h, lcdcolor_t color)</div><div class="ttdoc">矩形を描いて色を塗る． </div><div class="ttdef"><b>Definition:</b> ev3api_lcd.c:46</div></div>
+<div class="ttc" id="group__ev3api-lcd_html_ga29a41d6aaa6742b6ff7841023a7781fb"><div class="ttname"><a href="group__ev3api-lcd.html#ga29a41d6aaa6742b6ff7841023a7781fb">lcdcolor_t</a></div><div class="ttdeci">lcdcolor_t</div><div class="ttdoc">LCDカラーを表す番号 </div><div class="ttdef"><b>Definition:</b> ev3api_lcd.h:44</div></div>
+<div class="ttc" id="group__ev3api-lcd_html_ga9d053062bacfad3421e077c45934ce62"><div class="ttname"><a href="group__ev3api-lcd.html#ga9d053062bacfad3421e077c45934ce62">ev3_image_load</a></div><div class="ttdeci">ER ev3_image_load(const memfile_t *p_memfile, image_t *p_image)</div><div class="ttdoc">メモリファイルから画像をロードする． </div><div class="ttdef"><b>Definition:</b> ev3api_lcd.c:51</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><b>ev3api_lcd.h</b></li>
+    <li class="footer">2017年06月26日(月) 06時58分08秒作成 - EV3RT C API Reference / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
+  </ul>
+</div>
+</body>
+</html>

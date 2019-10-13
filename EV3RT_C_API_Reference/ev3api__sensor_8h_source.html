@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>EV3RT C API Reference: /Users/yutaka/program/tmp/ev3rt/hrp2/sdk/common/ev3api/src/ev3api_sensor.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EV3RT C API Reference
+   &#160;<span id="projectnumber">Beta 7</span>
+   </div>
+   <div id="projectbrief">An RTOS-based development platform for LEGO Mindstorms EV3.</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ev3api__sensor_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ev3api_sensor.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">   29</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869a6ed151d83ba3df1e8d15ea2a2210178c">   30</a></span>&#160;    <a class="code" href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869a6ed151d83ba3df1e8d15ea2a2210178c">EV3_PORT_1</a> = 0,       </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869a9d524b63759bfbf608af2a9cce68bf17">   31</a></span>&#160;    <a class="code" href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869a9d524b63759bfbf608af2a9cce68bf17">EV3_PORT_2</a> = 1,       </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869a63e3918741010a8a1e229c3ecedd504c">   32</a></span>&#160;    <a class="code" href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869a63e3918741010a8a1e229c3ecedd504c">EV3_PORT_3</a> = 2,       </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869a51984b8c0cf2e5fa5782c8b651b37cbf">   33</a></span>&#160;    <a class="code" href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869a51984b8c0cf2e5fa5782c8b651b37cbf">EV3_PORT_4</a> = 3,       </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869af1505cc881ba570b1260f73aea9bcd7d">   34</a></span>&#160;    <a class="code" href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869af1505cc881ba570b1260f73aea9bcd7d">TNUM_SENSOR_PORT</a> = 4, </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;} <a class="code" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#ga089f166159fb19f10d81c65c1d8793a2">   44</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2a3118b7b8f0e8b347e8b182d68fead688">   45</a></span>&#160;    <a class="code" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2a3118b7b8f0e8b347e8b182d68fead688">NONE_SENSOR</a> = 0,     </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2ab3572d930488403fb2c9faa5ae616a4a">   46</a></span>&#160;    <a class="code" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2ab3572d930488403fb2c9faa5ae616a4a">ULTRASONIC_SENSOR</a>,   </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2aeaadd6fd17d7b70e48c06b46f2643c5a">   47</a></span>&#160;    <a class="code" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2aeaadd6fd17d7b70e48c06b46f2643c5a">GYRO_SENSOR</a>,         </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2ab3a59d197a4a1f36a436c95ad613fdf4">   48</a></span>&#160;    <a class="code" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2ab3a59d197a4a1f36a436c95ad613fdf4">TOUCH_SENSOR</a>,        </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2aab32a5ad061cb13c0d5600a5862e255f">   49</a></span>&#160;    <a class="code" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2aab32a5ad061cb13c0d5600a5862e255f">COLOR_SENSOR</a>,        </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    INFRARED_SENSOR,     </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2a63ab9a8a461c070a5947da1df1e2d59e">   51</a></span>&#160;    <a class="code" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2a63ab9a8a461c070a5947da1df1e2d59e">HT_NXT_ACCEL_SENSOR</a>, </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2a0452c99b5eacb47a470b42da29073836">   52</a></span>&#160;    <a class="code" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2a0452c99b5eacb47a470b42da29073836">NXT_TEMP_SENSOR</a>,     </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2afaba14926b91bbe008f9ad3ebdbb469f">   53</a></span>&#160;    <a class="code" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2afaba14926b91bbe008f9ad3ebdbb469f">TNUM_SENSOR_TYPE</a>     </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;} <a class="code" href="group__ev3sensor.html#ga089f166159fb19f10d81c65c1d8793a2">sensor_type_t</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#gaf11750614f023e665f98eca0b1f79c2f">   63</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa01ff12cf7ff51aef192abe6f9b7d8a4a">   64</a></span>&#160;    <a class="code" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa01ff12cf7ff51aef192abe6f9b7d8a4a">COLOR_NONE</a>   = 0, </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa2a9daf215a30f1c539ead18c66380fc1">   65</a></span>&#160;    <a class="code" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa2a9daf215a30f1c539ead18c66380fc1">COLOR_BLACK</a>  = 1, </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa1340428efccb140dcbdb71aa6176f696">   66</a></span>&#160;    <a class="code" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa1340428efccb140dcbdb71aa6176f696">COLOR_BLUE</a>   = 2, </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2facfa9d8bbffc418447ed826f286abca02">   67</a></span>&#160;    <a class="code" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2facfa9d8bbffc418447ed826f286abca02">COLOR_GREEN</a>  = 3, </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fab03862907066c68204ee9df1ee04aa29">   68</a></span>&#160;    <a class="code" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fab03862907066c68204ee9df1ee04aa29">COLOR_YELLOW</a> = 4, </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa592503b9434c1e751a92f3fc536d7950">   69</a></span>&#160;    <a class="code" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa592503b9434c1e751a92f3fc536d7950">COLOR_RED</a>    = 5, </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fad47b4c240a0109970bb2a7fe3a07d3ec">   70</a></span>&#160;    <a class="code" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fad47b4c240a0109970bb2a7fe3a07d3ec">COLOR_WHITE</a>  = 6, </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa70b424bcf0a4a80c0a6f810d1cff20fe">   71</a></span>&#160;    <a class="code" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa70b424bcf0a4a80c0a6f810d1cff20fe">COLOR_BROWN</a>  = 7, </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2faf916aa87dc882c0ebec3d6dc683f5147">   72</a></span>&#160;    <a class="code" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2faf916aa87dc882c0ebec3d6dc683f5147">TNUM_COLOR</a>        </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;} <a class="code" href="group__ev3sensor.html#gaf11750614f023e665f98eca0b1f79c2f">colorid_t</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structrgb__raw__t.html">   82</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="structrgb__raw__t.html#acfb1795eb860b37ae4a0cf5007525b11">   83</a></span>&#160;    uint16_t <a class="code" href="structrgb__raw__t.html#acfb1795eb860b37ae4a0cf5007525b11">r</a>; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="structrgb__raw__t.html#ad2c8d7f21feee0ce670c72acadf51074">   84</a></span>&#160;    uint16_t <a class="code" href="structrgb__raw__t.html#ad2c8d7f21feee0ce670c72acadf51074">g</a>; </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="structrgb__raw__t.html#a7976cd62f9b61a65e8104a3cf7c15099">   85</a></span>&#160;    uint16_t <a class="code" href="structrgb__raw__t.html#a7976cd62f9b61a65e8104a3cf7c15099">b</a>; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;} <a class="code" href="structrgb__raw__t.html">rgb_raw_t</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;ER <a class="code" href="group__ev3sensor.html#ga554534f2f5a6ac558b29a9b01b5e8da3">ev3_sensor_config</a>(<a class="code" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port, <a class="code" href="group__ev3sensor.html#ga089f166159fb19f10d81c65c1d8793a2">sensor_type_t</a> type);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;ER_UINT <a class="code" href="group__ev3sensor.html#gabfc4a1d1c1c48d2407154f3e72e9ba88">ev3_sensor_get_type</a>(<a class="code" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<a class="code" href="group__ev3sensor.html#gaf11750614f023e665f98eca0b1f79c2f">colorid_t</a> <a class="code" href="group__ev3sensor.html#ga776b35d98fd73550278e27ee39a3d3aa">ev3_color_sensor_get_color</a>(<a class="code" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;uint8_t <a class="code" href="group__ev3sensor.html#ga6f0760f8a0781fd5397f3365c6d6ac87">ev3_color_sensor_get_reflect</a>(<a class="code" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;uint8_t <a class="code" href="group__ev3sensor.html#ga11104447594453531fc2c7e268e111be">ev3_color_sensor_get_ambient</a>(<a class="code" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ev3sensor.html#gad86c95ba26932e80b8a58dc95aaee39d">ev3_color_sensor_get_rgb_raw</a>(<a class="code" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port, <a class="code" href="structrgb__raw__t.html">rgb_raw_t</a> *val);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;int16_t <a class="code" href="group__ev3sensor.html#gaa679135221ab97ead4d35a7819c228c3">ev3_gyro_sensor_get_angle</a>(<a class="code" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;int16_t <a class="code" href="group__ev3sensor.html#ga5853577f47d1006fff6f050257fca384">ev3_gyro_sensor_get_rate</a>(<a class="code" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;ER <a class="code" href="group__ev3sensor.html#ga3ea1432e34aa420afe5444c6a93c4f86">ev3_gyro_sensor_reset</a>(<a class="code" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;int16_t <a class="code" href="group__ev3sensor.html#ga956536aaab7677c2b512b2d3bd4e498f">ev3_ultrasonic_sensor_get_distance</a>(<a class="code" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;bool_t <a class="code" href="group__ev3sensor.html#ga719db52bd7f8ad451d4d4b5bbad7706e">ev3_ultrasonic_sensor_listen</a>(<a class="code" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
+<div class="line"><a name="l00252"></a><span class="lineno"><a class="line" href="structir__seek__t.html">  252</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00253"></a><span class="lineno"><a class="line" href="structir__seek__t.html#abc5984273223bcd2ea523f05e2aadfe0">  253</a></span>&#160;    int8_t heading[4];  </div>
+<div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="structir__seek__t.html#a6268429bb3edb73ff45da8a5bbf3a7b2">  254</a></span>&#160;    int8_t distance[4]; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;} <a class="code" href="structir__seek__t.html">ir_seek_t</a>; </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="preprocessor">#define IR_RED_UP_BUTTON     1</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="preprocessor">#define IR_RED_DOWN_BUTTON   2</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="preprocessor">#define IR_BLUE_UP_BUTTON    4</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="preprocessor">#define IR_BLUE_DOWN_BUTTON  8</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor">#define IR_BEACON_BUTTON     16</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
+<div class="line"><a name="l00263"></a><span class="lineno"><a class="line" href="structir__remote__t.html">  263</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00264"></a><span class="lineno"><a class="line" href="structir__remote__t.html#ac807969279ec280acf6377e0236a5273">  264</a></span>&#160;    uint8_t channel[4];    </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;} <a class="code" href="structir__remote__t.html">ir_remote_t</a>; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;int8_t <a class="code" href="group__ev3sensor.html#ga3ba6293eb700f5a1b51fda768b3c9a5f">ev3_infrared_sensor_get_distance</a>(<a class="code" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<a class="code" href="structir__seek__t.html">ir_seek_t</a> <a class="code" href="group__ev3sensor.html#gad49c80d2d9294899af33dfa91039da48">ev3_infrared_sensor_seek</a>(<a class="code" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<a class="code" href="structir__remote__t.html">ir_remote_t</a> <a class="code" href="group__ev3sensor.html#ga141015aa29b5bb64913a9ebfe036a60d">ev3_infrared_sensor_get_remote</a>(<a class="code" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;bool_t <a class="code" href="group__ev3sensor.html#ga0bd7ec7b7ac2fbaaa6cbe46eff3a829d">ev3_touch_sensor_is_pressed</a>(<a class="code" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;bool_t <a class="code" href="group__ev3sensor.html#gab7a4ea002540a5a757fd6916fa200302">ht_nxt_accel_sensor_measure</a>(<a class="code" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port, int16_t axes[3]);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;bool_t <a class="code" href="group__ev3sensor.html#ga0ec1343baa9ff742a9d2354af9b601f4">nxt_temp_sensor_measure</a>(<a class="code" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port, <span class="keywordtype">float</span> *temp);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;</div>
+<div class="ttc" id="group__ev3sensor_html_gga089f166159fb19f10d81c65c1d8793a2ab3a59d197a4a1f36a436c95ad613fdf4"><div class="ttname"><a href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2ab3a59d197a4a1f36a436c95ad613fdf4">TOUCH_SENSOR</a></div><div class="ttdoc">タッチセンサ </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:48</div></div>
+<div class="ttc" id="group__ev3sensor_html_ggaf11750614f023e665f98eca0b1f79c2fa1340428efccb140dcbdb71aa6176f696"><div class="ttname"><a href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa1340428efccb140dcbdb71aa6176f696">COLOR_BLUE</a></div><div class="ttdoc">青 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:66</div></div>
+<div class="ttc" id="group__ev3sensor_html_gaf11750614f023e665f98eca0b1f79c2f"><div class="ttname"><a href="group__ev3sensor.html#gaf11750614f023e665f98eca0b1f79c2f">colorid_t</a></div><div class="ttdeci">colorid_t</div><div class="ttdoc">カラーセンサで識別できるカラーの番号 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:63</div></div>
+<div class="ttc" id="group__ev3sensor_html_ga0ec1343baa9ff742a9d2354af9b601f4"><div class="ttname"><a href="group__ev3sensor.html#ga0ec1343baa9ff742a9d2354af9b601f4">nxt_temp_sensor_measure</a></div><div class="ttdeci">bool_t nxt_temp_sensor_measure(sensor_port_t port, float *temp)</div><div class="ttdoc">NXT温度センサ（9749）で温度を測定する． </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.c:463</div></div>
+<div class="ttc" id="structir__seek__t_html"><div class="ttname"><a href="structir__seek__t.html">ir_seek_t</a></div><div class="ttdoc">IRビーコンの方位と距離を格納する構造体 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:252</div></div>
+<div class="ttc" id="group__ev3sensor_html_ggaf11750614f023e665f98eca0b1f79c2fa01ff12cf7ff51aef192abe6f9b7d8a4a"><div class="ttname"><a href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa01ff12cf7ff51aef192abe6f9b7d8a4a">COLOR_NONE</a></div><div class="ttdoc">無色 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:64</div></div>
+<div class="ttc" id="group__ev3sensor_html_ga776b35d98fd73550278e27ee39a3d3aa"><div class="ttname"><a href="group__ev3sensor.html#ga776b35d98fd73550278e27ee39a3d3aa">ev3_color_sensor_get_color</a></div><div class="ttdeci">colorid_t ev3_color_sensor_get_color(sensor_port_t port)</div><div class="ttdoc">カラーセンサでカラーを識別する． </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.c:157</div></div>
+<div class="ttc" id="group__ev3sensor_html_gad49c80d2d9294899af33dfa91039da48"><div class="ttname"><a href="group__ev3sensor.html#gad49c80d2d9294899af33dfa91039da48">ev3_infrared_sensor_seek</a></div><div class="ttdeci">ir_seek_t ev3_infrared_sensor_seek(sensor_port_t port)</div><div class="ttdoc">IRセンサでIRビーコンの方位と距離を測定する． </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.c:341</div></div>
+<div class="ttc" id="group__ev3sensor_html_ggaf11750614f023e665f98eca0b1f79c2fad47b4c240a0109970bb2a7fe3a07d3ec"><div class="ttname"><a href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fad47b4c240a0109970bb2a7fe3a07d3ec">COLOR_WHITE</a></div><div class="ttdoc">白 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:70</div></div>
+<div class="ttc" id="group__ev3sensor_html_ga956536aaab7677c2b512b2d3bd4e498f"><div class="ttname"><a href="group__ev3sensor.html#ga956536aaab7677c2b512b2d3bd4e498f">ev3_ultrasonic_sensor_get_distance</a></div><div class="ttdeci">int16_t ev3_ultrasonic_sensor_get_distance(sensor_port_t port)</div><div class="ttdoc">超音波センサで距離を測定する． </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.c:283</div></div>
+<div class="ttc" id="structrgb__raw__t_html_acfb1795eb860b37ae4a0cf5007525b11"><div class="ttname"><a href="structrgb__raw__t.html#acfb1795eb860b37ae4a0cf5007525b11">rgb_raw_t::r</a></div><div class="ttdeci">uint16_t r</div><div class="ttdoc">赤 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:83</div></div>
+<div class="ttc" id="group__ev3sensor_html_ga719db52bd7f8ad451d4d4b5bbad7706e"><div class="ttname"><a href="group__ev3sensor.html#ga719db52bd7f8ad451d4d4b5bbad7706e">ev3_ultrasonic_sensor_listen</a></div><div class="ttdeci">bool_t ev3_ultrasonic_sensor_listen(sensor_port_t port)</div><div class="ttdoc">超音波センサで超音波信号を検出する． </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.c:302</div></div>
+<div class="ttc" id="group__ev3sensor_html_gga089f166159fb19f10d81c65c1d8793a2aeaadd6fd17d7b70e48c06b46f2643c5a"><div class="ttname"><a href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2aeaadd6fd17d7b70e48c06b46f2643c5a">GYRO_SENSOR</a></div><div class="ttdoc">ジャイロセンサ </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:47</div></div>
+<div class="ttc" id="group__ev3sensor_html_gga089f166159fb19f10d81c65c1d8793a2ab3572d930488403fb2c9faa5ae616a4a"><div class="ttname"><a href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2ab3572d930488403fb2c9faa5ae616a4a">ULTRASONIC_SENSOR</a></div><div class="ttdoc">超音波センサ </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:46</div></div>
+<div class="ttc" id="group__ev3sensor_html_ga089f166159fb19f10d81c65c1d8793a2"><div class="ttname"><a href="group__ev3sensor.html#ga089f166159fb19f10d81c65c1d8793a2">sensor_type_t</a></div><div class="ttdeci">sensor_type_t</div><div class="ttdoc">サポートするセンサタイプ </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:44</div></div>
+<div class="ttc" id="group__ev3sensor_html_ga18141cc7c7997858eb8c73c52dab6869"><div class="ttname"><a href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a></div><div class="ttdeci">sensor_port_t</div><div class="ttdoc">センサポートを表す番号 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:29</div></div>
+<div class="ttc" id="group__ev3sensor_html_ga5853577f47d1006fff6f050257fca384"><div class="ttname"><a href="group__ev3sensor.html#ga5853577f47d1006fff6f050257fca384">ev3_gyro_sensor_get_rate</a></div><div class="ttdeci">int16_t ev3_gyro_sensor_get_rate(sensor_port_t port)</div><div class="ttdoc">ジャイロセンサで角速度を測定する </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.c:244</div></div>
+<div class="ttc" id="structir__remote__t_html"><div class="ttname"><a href="structir__remote__t.html">ir_remote_t</a></div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:263</div></div>
+<div class="ttc" id="structrgb__raw__t_html_a7976cd62f9b61a65e8104a3cf7c15099"><div class="ttname"><a href="structrgb__raw__t.html#a7976cd62f9b61a65e8104a3cf7c15099">rgb_raw_t::b</a></div><div class="ttdeci">uint16_t b</div><div class="ttdoc">青 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:85</div></div>
+<div class="ttc" id="group__ev3sensor_html_ggaf11750614f023e665f98eca0b1f79c2fa2a9daf215a30f1c539ead18c66380fc1"><div class="ttname"><a href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa2a9daf215a30f1c539ead18c66380fc1">COLOR_BLACK</a></div><div class="ttdoc">黒 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:65</div></div>
+<div class="ttc" id="group__ev3sensor_html_ggaf11750614f023e665f98eca0b1f79c2fa70b424bcf0a4a80c0a6f810d1cff20fe"><div class="ttname"><a href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa70b424bcf0a4a80c0a6f810d1cff20fe">COLOR_BROWN</a></div><div class="ttdoc">茶 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:71</div></div>
+<div class="ttc" id="group__ev3sensor_html_ga141015aa29b5bb64913a9ebfe036a60d"><div class="ttname"><a href="group__ev3sensor.html#ga141015aa29b5bb64913a9ebfe036a60d">ev3_infrared_sensor_get_remote</a></div><div class="ttdeci">ir_remote_t ev3_infrared_sensor_get_remote(sensor_port_t port)</div><div class="ttdoc">IRセンサでIRビーコンのボタン入力を検出する． </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.c:366</div></div>
+<div class="ttc" id="group__ev3sensor_html_gga089f166159fb19f10d81c65c1d8793a2a0452c99b5eacb47a470b42da29073836"><div class="ttname"><a href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2a0452c99b5eacb47a470b42da29073836">NXT_TEMP_SENSOR</a></div><div class="ttdoc">NXT温度センサ </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:52</div></div>
+<div class="ttc" id="structrgb__raw__t_html_ad2c8d7f21feee0ce670c72acadf51074"><div class="ttname"><a href="structrgb__raw__t.html#ad2c8d7f21feee0ce670c72acadf51074">rgb_raw_t::g</a></div><div class="ttdeci">uint16_t g</div><div class="ttdoc">緑 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:84</div></div>
+<div class="ttc" id="group__ev3sensor_html_gaa679135221ab97ead4d35a7819c228c3"><div class="ttname"><a href="group__ev3sensor.html#gaa679135221ab97ead4d35a7819c228c3">ev3_gyro_sensor_get_angle</a></div><div class="ttdeci">int16_t ev3_gyro_sensor_get_angle(sensor_port_t port)</div><div class="ttdoc">ジャイロセンサで角位置を測定する． </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.c:228</div></div>
+<div class="ttc" id="group__ev3sensor_html_gga18141cc7c7997858eb8c73c52dab6869a6ed151d83ba3df1e8d15ea2a2210178c"><div class="ttname"><a href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869a6ed151d83ba3df1e8d15ea2a2210178c">EV3_PORT_1</a></div><div class="ttdoc">ポート1 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:30</div></div>
+<div class="ttc" id="group__ev3sensor_html_gga18141cc7c7997858eb8c73c52dab6869a51984b8c0cf2e5fa5782c8b651b37cbf"><div class="ttname"><a href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869a51984b8c0cf2e5fa5782c8b651b37cbf">EV3_PORT_4</a></div><div class="ttdoc">ポート4 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:33</div></div>
+<div class="ttc" id="group__ev3sensor_html_ggaf11750614f023e665f98eca0b1f79c2fa592503b9434c1e751a92f3fc536d7950"><div class="ttname"><a href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa592503b9434c1e751a92f3fc536d7950">COLOR_RED</a></div><div class="ttdoc">赤 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:69</div></div>
+<div class="ttc" id="group__ev3sensor_html_ggaf11750614f023e665f98eca0b1f79c2facfa9d8bbffc418447ed826f286abca02"><div class="ttname"><a href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2facfa9d8bbffc418447ed826f286abca02">COLOR_GREEN</a></div><div class="ttdoc">緑 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:67</div></div>
+<div class="ttc" id="group__ev3sensor_html_gga089f166159fb19f10d81c65c1d8793a2a3118b7b8f0e8b347e8b182d68fead688"><div class="ttname"><a href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2a3118b7b8f0e8b347e8b182d68fead688">NONE_SENSOR</a></div><div class="ttdoc">センサ未接続 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:45</div></div>
+<div class="ttc" id="group__ev3sensor_html_gab7a4ea002540a5a757fd6916fa200302"><div class="ttname"><a href="group__ev3sensor.html#gab7a4ea002540a5a757fd6916fa200302">ht_nxt_accel_sensor_measure</a></div><div class="ttdeci">bool_t ht_nxt_accel_sensor_measure(sensor_port_t port, int16_t axes[3])</div><div class="ttdoc">加速度センサ（HiTechnic社製）で加速度を測定する． </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.c:441</div></div>
+<div class="ttc" id="group__ev3sensor_html_ga6f0760f8a0781fd5397f3365c6d6ac87"><div class="ttname"><a href="group__ev3sensor.html#ga6f0760f8a0781fd5397f3365c6d6ac87">ev3_color_sensor_get_reflect</a></div><div class="ttdeci">uint8_t ev3_color_sensor_get_reflect(sensor_port_t port)</div><div class="ttdoc">カラーセンサで反射光の強さを測定する． </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.c:174</div></div>
+<div class="ttc" id="group__ev3sensor_html_gabfc4a1d1c1c48d2407154f3e72e9ba88"><div class="ttname"><a href="group__ev3sensor.html#gabfc4a1d1c1c48d2407154f3e72e9ba88">ev3_sensor_get_type</a></div><div class="ttdeci">ER_UINT ev3_sensor_get_type(sensor_port_t port)</div><div class="ttdoc">センサポートのセンサタイプを取得する． </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.c:138</div></div>
+<div class="ttc" id="group__ev3sensor_html_ga3ba6293eb700f5a1b51fda768b3c9a5f"><div class="ttname"><a href="group__ev3sensor.html#ga3ba6293eb700f5a1b51fda768b3c9a5f">ev3_infrared_sensor_get_distance</a></div><div class="ttdeci">int8_t ev3_infrared_sensor_get_distance(sensor_port_t port)</div><div class="ttdoc">IRセンサで距離を測定する． </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.c:325</div></div>
+<div class="ttc" id="group__ev3sensor_html_ga3ea1432e34aa420afe5444c6a93c4f86"><div class="ttname"><a href="group__ev3sensor.html#ga3ea1432e34aa420afe5444c6a93c4f86">ev3_gyro_sensor_reset</a></div><div class="ttdeci">ER ev3_gyro_sensor_reset(sensor_port_t port)</div><div class="ttdoc">ジャイロセンサの角位置をゼロにリセットする． </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.c:260</div></div>
+<div class="ttc" id="group__ev3sensor_html_gad86c95ba26932e80b8a58dc95aaee39d"><div class="ttname"><a href="group__ev3sensor.html#gad86c95ba26932e80b8a58dc95aaee39d">ev3_color_sensor_get_rgb_raw</a></div><div class="ttdeci">void ev3_color_sensor_get_rgb_raw(sensor_port_t port, rgb_raw_t *val)</div><div class="ttdoc">カラーセンサでRGB Raw値を測定する． </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.c:206</div></div>
+<div class="ttc" id="structrgb__raw__t_html"><div class="ttname"><a href="structrgb__raw__t.html">rgb_raw_t</a></div><div class="ttdoc">RGB Raw値を格納する構造体 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:82</div></div>
+<div class="ttc" id="group__ev3sensor_html_gga089f166159fb19f10d81c65c1d8793a2afaba14926b91bbe008f9ad3ebdbb469f"><div class="ttname"><a href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2afaba14926b91bbe008f9ad3ebdbb469f">TNUM_SENSOR_TYPE</a></div><div class="ttdoc">センサタイプの数 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:53</div></div>
+<div class="ttc" id="group__ev3sensor_html_gga18141cc7c7997858eb8c73c52dab6869a9d524b63759bfbf608af2a9cce68bf17"><div class="ttname"><a href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869a9d524b63759bfbf608af2a9cce68bf17">EV3_PORT_2</a></div><div class="ttdoc">ポート2 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:31</div></div>
+<div class="ttc" id="group__ev3sensor_html_gga18141cc7c7997858eb8c73c52dab6869af1505cc881ba570b1260f73aea9bcd7d"><div class="ttname"><a href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869af1505cc881ba570b1260f73aea9bcd7d">TNUM_SENSOR_PORT</a></div><div class="ttdoc">センサポートの数 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:34</div></div>
+<div class="ttc" id="group__ev3sensor_html_gga089f166159fb19f10d81c65c1d8793a2a63ab9a8a461c070a5947da1df1e2d59e"><div class="ttname"><a href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2a63ab9a8a461c070a5947da1df1e2d59e">HT_NXT_ACCEL_SENSOR</a></div><div class="ttdoc">加速度センサ（HiTechnic社製） </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:51</div></div>
+<div class="ttc" id="group__ev3sensor_html_ga554534f2f5a6ac558b29a9b01b5e8da3"><div class="ttname"><a href="group__ev3sensor.html#ga554534f2f5a6ac558b29a9b01b5e8da3">ev3_sensor_config</a></div><div class="ttdeci">ER ev3_sensor_config(sensor_port_t port, sensor_type_t type)</div><div class="ttdoc">センサポートを設定する． </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.c:86</div></div>
+<div class="ttc" id="group__ev3sensor_html_gga18141cc7c7997858eb8c73c52dab6869a63e3918741010a8a1e229c3ecedd504c"><div class="ttname"><a href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869a63e3918741010a8a1e229c3ecedd504c">EV3_PORT_3</a></div><div class="ttdoc">ポート3 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:32</div></div>
+<div class="ttc" id="group__ev3sensor_html_ggaf11750614f023e665f98eca0b1f79c2faf916aa87dc882c0ebec3d6dc683f5147"><div class="ttname"><a href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2faf916aa87dc882c0ebec3d6dc683f5147">TNUM_COLOR</a></div><div class="ttdoc">識別できるカラーの数 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:72</div></div>
+<div class="ttc" id="group__ev3sensor_html_ga0bd7ec7b7ac2fbaaa6cbe46eff3a829d"><div class="ttname"><a href="group__ev3sensor.html#ga0bd7ec7b7ac2fbaaa6cbe46eff3a829d">ev3_touch_sensor_is_pressed</a></div><div class="ttdeci">bool_t ev3_touch_sensor_is_pressed(sensor_port_t port)</div><div class="ttdoc">タッチセンサの状態を検出する． </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.c:426</div></div>
+<div class="ttc" id="group__ev3sensor_html_ggaf11750614f023e665f98eca0b1f79c2fab03862907066c68204ee9df1ee04aa29"><div class="ttname"><a href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fab03862907066c68204ee9df1ee04aa29">COLOR_YELLOW</a></div><div class="ttdoc">黄 </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:68</div></div>
+<div class="ttc" id="group__ev3sensor_html_ga11104447594453531fc2c7e268e111be"><div class="ttname"><a href="group__ev3sensor.html#ga11104447594453531fc2c7e268e111be">ev3_color_sensor_get_ambient</a></div><div class="ttdeci">uint8_t ev3_color_sensor_get_ambient(sensor_port_t port)</div><div class="ttdoc">カラーセンサで環境光の強さを測定する． </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.c:190</div></div>
+<div class="ttc" id="group__ev3sensor_html_gga089f166159fb19f10d81c65c1d8793a2aab32a5ad061cb13c0d5600a5862e255f"><div class="ttname"><a href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2aab32a5ad061cb13c0d5600a5862e255f">COLOR_SENSOR</a></div><div class="ttdoc">カラーセンサ </div><div class="ttdef"><b>Definition:</b> ev3api_sensor.h:49</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><b>ev3api_sensor.h</b></li>
+    <li class="footer">2017年06月26日(月) 06時58分08秒作成 - EV3RT C API Reference / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>EV3RT C API Reference: ファイルシステム</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EV3RT C API Reference
+   &#160;<span id="projectnumber">Beta 7</span>
+   </div>
+   <div id="projectbrief">An RTOS-based development platform for LEGO Mindstorms EV3.</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('group__ev3api-fs.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">データ構造</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">ファイルシステム</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>ファイルシステムに関するAPI．  
+<a href="#details">[詳解]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+データ構造</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmemfile__t.html">memfile_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリファイルの構造体．メモリファイルのデータは，SDカードではなく，メモリに格納される．  <a href="structmemfile__t.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfileinfo__t.html">fileinfo_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ファイル情報の構造体．  <a href="structfileinfo__t.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:ga94da27886a8d380953ee3f2f623623c3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga94da27886a8d380953ee3f2f623623c3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-fs.html#ga94da27886a8d380953ee3f2f623623c3">TMAX_FILENAME_LEN</a>&#160;&#160;&#160;(255)</td></tr>
+<tr class="memdesc:ga94da27886a8d380953ee3f2f623623c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">ファイル名の最大の長さ <br /></td></tr>
+<tr class="separator:ga94da27886a8d380953ee3f2f623623c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:gadfc0b70260f2ffd57afd8229806bd6bc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-fs.html#gadfc0b70260f2ffd57afd8229806bd6bc">serial_port_t</a> { <br />
+&#160;&#160;<a class="el" href="group__ev3api-fs.html#ggadfc0b70260f2ffd57afd8229806bd6bca6e9c07a8e969e82e3f97dd0586ac3257">EV3_SERIAL_DEFAULT</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3api-fs.html#ggadfc0b70260f2ffd57afd8229806bd6bcab2511b1dfe8205d4d61726bcc15c5ec3">EV3_SERIAL_UART</a> = 1, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3api-fs.html#ggadfc0b70260f2ffd57afd8229806bd6bca62bed1745396ddbd9884f19a6d32617d">EV3_SERIAL_BT</a> = 2
+<br />
+ }<tr class="memdesc:gadfc0b70260f2ffd57afd8229806bd6bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">シリアルポートを表す番号  <a href="group__ev3api-fs.html#gadfc0b70260f2ffd57afd8229806bd6bc">[詳解]</a><br /></td></tr>
+<tr class="separator:gadfc0b70260f2ffd57afd8229806bd6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:ga532e8cc92304f0101e0deeb6cd9fadbf"><td class="memItemLeft" align="right" valign="top">ER_ID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-fs.html#ga532e8cc92304f0101e0deeb6cd9fadbf">ev3_sdcard_opendir</a> (const char *path)</td></tr>
+<tr class="memdesc:ga532e8cc92304f0101e0deeb6cd9fadbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">ディレクトリをオープンする．  <a href="#ga532e8cc92304f0101e0deeb6cd9fadbf">[詳解]</a><br /></td></tr>
+<tr class="separator:ga532e8cc92304f0101e0deeb6cd9fadbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8baeceaf1dc86c7e9d1a5dbdbd80e34b"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-fs.html#ga8baeceaf1dc86c7e9d1a5dbdbd80e34b">ev3_sdcard_readdir</a> (ID dirid, <a class="el" href="structfileinfo__t.html">fileinfo_t</a> *p_fileinfo)</td></tr>
+<tr class="memdesc:ga8baeceaf1dc86c7e9d1a5dbdbd80e34b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ディレクトリ内のファイル情報を読み込む．  <a href="#ga8baeceaf1dc86c7e9d1a5dbdbd80e34b">[詳解]</a><br /></td></tr>
+<tr class="separator:ga8baeceaf1dc86c7e9d1a5dbdbd80e34b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaffdeffb3f095a47382d48a352cd2472a"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-fs.html#gaffdeffb3f095a47382d48a352cd2472a">ev3_sdcard_closedir</a> (ID dirid)</td></tr>
+<tr class="memdesc:gaffdeffb3f095a47382d48a352cd2472a"><td class="mdescLeft">&#160;</td><td class="mdescRight">ディレクトリをクローズする．  <a href="#gaffdeffb3f095a47382d48a352cd2472a">[詳解]</a><br /></td></tr>
+<tr class="separator:gaffdeffb3f095a47382d48a352cd2472a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa75435a927bdaa6b1b6209b990a2cda1"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-fs.html#gaa75435a927bdaa6b1b6209b990a2cda1">ev3_memfile_load</a> (const char *path, <a class="el" href="structmemfile__t.html">memfile_t</a> *p_memfile)</td></tr>
+<tr class="memdesc:gaa75435a927bdaa6b1b6209b990a2cda1"><td class="mdescLeft">&#160;</td><td class="mdescRight">SDカードのファイルをメモリファイルとしてロードする．  <a href="#gaa75435a927bdaa6b1b6209b990a2cda1">[詳解]</a><br /></td></tr>
+<tr class="separator:gaa75435a927bdaa6b1b6209b990a2cda1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7e92f18ee9f6b9875c0191a777983570"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-fs.html#ga7e92f18ee9f6b9875c0191a777983570">ev3_memfile_free</a> (<a class="el" href="structmemfile__t.html">memfile_t</a> *p_memfile)</td></tr>
+<tr class="memdesc:ga7e92f18ee9f6b9875c0191a777983570"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリファイルを解放する．  <a href="#ga7e92f18ee9f6b9875c0191a777983570">[詳解]</a><br /></td></tr>
+<tr class="separator:ga7e92f18ee9f6b9875c0191a777983570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaac019d412e55aa7e82791ef708cec551"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-fs.html#gaac019d412e55aa7e82791ef708cec551">ev3_serial_open_file</a> (<a class="el" href="group__ev3api-fs.html#gadfc0b70260f2ffd57afd8229806bd6bc">serial_port_t</a> port)</td></tr>
+<tr class="memdesc:gaac019d412e55aa7e82791ef708cec551"><td class="mdescLeft">&#160;</td><td class="mdescRight">シリアルポートをファイルとしてオープンする．  <a href="#gaac019d412e55aa7e82791ef708cec551">[詳解]</a><br /></td></tr>
+<tr class="separator:gaac019d412e55aa7e82791ef708cec551"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5879be35470c24601cbc8a647bae2081"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-fs.html#ga5879be35470c24601cbc8a647bae2081">ev3_bluetooth_is_connected</a> ()</td></tr>
+<tr class="memdesc:ga5879be35470c24601cbc8a647bae2081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bluetooth (Serial Port Profile)が接続されているかどうかをチェックする．  <a href="#ga5879be35470c24601cbc8a647bae2081">[詳解]</a><br /></td></tr>
+<tr class="separator:ga5879be35470c24601cbc8a647bae2081"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<p>ファイルシステムに関するAPI． </p>
+<p>このページは本プラットフォーム独自のAPIしか記述しないが，fopen()等標準Cライブラリのファイル操作関数もサポートする． </p>
+<h2 class="groupheader">列挙型詳解</h2>
+<a class="anchor" id="gadfc0b70260f2ffd57afd8229806bd6bc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__ev3api-fs.html#gadfc0b70260f2ffd57afd8229806bd6bc">serial_port_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>シリアルポートを表す番号 </p>
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a class="anchor" id="ggadfc0b70260f2ffd57afd8229806bd6bca6e9c07a8e969e82e3f97dd0586ac3257"></a>EV3_SERIAL_DEFAULT&#160;</td><td class="fielddoc">
+<p>デフォルトのシリアルポート（ログタスク用ポート） </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggadfc0b70260f2ffd57afd8229806bd6bcab2511b1dfe8205d4d61726bcc15c5ec3"></a>EV3_SERIAL_UART&#160;</td><td class="fielddoc">
+<p>UARTポート（センサポート1） </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggadfc0b70260f2ffd57afd8229806bd6bca62bed1745396ddbd9884f19a6d32617d"></a>EV3_SERIAL_BT&#160;</td><td class="fielddoc">
+<p>Bluetooth仮想シリアルポート </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="ga5879be35470c24601cbc8a647bae2081"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool_t ev3_bluetooth_is_connected </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bluetooth (Serial Port Profile)が接続されているかどうかをチェックする． </p>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>接続済み．Bluetooth仮想シリアルポートで通信できる． </td></tr>
+    <tr><td class="paramname">false</td><td>接続切れ． </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7e92f18ee9f6b9875c0191a777983570"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_memfile_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmemfile__t.html">memfile_t</a> *&#160;</td>
+          <td class="paramname"><em>p_memfile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>メモリファイルを解放する． </p>
+<p>メモリファイルにより確保されたリソース（メモリ領域）を解放する．正常終了の場合，<em>p_memfile</em> の <em>buffer</em> はNULLにクリアする． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_memfile</td><td>解放するメモリファイルのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_MACV</td><td>メモリアクセス違反（p_memfile） </td></tr>
+    <tr><td class="paramname">E_OBJ</td><td><em>p_memfile</em> で指定したメモリファイルは無効 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa75435a927bdaa6b1b6209b990a2cda1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_memfile_load </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structmemfile__t.html">memfile_t</a> *&#160;</td>
+          <td class="paramname"><em>p_memfile</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SDカードのファイルをメモリファイルとしてロードする． </p>
+<p>メモリファイルのオブジェクトを生成して，指定したファイルをSDカードからこのメモリファイルに読み込む．エラーが発生する場合，<em>p_memfile</em> の <em>buffer</em> はNULLにクリアする. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>ファイルのパス </td></tr>
+    <tr><td class="paramname">p_memfile</td><td>生成したメモリファイルのオブジェクトを格納する場所へのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_MACV</td><td>メモリアクセス違反（pathかp_memfile） </td></tr>
+    <tr><td class="paramname">E_NOMEM</td><td>メモリ不足 </td></tr>
+    <tr><td class="paramname">E_PAR</td><td>パス名は無効 </td></tr>
+    <tr><td class="paramname">E_SYS</td><td>I/Oエラーが発生した（SDカード不良の可能性が高い） </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Open file</p>
+<p>Get file size &amp; allocate memory</p>
+<p>Perform reading</p>
+
+</div>
+</div>
+<a class="anchor" id="gaffdeffb3f095a47382d48a352cd2472a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_sdcard_closedir </td>
+          <td>(</td>
+          <td class="paramtype">ID&#160;</td>
+          <td class="paramname"><em>dirid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ディレクトリをクローズする． </p>
+<p>成功した場合，オープンされたディレクトリのリソースを解放して，そのIDは使えなくなる． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dirid</td><td>ディレクトリのID </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_CTX</td><td>非タスクコンテストから呼び出す </td></tr>
+    <tr><td class="paramname">E_ID</td><td>不正ID番号 </td></tr>
+    <tr><td class="paramname">E_SYS</td><td>I/Oエラーが発生した（SDカード不良の可能性が高い） </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga532e8cc92304f0101e0deeb6cd9fadbf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER_ID ev3_sdcard_opendir </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ディレクトリをオープンする． </p>
+<p>成功した場合，オープンされたディレクトリのIDを戻り値として返す．このIDはディレクトリ内のファイル情報を取得するために使える． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>ディレクトリのパス </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">&gt;0</td><td>オープンされたディレクトリのID </td></tr>
+    <tr><td class="paramname">E_CTX</td><td>非タスクコンテストから呼び出す </td></tr>
+    <tr><td class="paramname">E_MACV</td><td>メモリアクセス違反（path） </td></tr>
+    <tr><td class="paramname">E_NOID</td><td>ID番号不足 </td></tr>
+    <tr><td class="paramname">E_PAR</td><td>パス名は無効 </td></tr>
+    <tr><td class="paramname">E_SYS</td><td>I/Oエラーが発生した（SDカード不良の可能性が高い）</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>dirent.h </p>
+
+</div>
+</div>
+<a class="anchor" id="ga8baeceaf1dc86c7e9d1a5dbdbd80e34b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_sdcard_readdir </td>
+          <td>(</td>
+          <td class="paramtype">ID&#160;</td>
+          <td class="paramname"><em>dirid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structfileinfo__t.html">fileinfo_t</a> *&#160;</td>
+          <td class="paramname"><em>p_fileinfo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ディレクトリ内のファイル情報を読み込む． </p>
+<p>オープンされたディレクトリから次のファイルの情報を返す． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dirid</td><td>ディレクトリのID </td></tr>
+    <tr><td class="paramname">p_fileinfo</td><td>ファイル情報を格納する場所へのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_CTX</td><td>非タスクコンテストから呼び出す </td></tr>
+    <tr><td class="paramname">E_ID</td><td>不正ID番号 </td></tr>
+    <tr><td class="paramname">E_MACV</td><td>メモリアクセス違反（p_fileinfo） </td></tr>
+    <tr><td class="paramname">E_OBJ</td><td>これ以上読み込めるファイルの情報がない </td></tr>
+    <tr><td class="paramname">E_SYS</td><td>I/Oエラーが発生した（SDカード不良の可能性が高い） </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaac019d412e55aa7e82791ef708cec551"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FILE* ev3_serial_open_file </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3api-fs.html#gadfc0b70260f2ffd57afd8229806bd6bc">serial_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>シリアルポートをファイルとしてオープンする． </p>
+<p>失敗の場合，NULLを返す（エラーログが出力される）． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>シリアルポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>シリアルポートのファイル </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">2017年06月26日(月) 06時58分08秒作成 - EV3RT C API Reference / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
+  </ul>
+</div>
+</body>
+</html>

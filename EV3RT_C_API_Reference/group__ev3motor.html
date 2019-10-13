@@ -1,0 +1,599 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>EV3RT C API Reference: サーボモータ</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EV3RT C API Reference
+   &#160;<span id="projectnumber">Beta 7</span>
+   </div>
+   <div id="projectbrief">An RTOS-based development platform for LEGO Mindstorms EV3.</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('group__ev3motor.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">サーボモータ</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>モータ制御に関するAPI．  
+<a href="#details">[詳解]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:ga0f54b84f89f86be757f847d408a2f2f4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> { <br />
+&#160;&#160;<a class="el" href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4a45d2a35f4d83d7416273b9d6e5fb3c10">EV3_PORT_A</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4a64918ce114f44b89908009151b325ac6">EV3_PORT_B</a> = 1, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4a8077d672488fb19e0f864a65508b097e">EV3_PORT_C</a> = 2, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4aa1b994259795f86fdf26c690850202bf">EV3_PORT_D</a> = 3, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4a09134b8ce0f2f80e12555be3121bcc53">TNUM_MOTOR_PORT</a> = 4
+<br />
+ }<tr class="memdesc:ga0f54b84f89f86be757f847d408a2f2f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータポートを表す番号  <a href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">[詳解]</a><br /></td></tr>
+<tr class="separator:ga0f54b84f89f86be757f847d408a2f2f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</td></tr>
+<tr class="memitem:ga5f0f3e75314ae11b050988a1ba3e2075"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3motor.html#ga5f0f3e75314ae11b050988a1ba3e2075">motor_type_t</a> { <br />
+&#160;&#160;<a class="el" href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075a142827795767d88db173c85270e06e35">NONE_MOTOR</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075aa17ca356ce12346af151348aae72761c">MEDIUM_MOTOR</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075ac2fe66302f9229b1360844843688f469">LARGE_MOTOR</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075a4bd7adaded0610289cb20d7b4b6ebba1">UNREGULATED_MOTOR</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075a1857435c0c694eb4c80d560f778d982c">TNUM_MOTOR_TYPE</a>
+<br />
+ }<tr class="memdesc:ga5f0f3e75314ae11b050988a1ba3e2075"><td class="mdescLeft">&#160;</td><td class="mdescRight">サポートするモータタイプ  <a href="group__ev3motor.html#ga5f0f3e75314ae11b050988a1ba3e2075">[詳解]</a><br /></td></tr>
+<tr class="separator:ga5f0f3e75314ae11b050988a1ba3e2075"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:ga25f485fbe38e4234b29e4f1e6a87bd3e"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3motor.html#ga25f485fbe38e4234b29e4f1e6a87bd3e">ev3_motor_config</a> (<a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> port, <a class="el" href="group__ev3motor.html#ga5f0f3e75314ae11b050988a1ba3e2075">motor_type_t</a> type)</td></tr>
+<tr class="memdesc:ga25f485fbe38e4234b29e4f1e6a87bd3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータポートを設定する．  <a href="#ga25f485fbe38e4234b29e4f1e6a87bd3e">[詳解]</a><br /></td></tr>
+<tr class="separator:ga25f485fbe38e4234b29e4f1e6a87bd3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6565458195489126606bd5144b5b400d"><td class="memItemLeft" align="right" valign="top">ER_UINT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3motor.html#ga6565458195489126606bd5144b5b400d">ev3_motor_get_type</a> (<a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> port)</td></tr>
+<tr class="memdesc:ga6565458195489126606bd5144b5b400d"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータポートのモータタイプを取得する．  <a href="#ga6565458195489126606bd5144b5b400d">[詳解]</a><br /></td></tr>
+<tr class="separator:ga6565458195489126606bd5144b5b400d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0486d0a9d93975eb339f7b5e0afeb999"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3motor.html#ga0486d0a9d93975eb339f7b5e0afeb999">ev3_motor_get_counts</a> (<a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> port)</td></tr>
+<tr class="memdesc:ga0486d0a9d93975eb339f7b5e0afeb999"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータの角位置を取得する．  <a href="#ga0486d0a9d93975eb339f7b5e0afeb999">[詳解]</a><br /></td></tr>
+<tr class="separator:ga0486d0a9d93975eb339f7b5e0afeb999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga08da6ad2f59add3e33d4d208b0cc98e8"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3motor.html#ga08da6ad2f59add3e33d4d208b0cc98e8">ev3_motor_reset_counts</a> (<a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> port)</td></tr>
+<tr class="memdesc:ga08da6ad2f59add3e33d4d208b0cc98e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータの角位置をゼロにリセットする．  <a href="#ga08da6ad2f59add3e33d4d208b0cc98e8">[詳解]</a><br /></td></tr>
+<tr class="separator:ga08da6ad2f59add3e33d4d208b0cc98e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf5c96b6a7e3fdc7e13ba3466359294a0"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3motor.html#gaf5c96b6a7e3fdc7e13ba3466359294a0">ev3_motor_set_power</a> (<a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> port, int power)</td></tr>
+<tr class="memdesc:gaf5c96b6a7e3fdc7e13ba3466359294a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータのパワーを設定する  <a href="#gaf5c96b6a7e3fdc7e13ba3466359294a0">[詳解]</a><br /></td></tr>
+<tr class="separator:gaf5c96b6a7e3fdc7e13ba3466359294a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga67eb23319041faa1ef588c58d34f07e5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3motor.html#ga67eb23319041faa1ef588c58d34f07e5">ev3_motor_get_power</a> (<a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> port)</td></tr>
+<tr class="memdesc:ga67eb23319041faa1ef588c58d34f07e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータのパワーを取得する  <a href="#ga67eb23319041faa1ef588c58d34f07e5">[詳解]</a><br /></td></tr>
+<tr class="separator:ga67eb23319041faa1ef588c58d34f07e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga27585a7d658c0a5eec3ea4d7297c4e6b"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3motor.html#ga27585a7d658c0a5eec3ea4d7297c4e6b">ev3_motor_stop</a> (<a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> port, bool_t brake)</td></tr>
+<tr class="memdesc:ga27585a7d658c0a5eec3ea4d7297c4e6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータを停止する  <a href="#ga27585a7d658c0a5eec3ea4d7297c4e6b">[詳解]</a><br /></td></tr>
+<tr class="separator:ga27585a7d658c0a5eec3ea4d7297c4e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga057b79d7b6ec476812df854133d28e86"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3motor.html#ga057b79d7b6ec476812df854133d28e86">ev3_motor_rotate</a> (<a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> port, int degrees, uint32_t speed_abs, bool_t blocking)</td></tr>
+<tr class="memdesc:ga057b79d7b6ec476812df854133d28e86"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータを指定した角度だけ回転させる  <a href="#ga057b79d7b6ec476812df854133d28e86">[詳解]</a><br /></td></tr>
+<tr class="separator:ga057b79d7b6ec476812df854133d28e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga772dadf1354388584c36ba26f3baf7cf"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3motor.html#ga772dadf1354388584c36ba26f3baf7cf">ev3_motor_steer</a> (<a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> left_motor, <a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> right_motor, int power, int turn_ratio)</td></tr>
+<tr class="memdesc:ga772dadf1354388584c36ba26f3baf7cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">２つのモータでロボットのステアリング操作を行う．  <a href="#ga772dadf1354388584c36ba26f3baf7cf">[詳解]</a><br /></td></tr>
+<tr class="separator:ga772dadf1354388584c36ba26f3baf7cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<p>モータ制御に関するAPI． </p>
+<h2 class="groupheader">列挙型詳解</h2>
+<a class="anchor" id="ga0f54b84f89f86be757f847d408a2f2f4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>モータポートを表す番号 </p>
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a class="anchor" id="gga0f54b84f89f86be757f847d408a2f2f4a45d2a35f4d83d7416273b9d6e5fb3c10"></a>EV3_PORT_A&#160;</td><td class="fielddoc">
+<p>ポートA </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga0f54b84f89f86be757f847d408a2f2f4a64918ce114f44b89908009151b325ac6"></a>EV3_PORT_B&#160;</td><td class="fielddoc">
+<p>ポートB </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga0f54b84f89f86be757f847d408a2f2f4a8077d672488fb19e0f864a65508b097e"></a>EV3_PORT_C&#160;</td><td class="fielddoc">
+<p>ポートC </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga0f54b84f89f86be757f847d408a2f2f4aa1b994259795f86fdf26c690850202bf"></a>EV3_PORT_D&#160;</td><td class="fielddoc">
+<p>ポートD </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga0f54b84f89f86be757f847d408a2f2f4a09134b8ce0f2f80e12555be3121bcc53"></a>TNUM_MOTOR_PORT&#160;</td><td class="fielddoc">
+<p>モータポートの数 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a class="anchor" id="ga5f0f3e75314ae11b050988a1ba3e2075"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__ev3motor.html#ga5f0f3e75314ae11b050988a1ba3e2075">motor_type_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>サポートするモータタイプ </p>
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a class="anchor" id="gga5f0f3e75314ae11b050988a1ba3e2075a142827795767d88db173c85270e06e35"></a>NONE_MOTOR&#160;</td><td class="fielddoc">
+<p>モータ未接続 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga5f0f3e75314ae11b050988a1ba3e2075aa17ca356ce12346af151348aae72761c"></a>MEDIUM_MOTOR&#160;</td><td class="fielddoc">
+<p>サーボモータM </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga5f0f3e75314ae11b050988a1ba3e2075ac2fe66302f9229b1360844843688f469"></a>LARGE_MOTOR&#160;</td><td class="fielddoc">
+<p>サーボモータL </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga5f0f3e75314ae11b050988a1ba3e2075a4bd7adaded0610289cb20d7b4b6ebba1"></a>UNREGULATED_MOTOR&#160;</td><td class="fielddoc">
+<p>未調整モータ </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga5f0f3e75314ae11b050988a1ba3e2075a1857435c0c694eb4c80d560f778d982c"></a>TNUM_MOTOR_TYPE&#160;</td><td class="fielddoc">
+<p>モータタイプの数 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="ga25f485fbe38e4234b29e4f1e6a87bd3e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_motor_config </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__ev3motor.html#ga5f0f3e75314ae11b050988a1ba3e2075">motor_type_t</a>&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>モータポートを設定する． </p>
+<p>モータポートに接続しているモータのタイプを設定する．既に設定した場合も新しいモータタイプを指定できる． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>モータポート番号 </td></tr>
+    <tr><td class="paramname">type</td><td>モータタイプ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_ID</td><td>不正のモータポート番号 </td></tr>
+    <tr><td class="paramname">E_PAR</td><td>不正のモータタイプ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0486d0a9d93975eb339f7b5e0afeb999"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t ev3_motor_get_counts </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>モータの角位置を取得する． </p>
+<p>不正のモータポート番号を指定した場合，常に0を返す（エラーログが出力される）． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>モータポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>モータの角位置（単位は度），マイナスの値は逆方向に回転されたことを指す </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga67eb23319041faa1ef588c58d34f07e5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ev3_motor_get_power </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>モータのパワーを取得する </p>
+<p>不正のモータポート番号を指定した場合，常に0を返す（エラーログが出力される）． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>モータポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>モータのパワー </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6565458195489126606bd5144b5b400d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER_UINT ev3_motor_get_type </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>モータポートのモータタイプを取得する． </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>モータポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">&gt;=0</td><td>指定したモータポートのモータタイプ </td></tr>
+    <tr><td class="paramname">E_ID</td><td>不正のモータポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga08da6ad2f59add3e33d4d208b0cc98e8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_motor_reset_counts </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>モータの角位置をゼロにリセットする． </p>
+<p>モータの角位置センサの値を設定するだけ，モータの実際のパワーと位置に影響を与えない． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>モータポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_ID</td><td>不正のモータポート番号 </td></tr>
+    <tr><td class="paramname">E_OBJ</td><td>モータ未接続 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga057b79d7b6ec476812df854133d28e86"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_motor_rotate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>degrees</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>speed_abs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool_t&#160;</td>
+          <td class="paramname"><em>blocking</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>モータを指定した角度だけ回転させる </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>モータポート番号 </td></tr>
+    <tr><td class="paramname">degrees</td><td>回転角度，マイナスの値でモータを逆方向に回転させることができる </td></tr>
+    <tr><td class="paramname">speed_abs</td><td>回転速度，モータポートのフルスピードのパーセント値．範囲：0から+100． </td></tr>
+    <tr><td class="paramname">blocking</td><td><em>true</em> (関数は回転が完了してからリターン)，<em>false</em> (関数は回転操作を待たずにリターン) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_ID</td><td>不正のモータポート番号 </td></tr>
+    <tr><td class="paramname">E_OBJ</td><td>モータ未接続 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaf5c96b6a7e3fdc7e13ba3466359294a0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_motor_set_power </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>power</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>モータのパワーを設定する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>モータポート番号 </td></tr>
+    <tr><td class="paramname">power</td><td>モータのフルパワーのパーセント値．範囲：-100から+100．マイナスの値でモータを逆方向に回転させることができる． </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_ID</td><td>不正のモータポート番号 </td></tr>
+    <tr><td class="paramname">E_OBJ</td><td>モータ未接続 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Start the motor</p>
+
+</div>
+</div>
+<a class="anchor" id="ga772dadf1354388584c36ba26f3baf7cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_motor_steer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a>&#160;</td>
+          <td class="paramname"><em>left_motor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a>&#160;</td>
+          <td class="paramname"><em>right_motor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>power</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>turn_ratio</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>２つのモータでロボットのステアリング操作を行う． </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left_motor</td><td>左モータのモータポート番号 </td></tr>
+    <tr><td class="paramname">right_motor</td><td>右モータのモータポート番号 </td></tr>
+    <tr><td class="paramname">power</td><td>モータのパワー．範囲：-100から+100．マイナスの値は後退． </td></tr>
+    <tr><td class="paramname">turn_ratio</td><td>ステアリングの度合い．範囲：-100から+100．マイナスの値は左への転回，プラスの値は右への転回になる． 具体的に言えば，このパラメータはこの左右モータのパワーの差の度合いである．例えば，<em>turn_ratio</em> は+25である場合， 左モータのパワーは<em>power</em> で，右モータのパワーは<em>power</em> の75%になり，ロボットは右へ転回する． </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_ID</td><td>不正のモータID </td></tr>
+    <tr><td class="paramname">E_OBJ</td><td>モータ未接続 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga27585a7d658c0a5eec3ea4d7297c4e6b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_motor_stop </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool_t&#160;</td>
+          <td class="paramname"><em>brake</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>モータを停止する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>モータポート番号 </td></tr>
+    <tr><td class="paramname">brake</td><td>ブレーキモードの指定，<em>true</em> （ブレーキモード）, <em>false</em> （フロートモード） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_ID</td><td>不正のモータポート番号 </td></tr>
+    <tr><td class="paramname">E_OBJ</td><td>モータ未接続 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">2017年06月26日(月) 06時58分08秒作成 - EV3RT C API Reference / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
+  </ul>
+</div>
+</body>
+</html>

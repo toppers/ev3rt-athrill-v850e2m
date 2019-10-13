@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>EV3RT C API Reference: スピーカ</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EV3RT C API Reference
+   &#160;<span id="projectnumber">Beta 7</span>
+   </div>
+   <div id="projectbrief">An RTOS-based development platform for LEGO Mindstorms EV3.</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('group__ev3api-speaker.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">スピーカ<div class="ingroups"><a class="el" href="group__ev3api-brick.html">EV3本体機能</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>音声（スピーカ）に関するAPI．  
+<a href="#details">[詳解]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:ga167980fca3be2754a1a941610a73f3c9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga167980fca3be2754a1a941610a73f3c9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga167980fca3be2754a1a941610a73f3c9">SOUND_MANUAL_STOP</a>&#160;&#160;&#160;(-1)</td></tr>
+<tr class="memdesc:ga167980fca3be2754a1a941610a73f3c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">音声の再生を手動で停止するためのフラグ <br /></td></tr>
+<tr class="separator:ga167980fca3be2754a1a941610a73f3c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadbed706152a3d7114327fc5af3c7e07c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gadbed706152a3d7114327fc5af3c7e07c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#gadbed706152a3d7114327fc5af3c7e07c">NOTE_C4</a>&#160;&#160;&#160;(261.63)</td></tr>
+<tr class="memdesc:gadbed706152a3d7114327fc5af3c7e07c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートC4の周波数 <br /></td></tr>
+<tr class="separator:gadbed706152a3d7114327fc5af3c7e07c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae9a1fa0e819ea29161a72b6840dd0ffc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae9a1fa0e819ea29161a72b6840dd0ffc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#gae9a1fa0e819ea29161a72b6840dd0ffc">NOTE_CS4</a>&#160;&#160;&#160;(277.18)</td></tr>
+<tr class="memdesc:gae9a1fa0e819ea29161a72b6840dd0ffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートC#4の周波数 <br /></td></tr>
+<tr class="separator:gae9a1fa0e819ea29161a72b6840dd0ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6162f78ec6fc3457a077602a77e36992"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga6162f78ec6fc3457a077602a77e36992"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga6162f78ec6fc3457a077602a77e36992">NOTE_D4</a>&#160;&#160;&#160;(293.66)</td></tr>
+<tr class="memdesc:ga6162f78ec6fc3457a077602a77e36992"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートD4の周波数 <br /></td></tr>
+<tr class="separator:ga6162f78ec6fc3457a077602a77e36992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga638f884f0226cff11eff97ba96fbce88"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga638f884f0226cff11eff97ba96fbce88"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga638f884f0226cff11eff97ba96fbce88">NOTE_DS4</a>&#160;&#160;&#160;(311.13)</td></tr>
+<tr class="memdesc:ga638f884f0226cff11eff97ba96fbce88"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートD#4の周波数 <br /></td></tr>
+<tr class="separator:ga638f884f0226cff11eff97ba96fbce88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga147e4663d8161df841c418859a70f66f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga147e4663d8161df841c418859a70f66f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga147e4663d8161df841c418859a70f66f">NOTE_E4</a>&#160;&#160;&#160;(329.63)</td></tr>
+<tr class="memdesc:ga147e4663d8161df841c418859a70f66f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートE4の周波数 <br /></td></tr>
+<tr class="separator:ga147e4663d8161df841c418859a70f66f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaff20d9abb2ef6f25afeb44245129eba6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaff20d9abb2ef6f25afeb44245129eba6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#gaff20d9abb2ef6f25afeb44245129eba6">NOTE_F4</a>&#160;&#160;&#160;(349.23)</td></tr>
+<tr class="memdesc:gaff20d9abb2ef6f25afeb44245129eba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートF4の周波数 <br /></td></tr>
+<tr class="separator:gaff20d9abb2ef6f25afeb44245129eba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ca197d6b74ace12c6cc9e53f47b7a6a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga3ca197d6b74ace12c6cc9e53f47b7a6a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga3ca197d6b74ace12c6cc9e53f47b7a6a">NOTE_FS4</a>&#160;&#160;&#160;(369.99)</td></tr>
+<tr class="memdesc:ga3ca197d6b74ace12c6cc9e53f47b7a6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートF#4の周波数 <br /></td></tr>
+<tr class="separator:ga3ca197d6b74ace12c6cc9e53f47b7a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga588324691d836c7cdf1dd8cc071eeecc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga588324691d836c7cdf1dd8cc071eeecc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga588324691d836c7cdf1dd8cc071eeecc">NOTE_G4</a>&#160;&#160;&#160;(392.00)</td></tr>
+<tr class="memdesc:ga588324691d836c7cdf1dd8cc071eeecc"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートG4の周波数 <br /></td></tr>
+<tr class="separator:ga588324691d836c7cdf1dd8cc071eeecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac446a7c56b75b56451b6712833bfd31f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac446a7c56b75b56451b6712833bfd31f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#gac446a7c56b75b56451b6712833bfd31f">NOTE_GS4</a>&#160;&#160;&#160;(415.30)</td></tr>
+<tr class="memdesc:gac446a7c56b75b56451b6712833bfd31f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートG#4の周波数 <br /></td></tr>
+<tr class="separator:gac446a7c56b75b56451b6712833bfd31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4ede898d3fa744ffb02d5e9b66994ef3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga4ede898d3fa744ffb02d5e9b66994ef3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga4ede898d3fa744ffb02d5e9b66994ef3">NOTE_A4</a>&#160;&#160;&#160;(440.00)</td></tr>
+<tr class="memdesc:ga4ede898d3fa744ffb02d5e9b66994ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートA4の周波数 <br /></td></tr>
+<tr class="separator:ga4ede898d3fa744ffb02d5e9b66994ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf4ee3ef21f5803c75089341e7e3f50d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaaf4ee3ef21f5803c75089341e7e3f50d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#gaaf4ee3ef21f5803c75089341e7e3f50d">NOTE_AS4</a>&#160;&#160;&#160;(466.16)</td></tr>
+<tr class="memdesc:gaaf4ee3ef21f5803c75089341e7e3f50d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートA#4の周波数 <br /></td></tr>
+<tr class="separator:gaaf4ee3ef21f5803c75089341e7e3f50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9ed6d5c8563ae60e6d2716e13d261386"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga9ed6d5c8563ae60e6d2716e13d261386"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga9ed6d5c8563ae60e6d2716e13d261386">NOTE_B4</a>&#160;&#160;&#160;(493.88)</td></tr>
+<tr class="memdesc:ga9ed6d5c8563ae60e6d2716e13d261386"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートB4の周波数 <br /></td></tr>
+<tr class="separator:ga9ed6d5c8563ae60e6d2716e13d261386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8afb484cf5507628f20dd2822a5b2e79"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga8afb484cf5507628f20dd2822a5b2e79"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga8afb484cf5507628f20dd2822a5b2e79">NOTE_C5</a>&#160;&#160;&#160;(523.25)</td></tr>
+<tr class="memdesc:ga8afb484cf5507628f20dd2822a5b2e79"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートC5の周波数 <br /></td></tr>
+<tr class="separator:ga8afb484cf5507628f20dd2822a5b2e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8f01a2997f769170cc4f20287aca5339"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga8f01a2997f769170cc4f20287aca5339"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga8f01a2997f769170cc4f20287aca5339">NOTE_CS5</a>&#160;&#160;&#160;(554.37)</td></tr>
+<tr class="memdesc:ga8f01a2997f769170cc4f20287aca5339"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートC#5の周波数 <br /></td></tr>
+<tr class="separator:ga8f01a2997f769170cc4f20287aca5339"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga37abdd5b16959e6265e7de75022f5dde"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga37abdd5b16959e6265e7de75022f5dde"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga37abdd5b16959e6265e7de75022f5dde">NOTE_D5</a>&#160;&#160;&#160;(587.33)</td></tr>
+<tr class="memdesc:ga37abdd5b16959e6265e7de75022f5dde"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートD5の周波数 <br /></td></tr>
+<tr class="separator:ga37abdd5b16959e6265e7de75022f5dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7943ad2d66e53367906e04e8af1c086a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga7943ad2d66e53367906e04e8af1c086a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga7943ad2d66e53367906e04e8af1c086a">NOTE_DS5</a>&#160;&#160;&#160;(622.25)</td></tr>
+<tr class="memdesc:ga7943ad2d66e53367906e04e8af1c086a"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートD#5の周波数 <br /></td></tr>
+<tr class="separator:ga7943ad2d66e53367906e04e8af1c086a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga441475178599565b3dd4572cebbdf28c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga441475178599565b3dd4572cebbdf28c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga441475178599565b3dd4572cebbdf28c">NOTE_E5</a>&#160;&#160;&#160;(659.25)</td></tr>
+<tr class="memdesc:ga441475178599565b3dd4572cebbdf28c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートE5の周波数 <br /></td></tr>
+<tr class="separator:ga441475178599565b3dd4572cebbdf28c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga88cbd6246f212e3bcbecbb032c8e2000"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga88cbd6246f212e3bcbecbb032c8e2000"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga88cbd6246f212e3bcbecbb032c8e2000">NOTE_F5</a>&#160;&#160;&#160;(698.46)</td></tr>
+<tr class="memdesc:ga88cbd6246f212e3bcbecbb032c8e2000"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートF5の周波数 <br /></td></tr>
+<tr class="separator:ga88cbd6246f212e3bcbecbb032c8e2000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga84727bb42a42a0b6af92403750f91557"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga84727bb42a42a0b6af92403750f91557"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga84727bb42a42a0b6af92403750f91557">NOTE_FS5</a>&#160;&#160;&#160;(739.99)</td></tr>
+<tr class="memdesc:ga84727bb42a42a0b6af92403750f91557"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートF#5の周波数 <br /></td></tr>
+<tr class="separator:ga84727bb42a42a0b6af92403750f91557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf71ac5d772736db7a12fd9f9521dd475"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaf71ac5d772736db7a12fd9f9521dd475"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#gaf71ac5d772736db7a12fd9f9521dd475">NOTE_G5</a>&#160;&#160;&#160;(783.99)</td></tr>
+<tr class="memdesc:gaf71ac5d772736db7a12fd9f9521dd475"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートG5の周波数 <br /></td></tr>
+<tr class="separator:gaf71ac5d772736db7a12fd9f9521dd475"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1d0d4526c7554185499a7207359bda67"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga1d0d4526c7554185499a7207359bda67"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga1d0d4526c7554185499a7207359bda67">NOTE_GS5</a>&#160;&#160;&#160;(830.61)</td></tr>
+<tr class="memdesc:ga1d0d4526c7554185499a7207359bda67"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートG#5の周波数 <br /></td></tr>
+<tr class="separator:ga1d0d4526c7554185499a7207359bda67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga304d30fa9be20c63c38c57787d037855"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga304d30fa9be20c63c38c57787d037855"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga304d30fa9be20c63c38c57787d037855">NOTE_A5</a>&#160;&#160;&#160;(880.00)</td></tr>
+<tr class="memdesc:ga304d30fa9be20c63c38c57787d037855"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートA5の周波数 <br /></td></tr>
+<tr class="separator:ga304d30fa9be20c63c38c57787d037855"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9eb288f3153b75a074d08dce3765298e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga9eb288f3153b75a074d08dce3765298e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga9eb288f3153b75a074d08dce3765298e">NOTE_AS5</a>&#160;&#160;&#160;(932.33)</td></tr>
+<tr class="memdesc:ga9eb288f3153b75a074d08dce3765298e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートA#5の周波数 <br /></td></tr>
+<tr class="separator:ga9eb288f3153b75a074d08dce3765298e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga88aac44b58d74d5aa5749e17a22b8cdd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga88aac44b58d74d5aa5749e17a22b8cdd"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga88aac44b58d74d5aa5749e17a22b8cdd">NOTE_B5</a>&#160;&#160;&#160;(987.77)</td></tr>
+<tr class="memdesc:ga88aac44b58d74d5aa5749e17a22b8cdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートB5の周波数 <br /></td></tr>
+<tr class="separator:ga88aac44b58d74d5aa5749e17a22b8cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga54087ffb7da518f038a39025b2a9ee7e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga54087ffb7da518f038a39025b2a9ee7e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga54087ffb7da518f038a39025b2a9ee7e">NOTE_C6</a>&#160;&#160;&#160;(1046.50)</td></tr>
+<tr class="memdesc:ga54087ffb7da518f038a39025b2a9ee7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートC6の周波数 <br /></td></tr>
+<tr class="separator:ga54087ffb7da518f038a39025b2a9ee7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga54087ffb7da518f038a39025b2a9ee7e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga54087ffb7da518f038a39025b2a9ee7e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga54087ffb7da518f038a39025b2a9ee7e">NOTE_C6</a>&#160;&#160;&#160;(1046.50)</td></tr>
+<tr class="memdesc:ga54087ffb7da518f038a39025b2a9ee7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートC6の周波数 <br /></td></tr>
+<tr class="separator:ga54087ffb7da518f038a39025b2a9ee7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga469d61024f06d70e36b5a201e02290dd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga469d61024f06d70e36b5a201e02290dd"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga469d61024f06d70e36b5a201e02290dd">NOTE_CS6</a>&#160;&#160;&#160;(1108.73)</td></tr>
+<tr class="memdesc:ga469d61024f06d70e36b5a201e02290dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートC#6の周波数 <br /></td></tr>
+<tr class="separator:ga469d61024f06d70e36b5a201e02290dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga469d61024f06d70e36b5a201e02290dd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga469d61024f06d70e36b5a201e02290dd"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga469d61024f06d70e36b5a201e02290dd">NOTE_CS6</a>&#160;&#160;&#160;(1108.73)</td></tr>
+<tr class="memdesc:ga469d61024f06d70e36b5a201e02290dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートC#6の周波数 <br /></td></tr>
+<tr class="separator:ga469d61024f06d70e36b5a201e02290dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga811db0f526f36b57a6798aaf31c8d70c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga811db0f526f36b57a6798aaf31c8d70c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga811db0f526f36b57a6798aaf31c8d70c">NOTE_D6</a>&#160;&#160;&#160;(1174.66)</td></tr>
+<tr class="memdesc:ga811db0f526f36b57a6798aaf31c8d70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートD6の周波数 <br /></td></tr>
+<tr class="separator:ga811db0f526f36b57a6798aaf31c8d70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga811db0f526f36b57a6798aaf31c8d70c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga811db0f526f36b57a6798aaf31c8d70c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga811db0f526f36b57a6798aaf31c8d70c">NOTE_D6</a>&#160;&#160;&#160;(1174.66)</td></tr>
+<tr class="memdesc:ga811db0f526f36b57a6798aaf31c8d70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートD6の周波数 <br /></td></tr>
+<tr class="separator:ga811db0f526f36b57a6798aaf31c8d70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga24a650a77ce62398dafbd1bcce98eb59"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga24a650a77ce62398dafbd1bcce98eb59"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga24a650a77ce62398dafbd1bcce98eb59">NOTE_DS6</a>&#160;&#160;&#160;(1244.51)</td></tr>
+<tr class="memdesc:ga24a650a77ce62398dafbd1bcce98eb59"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートD#6の周波数 <br /></td></tr>
+<tr class="separator:ga24a650a77ce62398dafbd1bcce98eb59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga24a650a77ce62398dafbd1bcce98eb59"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga24a650a77ce62398dafbd1bcce98eb59"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga24a650a77ce62398dafbd1bcce98eb59">NOTE_DS6</a>&#160;&#160;&#160;(1244.51)</td></tr>
+<tr class="memdesc:ga24a650a77ce62398dafbd1bcce98eb59"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートD#6の周波数 <br /></td></tr>
+<tr class="separator:ga24a650a77ce62398dafbd1bcce98eb59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga857f52119eedaadce999e3918ae9959f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga857f52119eedaadce999e3918ae9959f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga857f52119eedaadce999e3918ae9959f">NOTE_E6</a>&#160;&#160;&#160;(1318.51)</td></tr>
+<tr class="memdesc:ga857f52119eedaadce999e3918ae9959f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートE6の周波数 <br /></td></tr>
+<tr class="separator:ga857f52119eedaadce999e3918ae9959f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga857f52119eedaadce999e3918ae9959f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga857f52119eedaadce999e3918ae9959f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga857f52119eedaadce999e3918ae9959f">NOTE_E6</a>&#160;&#160;&#160;(1318.51)</td></tr>
+<tr class="memdesc:ga857f52119eedaadce999e3918ae9959f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートE6の周波数 <br /></td></tr>
+<tr class="separator:ga857f52119eedaadce999e3918ae9959f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadfe1a899865ae2952aa2d9ed5e790b79"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gadfe1a899865ae2952aa2d9ed5e790b79"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#gadfe1a899865ae2952aa2d9ed5e790b79">NOTE_F6</a>&#160;&#160;&#160;(1396.91)</td></tr>
+<tr class="memdesc:gadfe1a899865ae2952aa2d9ed5e790b79"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートF6の周波数 <br /></td></tr>
+<tr class="separator:gadfe1a899865ae2952aa2d9ed5e790b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadfe1a899865ae2952aa2d9ed5e790b79"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gadfe1a899865ae2952aa2d9ed5e790b79"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#gadfe1a899865ae2952aa2d9ed5e790b79">NOTE_F6</a>&#160;&#160;&#160;(1396.91)</td></tr>
+<tr class="memdesc:gadfe1a899865ae2952aa2d9ed5e790b79"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートF6の周波数 <br /></td></tr>
+<tr class="separator:gadfe1a899865ae2952aa2d9ed5e790b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab4ebb3f662ea22dd29c2887d1d217af6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gab4ebb3f662ea22dd29c2887d1d217af6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#gab4ebb3f662ea22dd29c2887d1d217af6">NOTE_FS6</a>&#160;&#160;&#160;(1479.98)</td></tr>
+<tr class="memdesc:gab4ebb3f662ea22dd29c2887d1d217af6"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートF#6の周波数 <br /></td></tr>
+<tr class="separator:gab4ebb3f662ea22dd29c2887d1d217af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab4ebb3f662ea22dd29c2887d1d217af6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gab4ebb3f662ea22dd29c2887d1d217af6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#gab4ebb3f662ea22dd29c2887d1d217af6">NOTE_FS6</a>&#160;&#160;&#160;(1479.98)</td></tr>
+<tr class="memdesc:gab4ebb3f662ea22dd29c2887d1d217af6"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートF#6の周波数 <br /></td></tr>
+<tr class="separator:gab4ebb3f662ea22dd29c2887d1d217af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabc6a20319564cb37b2de2d3ef3b90c56"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gabc6a20319564cb37b2de2d3ef3b90c56"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#gabc6a20319564cb37b2de2d3ef3b90c56">NOTE_G6</a>&#160;&#160;&#160;(1567.98)</td></tr>
+<tr class="memdesc:gabc6a20319564cb37b2de2d3ef3b90c56"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートG6の周波数 <br /></td></tr>
+<tr class="separator:gabc6a20319564cb37b2de2d3ef3b90c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabc6a20319564cb37b2de2d3ef3b90c56"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gabc6a20319564cb37b2de2d3ef3b90c56"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#gabc6a20319564cb37b2de2d3ef3b90c56">NOTE_G6</a>&#160;&#160;&#160;(1567.98)</td></tr>
+<tr class="memdesc:gabc6a20319564cb37b2de2d3ef3b90c56"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートG6の周波数 <br /></td></tr>
+<tr class="separator:gabc6a20319564cb37b2de2d3ef3b90c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga97b306e8336c0e303e366ad2cdacbee0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga97b306e8336c0e303e366ad2cdacbee0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga97b306e8336c0e303e366ad2cdacbee0">NOTE_GS6</a>&#160;&#160;&#160;(1661.22)</td></tr>
+<tr class="memdesc:ga97b306e8336c0e303e366ad2cdacbee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートG#6の周波数 <br /></td></tr>
+<tr class="separator:ga97b306e8336c0e303e366ad2cdacbee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga97b306e8336c0e303e366ad2cdacbee0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga97b306e8336c0e303e366ad2cdacbee0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga97b306e8336c0e303e366ad2cdacbee0">NOTE_GS6</a>&#160;&#160;&#160;(1661.22)</td></tr>
+<tr class="memdesc:ga97b306e8336c0e303e366ad2cdacbee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートG#6の周波数 <br /></td></tr>
+<tr class="separator:ga97b306e8336c0e303e366ad2cdacbee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga398204aee459448c88756450dec5917e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga398204aee459448c88756450dec5917e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga398204aee459448c88756450dec5917e">NOTE_A6</a>&#160;&#160;&#160;(1760.00)</td></tr>
+<tr class="memdesc:ga398204aee459448c88756450dec5917e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートA6の周波数 <br /></td></tr>
+<tr class="separator:ga398204aee459448c88756450dec5917e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga398204aee459448c88756450dec5917e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga398204aee459448c88756450dec5917e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga398204aee459448c88756450dec5917e">NOTE_A6</a>&#160;&#160;&#160;(1760.00)</td></tr>
+<tr class="memdesc:ga398204aee459448c88756450dec5917e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートA6の周波数 <br /></td></tr>
+<tr class="separator:ga398204aee459448c88756450dec5917e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa79cf5cf202add769c2b5e3bac36b07e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaa79cf5cf202add769c2b5e3bac36b07e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#gaa79cf5cf202add769c2b5e3bac36b07e">NOTE_AS6</a>&#160;&#160;&#160;(1864.66)</td></tr>
+<tr class="memdesc:gaa79cf5cf202add769c2b5e3bac36b07e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートA#6の周波数 <br /></td></tr>
+<tr class="separator:gaa79cf5cf202add769c2b5e3bac36b07e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa79cf5cf202add769c2b5e3bac36b07e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaa79cf5cf202add769c2b5e3bac36b07e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#gaa79cf5cf202add769c2b5e3bac36b07e">NOTE_AS6</a>&#160;&#160;&#160;(1864.66)</td></tr>
+<tr class="memdesc:gaa79cf5cf202add769c2b5e3bac36b07e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートA#6の周波数 <br /></td></tr>
+<tr class="separator:gaa79cf5cf202add769c2b5e3bac36b07e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga918042b793d057bd1038d859bc769ec0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga918042b793d057bd1038d859bc769ec0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga918042b793d057bd1038d859bc769ec0">NOTE_B6</a>&#160;&#160;&#160;(1975.53)</td></tr>
+<tr class="memdesc:ga918042b793d057bd1038d859bc769ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートB6の周波数 <br /></td></tr>
+<tr class="separator:ga918042b793d057bd1038d859bc769ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga918042b793d057bd1038d859bc769ec0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga918042b793d057bd1038d859bc769ec0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga918042b793d057bd1038d859bc769ec0">NOTE_B6</a>&#160;&#160;&#160;(1975.53)</td></tr>
+<tr class="memdesc:ga918042b793d057bd1038d859bc769ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノートB6の周波数 <br /></td></tr>
+<tr class="separator:ga918042b793d057bd1038d859bc769ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:ga0260256515977d4f59895a893df1da59"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#ga0260256515977d4f59895a893df1da59">ev3_speaker_set_volume</a> (uint8_t volume)</td></tr>
+<tr class="memdesc:ga0260256515977d4f59895a893df1da59"><td class="mdescLeft">&#160;</td><td class="mdescRight">音量を調整する．  <a href="#ga0260256515977d4f59895a893df1da59">[詳解]</a><br /></td></tr>
+<tr class="separator:ga0260256515977d4f59895a893df1da59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafdf8b7713aff9d314c0f5e2b95a23716"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#gafdf8b7713aff9d314c0f5e2b95a23716">ev3_speaker_play_tone</a> (uint16_t frequency, int32_t duration)</td></tr>
+<tr class="memdesc:gafdf8b7713aff9d314c0f5e2b95a23716"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定した周波数でトーン出力する．今再生しているサウンドは停止される．  <a href="#gafdf8b7713aff9d314c0f5e2b95a23716">[詳解]</a><br /></td></tr>
+<tr class="separator:gafdf8b7713aff9d314c0f5e2b95a23716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaead65aa6bfeaf0d46df3393d877ca7b4"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#gaead65aa6bfeaf0d46df3393d877ca7b4">ev3_speaker_play_file</a> (const <a class="el" href="structmemfile__t.html">memfile_t</a> *p_memfile, int32_t duration)</td></tr>
+<tr class="memdesc:gaead65aa6bfeaf0d46df3393d877ca7b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したWAVファイル（8-bit 8kHz mono）を再生する．今再生しているサウンドは停止される．  <a href="#gaead65aa6bfeaf0d46df3393d877ca7b4">[詳解]</a><br /></td></tr>
+<tr class="separator:gaead65aa6bfeaf0d46df3393d877ca7b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacdb32f5d7d15419cd50c2a5d677a5952"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-speaker.html#gacdb32f5d7d15419cd50c2a5d677a5952">ev3_speaker_stop</a> ()</td></tr>
+<tr class="memdesc:gacdb32f5d7d15419cd50c2a5d677a5952"><td class="mdescLeft">&#160;</td><td class="mdescRight">今再生しているサウンドを停止する．  <a href="#gacdb32f5d7d15419cd50c2a5d677a5952">[詳解]</a><br /></td></tr>
+<tr class="separator:gacdb32f5d7d15419cd50c2a5d677a5952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<p>音声（スピーカ）に関するAPI． </p>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="gaead65aa6bfeaf0d46df3393d877ca7b4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_speaker_play_file </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmemfile__t.html">memfile_t</a> *&#160;</td>
+          <td class="paramname"><em>p_memfile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>duration</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指定したWAVファイル（8-bit 8kHz mono）を再生する．今再生しているサウンドは停止される． </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_memfile</td><td>WAVファイルのメモリファイルへのポインタ </td></tr>
+    <tr><td class="paramname">duration</td><td>出力持続時間．単位：ミリ秒．SOUND_MANUAL_STOPを指定した場合は手動で停止しないと最後まで再生する． </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_CTX</td><td>非タスクコンテストから呼び出す </td></tr>
+    <tr><td class="paramname">E_NORES</td><td>サウンドデバイスが占有されている </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gafdf8b7713aff9d314c0f5e2b95a23716"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_speaker_play_tone </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>frequency</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>duration</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指定した周波数でトーン出力する．今再生しているサウンドは停止される． </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frequency</td><td>トーンの周波数 </td></tr>
+    <tr><td class="paramname">duration</td><td>出力持続時間．単位：ミリ秒．SOUND_MANUAL_STOPを指定した場合は手動で停止する． </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_CTX</td><td>非タスクコンテストから呼び出す </td></tr>
+    <tr><td class="paramname">E_NORES</td><td>サウンドデバイスが占有されている </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0260256515977d4f59895a893df1da59"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_speaker_set_volume </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>volume</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>音量を調整する． </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">volume</td><td>ボリュームの値．範囲：0から+100．0はミュート．+100を超えた値を指定すると，実際の値は+100になる． </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_CTX</td><td>非タスクコンテストから呼び出す </td></tr>
+    <tr><td class="paramname">E_NORES</td><td>サウンドデバイスが占有されている </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gacdb32f5d7d15419cd50c2a5d677a5952"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_speaker_stop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>今再生しているサウンドを停止する． </p>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_CTX</td><td>非タスクコンテストから呼び出す </td></tr>
+    <tr><td class="paramname">E_NORES</td><td>サウンドデバイスが占有されている </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">2017年06月26日(月) 06時58分08秒作成 - EV3RT C API Reference / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>EV3RT C API Reference: ボタン</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EV3RT C API Reference
+   &#160;<span id="projectnumber">Beta 7</span>
+   </div>
+   <div id="projectbrief">An RTOS-based development platform for LEGO Mindstorms EV3.</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('group__ev3button.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">ボタン<div class="ingroups"><a class="el" href="group__ev3api-brick.html">EV3本体機能</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>ボタンに関するAPI．  
+<a href="#details">[詳解]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:ga7754652ebe470fb6cc5d30b4cd258660"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3button.html#ga7754652ebe470fb6cc5d30b4cd258660">button_t</a> { <br />
+&#160;&#160;<a class="el" href="group__ev3button.html#gga7754652ebe470fb6cc5d30b4cd258660acc7c999423bde38a6b6156b77c4f194e">LEFT_BUTTON</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3button.html#gga7754652ebe470fb6cc5d30b4cd258660a2f7db56ce29bb4a148cae5ab0198709a">RIGHT_BUTTON</a> = 1, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3button.html#gga7754652ebe470fb6cc5d30b4cd258660a308e2dec294b93e1c691bacd5cd45266">UP_BUTTON</a> = 2, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3button.html#gga7754652ebe470fb6cc5d30b4cd258660a4ef6f8a30edabae1ea534aa7c4f79199">DOWN_BUTTON</a> = 3, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3button.html#gga7754652ebe470fb6cc5d30b4cd258660ab42cc4bbdbed78b08763c32419fb5796">ENTER_BUTTON</a> = 4, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3button.html#gga7754652ebe470fb6cc5d30b4cd258660a46cf6c1da23c500cd1369fa994f902fb">BACK_BUTTON</a> = 5, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3button.html#gga7754652ebe470fb6cc5d30b4cd258660af198627fc8492ff6a8bc7329f5d720da">TNUM_BUTTON</a> = 6
+<br />
+ }<tr class="memdesc:ga7754652ebe470fb6cc5d30b4cd258660"><td class="mdescLeft">&#160;</td><td class="mdescRight">ボタンを表す番号  <a href="group__ev3button.html#ga7754652ebe470fb6cc5d30b4cd258660">[詳解]</a><br /></td></tr>
+<tr class="separator:ga7754652ebe470fb6cc5d30b4cd258660"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:ga58698096470ad567a785e82cd2514ced"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3button.html#ga58698096470ad567a785e82cd2514ced">ev3_button_is_pressed</a> (<a class="el" href="group__ev3button.html#ga7754652ebe470fb6cc5d30b4cd258660">button_t</a> button)</td></tr>
+<tr class="memdesc:ga58698096470ad567a785e82cd2514ced"><td class="mdescLeft">&#160;</td><td class="mdescRight">ボタンの押下状態を取得する．  <a href="#ga58698096470ad567a785e82cd2514ced">[詳解]</a><br /></td></tr>
+<tr class="separator:ga58698096470ad567a785e82cd2514ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf2da803506b62a1f3180e182f504ff80"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3button.html#gaf2da803506b62a1f3180e182f504ff80">ev3_button_set_on_clicked</a> (<a class="el" href="group__ev3button.html#ga7754652ebe470fb6cc5d30b4cd258660">button_t</a> button, ISR handler, intptr_t exinf)</td></tr>
+<tr class="memdesc:gaf2da803506b62a1f3180e182f504ff80"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したボタンのクリックイベントハンドラを設定する．  <a href="#gaf2da803506b62a1f3180e182f504ff80">[詳解]</a><br /></td></tr>
+<tr class="separator:gaf2da803506b62a1f3180e182f504ff80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<p>ボタンに関するAPI． </p>
+<h2 class="groupheader">列挙型詳解</h2>
+<a class="anchor" id="ga7754652ebe470fb6cc5d30b4cd258660"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__ev3button.html#ga7754652ebe470fb6cc5d30b4cd258660">button_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ボタンを表す番号 </p>
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a class="anchor" id="gga7754652ebe470fb6cc5d30b4cd258660acc7c999423bde38a6b6156b77c4f194e"></a>LEFT_BUTTON&#160;</td><td class="fielddoc">
+<p>左ボタン </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga7754652ebe470fb6cc5d30b4cd258660a2f7db56ce29bb4a148cae5ab0198709a"></a>RIGHT_BUTTON&#160;</td><td class="fielddoc">
+<p>右ボタン </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga7754652ebe470fb6cc5d30b4cd258660a308e2dec294b93e1c691bacd5cd45266"></a>UP_BUTTON&#160;</td><td class="fielddoc">
+<p>上ボタン </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga7754652ebe470fb6cc5d30b4cd258660a4ef6f8a30edabae1ea534aa7c4f79199"></a>DOWN_BUTTON&#160;</td><td class="fielddoc">
+<p>下ボタン </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga7754652ebe470fb6cc5d30b4cd258660ab42cc4bbdbed78b08763c32419fb5796"></a>ENTER_BUTTON&#160;</td><td class="fielddoc">
+<p>中央ボタン </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga7754652ebe470fb6cc5d30b4cd258660a46cf6c1da23c500cd1369fa994f902fb"></a>BACK_BUTTON&#160;</td><td class="fielddoc">
+<p>戻るボタン </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga7754652ebe470fb6cc5d30b4cd258660af198627fc8492ff6a8bc7329f5d720da"></a>TNUM_BUTTON&#160;</td><td class="fielddoc">
+<p>ボタンの数 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="ga58698096470ad567a785e82cd2514ced"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool_t ev3_button_is_pressed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3button.html#ga7754652ebe470fb6cc5d30b4cd258660">button_t</a>&#160;</td>
+          <td class="paramname"><em>button</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ボタンの押下状態を取得する． </p>
+<p>不正のボタン番号を指定した場合，常に <em>false</em> を返す（エラーログが出力される）． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">button</td><td>ボタン番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>押されている状態 </td></tr>
+    <tr><td class="paramname">false</td><td>押されていない状態 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaf2da803506b62a1f3180e182f504ff80"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_button_set_on_clicked </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3button.html#ga7754652ebe470fb6cc5d30b4cd258660">button_t</a>&#160;</td>
+          <td class="paramname"><em>button</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ISR&#160;</td>
+          <td class="paramname"><em>handler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">intptr_t&#160;</td>
+          <td class="paramname"><em>exinf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指定したボタンのクリックイベントハンドラを設定する． </p>
+<p>ボタンハンドラはタスクコンテストで実行する．デフォルトは，待ち禁止状態から呼び出される． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">button</td><td>ボタン番号 </td></tr>
+    <tr><td class="paramname">handler</td><td>イベントハンドラ．NULLを指定した場合，元のハンドラがクリアされる </td></tr>
+    <tr><td class="paramname">exinf</td><td>イベントハンドラの拡張情報 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_ID</td><td>不正のボタン番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">2017年06月26日(月) 06時58分08秒作成 - EV3RT C API Reference / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>EV3RT C++ API Reference: include/Port.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EV3RT C++ API Reference
+   &#160;<span id="projectnumber">Beta 7</span>
+   </div>
+   <div id="projectbrief">An RTOS-based development platform for LEGO Mindstorms EV3.</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_port_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Port.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_port_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Port.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Copyright (c) 2015-2016 Embedded Technology Software Design Robot Contest</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef EV3CPPAPI_PORT_H_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define EV3CPPAPI_PORT_H_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="_port_8h.html#a8d17f8fabb486d5815d626610983e82d">   18</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="_port_8h.html#a8d17f8fabb486d5815d626610983e82d">ePortS</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="_port_8h.html#a8d17f8fabb486d5815d626610983e82daa0bafbc5d1a37affbad146654a13527f">   20</a></span>&#160;    <a class="code" href="_port_8h.html#a8d17f8fabb486d5815d626610983e82daa0bafbc5d1a37affbad146654a13527f">PORT_1</a> = 0, </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="_port_8h.html#a8d17f8fabb486d5815d626610983e82da1196d475e71fa8b4236f365de58ad9fc">   21</a></span>&#160;    <a class="code" href="_port_8h.html#a8d17f8fabb486d5815d626610983e82da1196d475e71fa8b4236f365de58ad9fc">PORT_2</a>,     </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="_port_8h.html#a8d17f8fabb486d5815d626610983e82dac955981798afdb1cdd6c0fa3ccb09ae5">   22</a></span>&#160;    <a class="code" href="_port_8h.html#a8d17f8fabb486d5815d626610983e82dac955981798afdb1cdd6c0fa3ccb09ae5">PORT_3</a>,     </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="_port_8h.html#a8d17f8fabb486d5815d626610983e82dad883f3fd0cfe73362b8abf3e33f518a6">   23</a></span>&#160;    <a class="code" href="_port_8h.html#a8d17f8fabb486d5815d626610983e82dad883f3fd0cfe73362b8abf3e33f518a6">PORT_4</a>      </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="_port_8h.html#a01d16e2109729e564c90cd6d211c0938">   29</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="_port_8h.html#a01d16e2109729e564c90cd6d211c0938">ePortM</a></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="_port_8h.html#a01d16e2109729e564c90cd6d211c0938aeb6782d9dfedf3c6a78ffdb1624fa454">   31</a></span>&#160;    <a class="code" href="_port_8h.html#a01d16e2109729e564c90cd6d211c0938aeb6782d9dfedf3c6a78ffdb1624fa454">PORT_A</a> = 0, </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="_port_8h.html#a01d16e2109729e564c90cd6d211c0938a16ada472d473fbd0207b99e9e4d68f4a">   32</a></span>&#160;    <a class="code" href="_port_8h.html#a01d16e2109729e564c90cd6d211c0938a16ada472d473fbd0207b99e9e4d68f4a">PORT_B</a>,     </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="_port_8h.html#a01d16e2109729e564c90cd6d211c0938a627cc690c37f97527dd2f07aa22092d9">   33</a></span>&#160;    <a class="code" href="_port_8h.html#a01d16e2109729e564c90cd6d211c0938a627cc690c37f97527dd2f07aa22092d9">PORT_C</a>,     </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="_port_8h.html#a01d16e2109729e564c90cd6d211c0938af7242fe75227a46a190645663f91ce69">   34</a></span>&#160;    <a class="code" href="_port_8h.html#a01d16e2109729e564c90cd6d211c0938af7242fe75227a46a190645663f91ce69">PORT_D</a>      </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="_port_8h.html#a0de7742117569a1ace9ea7cc1448e2db">   40</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="_port_8h.html#a0de7742117569a1ace9ea7cc1448e2db">ePower</a></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="_port_8h.html#a0de7742117569a1ace9ea7cc1448e2dba4a0682c6762857d83fd5d8cb36f9c94e">   42</a></span>&#160;    <a class="code" href="_port_8h.html#a0de7742117569a1ace9ea7cc1448e2dba4a0682c6762857d83fd5d8cb36f9c94e">POWER_OFF</a> = 0,          </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="_port_8h.html#a0de7742117569a1ace9ea7cc1448e2dba5075d6f0666251bb9bb1dde4fd57bad9">   43</a></span>&#160;    <a class="code" href="_port_8h.html#a0de7742117569a1ace9ea7cc1448e2dba5075d6f0666251bb9bb1dde4fd57bad9">POWER_LOWSPEED_9V</a> = 1,  </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="_port_8h.html#a0de7742117569a1ace9ea7cc1448e2dba87c314914b4c9bc1ada20ae5ceed9737">   44</a></span>&#160;    <a class="code" href="_port_8h.html#a0de7742117569a1ace9ea7cc1448e2dba87c314914b4c9bc1ada20ae5ceed9737">POWER_LOWSPEED</a> = 2      </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="_port_8h.html#ae00f304b02f73a4d31c5bd8a275e74a8">   48</a></span>&#160;<span class="preprocessor">#define NUM_PORT_S (4) // number of sensor ports</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="_port_8h.html#ad870f87bcd263c596e77c3d0269cdcf4">   51</a></span>&#160;<span class="preprocessor">#define NUM_PORT_M (4) // number of motor ports</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif // ! EV3CPPAPI_PORT_H_</span></div>
+<div class="ttc" id="_port_8h_html_a8d17f8fabb486d5815d626610983e82daa0bafbc5d1a37affbad146654a13527f"><div class="ttname"><a href="_port_8h.html#a8d17f8fabb486d5815d626610983e82daa0bafbc5d1a37affbad146654a13527f">PORT_1</a></div><div class="ttdef"><b>Definition:</b> Port.h:20</div></div>
+<div class="ttc" id="_port_8h_html_a01d16e2109729e564c90cd6d211c0938"><div class="ttname"><a href="_port_8h.html#a01d16e2109729e564c90cd6d211c0938">ePortM</a></div><div class="ttdeci">ePortM</div><div class="ttdef"><b>Definition:</b> Port.h:29</div></div>
+<div class="ttc" id="_port_8h_html_a01d16e2109729e564c90cd6d211c0938a16ada472d473fbd0207b99e9e4d68f4a"><div class="ttname"><a href="_port_8h.html#a01d16e2109729e564c90cd6d211c0938a16ada472d473fbd0207b99e9e4d68f4a">PORT_B</a></div><div class="ttdef"><b>Definition:</b> Port.h:32</div></div>
+<div class="ttc" id="_port_8h_html_a0de7742117569a1ace9ea7cc1448e2dba5075d6f0666251bb9bb1dde4fd57bad9"><div class="ttname"><a href="_port_8h.html#a0de7742117569a1ace9ea7cc1448e2dba5075d6f0666251bb9bb1dde4fd57bad9">POWER_LOWSPEED_9V</a></div><div class="ttdef"><b>Definition:</b> Port.h:43</div></div>
+<div class="ttc" id="_port_8h_html_a8d17f8fabb486d5815d626610983e82d"><div class="ttname"><a href="_port_8h.html#a8d17f8fabb486d5815d626610983e82d">ePortS</a></div><div class="ttdeci">ePortS</div><div class="ttdef"><b>Definition:</b> Port.h:18</div></div>
+<div class="ttc" id="_port_8h_html_a8d17f8fabb486d5815d626610983e82dac955981798afdb1cdd6c0fa3ccb09ae5"><div class="ttname"><a href="_port_8h.html#a8d17f8fabb486d5815d626610983e82dac955981798afdb1cdd6c0fa3ccb09ae5">PORT_3</a></div><div class="ttdef"><b>Definition:</b> Port.h:22</div></div>
+<div class="ttc" id="_port_8h_html_a01d16e2109729e564c90cd6d211c0938a627cc690c37f97527dd2f07aa22092d9"><div class="ttname"><a href="_port_8h.html#a01d16e2109729e564c90cd6d211c0938a627cc690c37f97527dd2f07aa22092d9">PORT_C</a></div><div class="ttdef"><b>Definition:</b> Port.h:33</div></div>
+<div class="ttc" id="_port_8h_html_a8d17f8fabb486d5815d626610983e82dad883f3fd0cfe73362b8abf3e33f518a6"><div class="ttname"><a href="_port_8h.html#a8d17f8fabb486d5815d626610983e82dad883f3fd0cfe73362b8abf3e33f518a6">PORT_4</a></div><div class="ttdef"><b>Definition:</b> Port.h:23</div></div>
+<div class="ttc" id="_port_8h_html_a0de7742117569a1ace9ea7cc1448e2db"><div class="ttname"><a href="_port_8h.html#a0de7742117569a1ace9ea7cc1448e2db">ePower</a></div><div class="ttdeci">ePower</div><div class="ttdef"><b>Definition:</b> Port.h:40</div></div>
+<div class="ttc" id="_port_8h_html_a0de7742117569a1ace9ea7cc1448e2dba87c314914b4c9bc1ada20ae5ceed9737"><div class="ttname"><a href="_port_8h.html#a0de7742117569a1ace9ea7cc1448e2dba87c314914b4c9bc1ada20ae5ceed9737">POWER_LOWSPEED</a></div><div class="ttdef"><b>Definition:</b> Port.h:44</div></div>
+<div class="ttc" id="_port_8h_html_a01d16e2109729e564c90cd6d211c0938af7242fe75227a46a190645663f91ce69"><div class="ttname"><a href="_port_8h.html#a01d16e2109729e564c90cd6d211c0938af7242fe75227a46a190645663f91ce69">PORT_D</a></div><div class="ttdef"><b>Definition:</b> Port.h:34</div></div>
+<div class="ttc" id="_port_8h_html_a0de7742117569a1ace9ea7cc1448e2dba4a0682c6762857d83fd5d8cb36f9c94e"><div class="ttname"><a href="_port_8h.html#a0de7742117569a1ace9ea7cc1448e2dba4a0682c6762857d83fd5d8cb36f9c94e">POWER_OFF</a></div><div class="ttdef"><b>Definition:</b> Port.h:42</div></div>
+<div class="ttc" id="_port_8h_html_a8d17f8fabb486d5815d626610983e82da1196d475e71fa8b4236f365de58ad9fc"><div class="ttname"><a href="_port_8h.html#a8d17f8fabb486d5815d626610983e82da1196d475e71fa8b4236f365de58ad9fc">PORT_2</a></div><div class="ttdef"><b>Definition:</b> Port.h:21</div></div>
+<div class="ttc" id="_port_8h_html_a01d16e2109729e564c90cd6d211c0938aeb6782d9dfedf3c6a78ffdb1624fa454"><div class="ttname"><a href="_port_8h.html#a01d16e2109729e564c90cd6d211c0938aeb6782d9dfedf3c6a78ffdb1624fa454">PORT_A</a></div><div class="ttdef"><b>Definition:</b> Port.h:31</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_port_8h.html">Port.h</a></li>
+    <li class="footer">2017年06月26日(月) 06時58分08秒作成 - EV3RT C++ API Reference / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
+  </ul>
+</div>
+</body>
+</html>

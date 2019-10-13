@@ -1,0 +1,890 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>EV3RT C API Reference: 各種センサ</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EV3RT C API Reference
+   &#160;<span id="projectnumber">Beta 7</span>
+   </div>
+   <div id="projectbrief">An RTOS-based development platform for LEGO Mindstorms EV3.</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('group__ev3sensor.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">データ構造</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">各種センサ</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>各種センサに関するAPI．  
+<a href="#details">[詳解]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+データ構造</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgb__raw__t.html">rgb_raw_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RGB Raw値を格納する構造体  <a href="structrgb__raw__t.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structir__seek__t.html">ir_seek_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">IRビーコンの方位と距離を格納する構造体  <a href="structir__seek__t.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structir__remote__t.html">ir_remote_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:gaf20d834c3d3b95b26fea71c0759f1ade"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaf20d834c3d3b95b26fea71c0759f1ade"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IR_RED_UP_BUTTON</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:gaf20d834c3d3b95b26fea71c0759f1ade"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa138ef8f5875fdc4e5391568e39c099c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaa138ef8f5875fdc4e5391568e39c099c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IR_RED_DOWN_BUTTON</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:gaa138ef8f5875fdc4e5391568e39c099c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafe929192737190e159b3e775ab50ed1a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gafe929192737190e159b3e775ab50ed1a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IR_BLUE_UP_BUTTON</b>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:gafe929192737190e159b3e775ab50ed1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga442260ca984ff520708039861da9612d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga442260ca984ff520708039861da9612d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IR_BLUE_DOWN_BUTTON</b>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:ga442260ca984ff520708039861da9612d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga51b55f1746ee84e13339b14e1deab2da"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga51b55f1746ee84e13339b14e1deab2da"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IR_BEACON_BUTTON</b>&#160;&#160;&#160;16</td></tr>
+<tr class="separator:ga51b55f1746ee84e13339b14e1deab2da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:ga18141cc7c7997858eb8c73c52dab6869"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> { <br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869a6ed151d83ba3df1e8d15ea2a2210178c">EV3_PORT_1</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869a9d524b63759bfbf608af2a9cce68bf17">EV3_PORT_2</a> = 1, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869a63e3918741010a8a1e229c3ecedd504c">EV3_PORT_3</a> = 2, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869a51984b8c0cf2e5fa5782c8b651b37cbf">EV3_PORT_4</a> = 3, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#gga18141cc7c7997858eb8c73c52dab6869af1505cc881ba570b1260f73aea9bcd7d">TNUM_SENSOR_PORT</a> = 4
+<br />
+ }<tr class="memdesc:ga18141cc7c7997858eb8c73c52dab6869"><td class="mdescLeft">&#160;</td><td class="mdescRight">センサポートを表す番号  <a href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">[詳解]</a><br /></td></tr>
+<tr class="separator:ga18141cc7c7997858eb8c73c52dab6869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</td></tr>
+<tr class="memitem:ga089f166159fb19f10d81c65c1d8793a2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#ga089f166159fb19f10d81c65c1d8793a2">sensor_type_t</a> { <br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2a3118b7b8f0e8b347e8b182d68fead688">NONE_SENSOR</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2ab3572d930488403fb2c9faa5ae616a4a">ULTRASONIC_SENSOR</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2aeaadd6fd17d7b70e48c06b46f2643c5a">GYRO_SENSOR</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2ab3a59d197a4a1f36a436c95ad613fdf4">TOUCH_SENSOR</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2aab32a5ad061cb13c0d5600a5862e255f">COLOR_SENSOR</a>, 
+<br />
+&#160;&#160;<b>INFRARED_SENSOR</b>, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2a63ab9a8a461c070a5947da1df1e2d59e">HT_NXT_ACCEL_SENSOR</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2a0452c99b5eacb47a470b42da29073836">NXT_TEMP_SENSOR</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#gga089f166159fb19f10d81c65c1d8793a2afaba14926b91bbe008f9ad3ebdbb469f">TNUM_SENSOR_TYPE</a>
+<br />
+ }<tr class="memdesc:ga089f166159fb19f10d81c65c1d8793a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">サポートするセンサタイプ  <a href="group__ev3sensor.html#ga089f166159fb19f10d81c65c1d8793a2">[詳解]</a><br /></td></tr>
+<tr class="separator:ga089f166159fb19f10d81c65c1d8793a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</td></tr>
+<tr class="memitem:gaf11750614f023e665f98eca0b1f79c2f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#gaf11750614f023e665f98eca0b1f79c2f">colorid_t</a> { <br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa01ff12cf7ff51aef192abe6f9b7d8a4a">COLOR_NONE</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa2a9daf215a30f1c539ead18c66380fc1">COLOR_BLACK</a> = 1, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa1340428efccb140dcbdb71aa6176f696">COLOR_BLUE</a> = 2, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2facfa9d8bbffc418447ed826f286abca02">COLOR_GREEN</a> = 3, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fab03862907066c68204ee9df1ee04aa29">COLOR_YELLOW</a> = 4, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa592503b9434c1e751a92f3fc536d7950">COLOR_RED</a> = 5, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fad47b4c240a0109970bb2a7fe3a07d3ec">COLOR_WHITE</a> = 6, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2fa70b424bcf0a4a80c0a6f810d1cff20fe">COLOR_BROWN</a> = 7, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3sensor.html#ggaf11750614f023e665f98eca0b1f79c2faf916aa87dc882c0ebec3d6dc683f5147">TNUM_COLOR</a>
+<br />
+ }<tr class="memdesc:gaf11750614f023e665f98eca0b1f79c2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">カラーセンサで識別できるカラーの番号  <a href="group__ev3sensor.html#gaf11750614f023e665f98eca0b1f79c2f">[詳解]</a><br /></td></tr>
+<tr class="separator:gaf11750614f023e665f98eca0b1f79c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:ga554534f2f5a6ac558b29a9b01b5e8da3"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#ga554534f2f5a6ac558b29a9b01b5e8da3">ev3_sensor_config</a> (<a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port, <a class="el" href="group__ev3sensor.html#ga089f166159fb19f10d81c65c1d8793a2">sensor_type_t</a> type)</td></tr>
+<tr class="memdesc:ga554534f2f5a6ac558b29a9b01b5e8da3"><td class="mdescLeft">&#160;</td><td class="mdescRight">センサポートを設定する．  <a href="#ga554534f2f5a6ac558b29a9b01b5e8da3">[詳解]</a><br /></td></tr>
+<tr class="separator:ga554534f2f5a6ac558b29a9b01b5e8da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabfc4a1d1c1c48d2407154f3e72e9ba88"><td class="memItemLeft" align="right" valign="top">ER_UINT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#gabfc4a1d1c1c48d2407154f3e72e9ba88">ev3_sensor_get_type</a> (<a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port)</td></tr>
+<tr class="memdesc:gabfc4a1d1c1c48d2407154f3e72e9ba88"><td class="mdescLeft">&#160;</td><td class="mdescRight">センサポートのセンサタイプを取得する．  <a href="#gabfc4a1d1c1c48d2407154f3e72e9ba88">[詳解]</a><br /></td></tr>
+<tr class="separator:gabfc4a1d1c1c48d2407154f3e72e9ba88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga776b35d98fd73550278e27ee39a3d3aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__ev3sensor.html#gaf11750614f023e665f98eca0b1f79c2f">colorid_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#ga776b35d98fd73550278e27ee39a3d3aa">ev3_color_sensor_get_color</a> (<a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port)</td></tr>
+<tr class="memdesc:ga776b35d98fd73550278e27ee39a3d3aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">カラーセンサでカラーを識別する．  <a href="#ga776b35d98fd73550278e27ee39a3d3aa">[詳解]</a><br /></td></tr>
+<tr class="separator:ga776b35d98fd73550278e27ee39a3d3aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6f0760f8a0781fd5397f3365c6d6ac87"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#ga6f0760f8a0781fd5397f3365c6d6ac87">ev3_color_sensor_get_reflect</a> (<a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port)</td></tr>
+<tr class="memdesc:ga6f0760f8a0781fd5397f3365c6d6ac87"><td class="mdescLeft">&#160;</td><td class="mdescRight">カラーセンサで反射光の強さを測定する．  <a href="#ga6f0760f8a0781fd5397f3365c6d6ac87">[詳解]</a><br /></td></tr>
+<tr class="separator:ga6f0760f8a0781fd5397f3365c6d6ac87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga11104447594453531fc2c7e268e111be"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#ga11104447594453531fc2c7e268e111be">ev3_color_sensor_get_ambient</a> (<a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port)</td></tr>
+<tr class="memdesc:ga11104447594453531fc2c7e268e111be"><td class="mdescLeft">&#160;</td><td class="mdescRight">カラーセンサで環境光の強さを測定する．  <a href="#ga11104447594453531fc2c7e268e111be">[詳解]</a><br /></td></tr>
+<tr class="separator:ga11104447594453531fc2c7e268e111be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad86c95ba26932e80b8a58dc95aaee39d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#gad86c95ba26932e80b8a58dc95aaee39d">ev3_color_sensor_get_rgb_raw</a> (<a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port, <a class="el" href="structrgb__raw__t.html">rgb_raw_t</a> *val)</td></tr>
+<tr class="memdesc:gad86c95ba26932e80b8a58dc95aaee39d"><td class="mdescLeft">&#160;</td><td class="mdescRight">カラーセンサでRGB Raw値を測定する．  <a href="#gad86c95ba26932e80b8a58dc95aaee39d">[詳解]</a><br /></td></tr>
+<tr class="separator:gad86c95ba26932e80b8a58dc95aaee39d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa679135221ab97ead4d35a7819c228c3"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#gaa679135221ab97ead4d35a7819c228c3">ev3_gyro_sensor_get_angle</a> (<a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port)</td></tr>
+<tr class="memdesc:gaa679135221ab97ead4d35a7819c228c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">ジャイロセンサで角位置を測定する．  <a href="#gaa679135221ab97ead4d35a7819c228c3">[詳解]</a><br /></td></tr>
+<tr class="separator:gaa679135221ab97ead4d35a7819c228c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5853577f47d1006fff6f050257fca384"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#ga5853577f47d1006fff6f050257fca384">ev3_gyro_sensor_get_rate</a> (<a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port)</td></tr>
+<tr class="memdesc:ga5853577f47d1006fff6f050257fca384"><td class="mdescLeft">&#160;</td><td class="mdescRight">ジャイロセンサで角速度を測定する  <a href="#ga5853577f47d1006fff6f050257fca384">[詳解]</a><br /></td></tr>
+<tr class="separator:ga5853577f47d1006fff6f050257fca384"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ea1432e34aa420afe5444c6a93c4f86"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#ga3ea1432e34aa420afe5444c6a93c4f86">ev3_gyro_sensor_reset</a> (<a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port)</td></tr>
+<tr class="memdesc:ga3ea1432e34aa420afe5444c6a93c4f86"><td class="mdescLeft">&#160;</td><td class="mdescRight">ジャイロセンサの角位置をゼロにリセットする．  <a href="#ga3ea1432e34aa420afe5444c6a93c4f86">[詳解]</a><br /></td></tr>
+<tr class="separator:ga3ea1432e34aa420afe5444c6a93c4f86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga956536aaab7677c2b512b2d3bd4e498f"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#ga956536aaab7677c2b512b2d3bd4e498f">ev3_ultrasonic_sensor_get_distance</a> (<a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port)</td></tr>
+<tr class="memdesc:ga956536aaab7677c2b512b2d3bd4e498f"><td class="mdescLeft">&#160;</td><td class="mdescRight">超音波センサで距離を測定する．  <a href="#ga956536aaab7677c2b512b2d3bd4e498f">[詳解]</a><br /></td></tr>
+<tr class="separator:ga956536aaab7677c2b512b2d3bd4e498f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga719db52bd7f8ad451d4d4b5bbad7706e"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#ga719db52bd7f8ad451d4d4b5bbad7706e">ev3_ultrasonic_sensor_listen</a> (<a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port)</td></tr>
+<tr class="memdesc:ga719db52bd7f8ad451d4d4b5bbad7706e"><td class="mdescLeft">&#160;</td><td class="mdescRight">超音波センサで超音波信号を検出する．  <a href="#ga719db52bd7f8ad451d4d4b5bbad7706e">[詳解]</a><br /></td></tr>
+<tr class="separator:ga719db52bd7f8ad451d4d4b5bbad7706e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ba6293eb700f5a1b51fda768b3c9a5f"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#ga3ba6293eb700f5a1b51fda768b3c9a5f">ev3_infrared_sensor_get_distance</a> (<a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port)</td></tr>
+<tr class="memdesc:ga3ba6293eb700f5a1b51fda768b3c9a5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">IRセンサで距離を測定する．  <a href="#ga3ba6293eb700f5a1b51fda768b3c9a5f">[詳解]</a><br /></td></tr>
+<tr class="separator:ga3ba6293eb700f5a1b51fda768b3c9a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad49c80d2d9294899af33dfa91039da48"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structir__seek__t.html">ir_seek_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#gad49c80d2d9294899af33dfa91039da48">ev3_infrared_sensor_seek</a> (<a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port)</td></tr>
+<tr class="memdesc:gad49c80d2d9294899af33dfa91039da48"><td class="mdescLeft">&#160;</td><td class="mdescRight">IRセンサでIRビーコンの方位と距離を測定する．  <a href="#gad49c80d2d9294899af33dfa91039da48">[詳解]</a><br /></td></tr>
+<tr class="separator:gad49c80d2d9294899af33dfa91039da48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga141015aa29b5bb64913a9ebfe036a60d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structir__remote__t.html">ir_remote_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#ga141015aa29b5bb64913a9ebfe036a60d">ev3_infrared_sensor_get_remote</a> (<a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port)</td></tr>
+<tr class="memdesc:ga141015aa29b5bb64913a9ebfe036a60d"><td class="mdescLeft">&#160;</td><td class="mdescRight">IRセンサでIRビーコンのボタン入力を検出する．  <a href="#ga141015aa29b5bb64913a9ebfe036a60d">[詳解]</a><br /></td></tr>
+<tr class="separator:ga141015aa29b5bb64913a9ebfe036a60d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0bd7ec7b7ac2fbaaa6cbe46eff3a829d"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#ga0bd7ec7b7ac2fbaaa6cbe46eff3a829d">ev3_touch_sensor_is_pressed</a> (<a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port)</td></tr>
+<tr class="memdesc:ga0bd7ec7b7ac2fbaaa6cbe46eff3a829d"><td class="mdescLeft">&#160;</td><td class="mdescRight">タッチセンサの状態を検出する．  <a href="#ga0bd7ec7b7ac2fbaaa6cbe46eff3a829d">[詳解]</a><br /></td></tr>
+<tr class="separator:ga0bd7ec7b7ac2fbaaa6cbe46eff3a829d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab7a4ea002540a5a757fd6916fa200302"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#gab7a4ea002540a5a757fd6916fa200302">ht_nxt_accel_sensor_measure</a> (<a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port, int16_t axes[3])</td></tr>
+<tr class="memdesc:gab7a4ea002540a5a757fd6916fa200302"><td class="mdescLeft">&#160;</td><td class="mdescRight">加速度センサ（HiTechnic社製）で加速度を測定する．  <a href="#gab7a4ea002540a5a757fd6916fa200302">[詳解]</a><br /></td></tr>
+<tr class="separator:gab7a4ea002540a5a757fd6916fa200302"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0ec1343baa9ff742a9d2354af9b601f4"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3sensor.html#ga0ec1343baa9ff742a9d2354af9b601f4">nxt_temp_sensor_measure</a> (<a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a> port, float *temp)</td></tr>
+<tr class="memdesc:ga0ec1343baa9ff742a9d2354af9b601f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">NXT温度センサ（9749）で温度を測定する．  <a href="#ga0ec1343baa9ff742a9d2354af9b601f4">[詳解]</a><br /></td></tr>
+<tr class="separator:ga0ec1343baa9ff742a9d2354af9b601f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<p>各種センサに関するAPI． </p>
+<h2 class="groupheader">列挙型詳解</h2>
+<a class="anchor" id="gaf11750614f023e665f98eca0b1f79c2f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__ev3sensor.html#gaf11750614f023e665f98eca0b1f79c2f">colorid_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>カラーセンサで識別できるカラーの番号 </p>
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a class="anchor" id="ggaf11750614f023e665f98eca0b1f79c2fa01ff12cf7ff51aef192abe6f9b7d8a4a"></a>COLOR_NONE&#160;</td><td class="fielddoc">
+<p>無色 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggaf11750614f023e665f98eca0b1f79c2fa2a9daf215a30f1c539ead18c66380fc1"></a>COLOR_BLACK&#160;</td><td class="fielddoc">
+<p>黒 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggaf11750614f023e665f98eca0b1f79c2fa1340428efccb140dcbdb71aa6176f696"></a>COLOR_BLUE&#160;</td><td class="fielddoc">
+<p>青 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggaf11750614f023e665f98eca0b1f79c2facfa9d8bbffc418447ed826f286abca02"></a>COLOR_GREEN&#160;</td><td class="fielddoc">
+<p>緑 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggaf11750614f023e665f98eca0b1f79c2fab03862907066c68204ee9df1ee04aa29"></a>COLOR_YELLOW&#160;</td><td class="fielddoc">
+<p>黄 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggaf11750614f023e665f98eca0b1f79c2fa592503b9434c1e751a92f3fc536d7950"></a>COLOR_RED&#160;</td><td class="fielddoc">
+<p>赤 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggaf11750614f023e665f98eca0b1f79c2fad47b4c240a0109970bb2a7fe3a07d3ec"></a>COLOR_WHITE&#160;</td><td class="fielddoc">
+<p>白 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggaf11750614f023e665f98eca0b1f79c2fa70b424bcf0a4a80c0a6f810d1cff20fe"></a>COLOR_BROWN&#160;</td><td class="fielddoc">
+<p>茶 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggaf11750614f023e665f98eca0b1f79c2faf916aa87dc882c0ebec3d6dc683f5147"></a>TNUM_COLOR&#160;</td><td class="fielddoc">
+<p>識別できるカラーの数 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a class="anchor" id="ga18141cc7c7997858eb8c73c52dab6869"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>センサポートを表す番号 </p>
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a class="anchor" id="gga18141cc7c7997858eb8c73c52dab6869a6ed151d83ba3df1e8d15ea2a2210178c"></a>EV3_PORT_1&#160;</td><td class="fielddoc">
+<p>ポート1 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga18141cc7c7997858eb8c73c52dab6869a9d524b63759bfbf608af2a9cce68bf17"></a>EV3_PORT_2&#160;</td><td class="fielddoc">
+<p>ポート2 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga18141cc7c7997858eb8c73c52dab6869a63e3918741010a8a1e229c3ecedd504c"></a>EV3_PORT_3&#160;</td><td class="fielddoc">
+<p>ポート3 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga18141cc7c7997858eb8c73c52dab6869a51984b8c0cf2e5fa5782c8b651b37cbf"></a>EV3_PORT_4&#160;</td><td class="fielddoc">
+<p>ポート4 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga18141cc7c7997858eb8c73c52dab6869af1505cc881ba570b1260f73aea9bcd7d"></a>TNUM_SENSOR_PORT&#160;</td><td class="fielddoc">
+<p>センサポートの数 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a class="anchor" id="ga089f166159fb19f10d81c65c1d8793a2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__ev3sensor.html#ga089f166159fb19f10d81c65c1d8793a2">sensor_type_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>サポートするセンサタイプ </p>
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a class="anchor" id="gga089f166159fb19f10d81c65c1d8793a2a3118b7b8f0e8b347e8b182d68fead688"></a>NONE_SENSOR&#160;</td><td class="fielddoc">
+<p>センサ未接続 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga089f166159fb19f10d81c65c1d8793a2ab3572d930488403fb2c9faa5ae616a4a"></a>ULTRASONIC_SENSOR&#160;</td><td class="fielddoc">
+<p>超音波センサ </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga089f166159fb19f10d81c65c1d8793a2aeaadd6fd17d7b70e48c06b46f2643c5a"></a>GYRO_SENSOR&#160;</td><td class="fielddoc">
+<p>ジャイロセンサ </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga089f166159fb19f10d81c65c1d8793a2ab3a59d197a4a1f36a436c95ad613fdf4"></a>TOUCH_SENSOR&#160;</td><td class="fielddoc">
+<p>タッチセンサ </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga089f166159fb19f10d81c65c1d8793a2aab32a5ad061cb13c0d5600a5862e255f"></a>COLOR_SENSOR&#160;</td><td class="fielddoc">
+<p>カラーセンサ </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga089f166159fb19f10d81c65c1d8793a2a63ab9a8a461c070a5947da1df1e2d59e"></a>HT_NXT_ACCEL_SENSOR&#160;</td><td class="fielddoc">
+<p>加速度センサ（HiTechnic社製） </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga089f166159fb19f10d81c65c1d8793a2a0452c99b5eacb47a470b42da29073836"></a>NXT_TEMP_SENSOR&#160;</td><td class="fielddoc">
+<p>NXT温度センサ </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga089f166159fb19f10d81c65c1d8793a2afaba14926b91bbe008f9ad3ebdbb469f"></a>TNUM_SENSOR_TYPE&#160;</td><td class="fielddoc">
+<p>センサタイプの数 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="ga11104447594453531fc2c7e268e111be"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t ev3_color_sensor_get_ambient </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>カラーセンサで環境光の強さを測定する． </p>
+<p>不正のセンサポート番号を指定した場合，常に0を返す（エラーログが出力される）． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>センサポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>環境光の強さ（0〜100） </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga776b35d98fd73550278e27ee39a3d3aa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__ev3sensor.html#gaf11750614f023e665f98eca0b1f79c2f">colorid_t</a> ev3_color_sensor_get_color </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>カラーセンサでカラーを識別する． </p>
+<p>不正のセンサポート番号を指定した場合，常にCOLOR_NONEを返す（エラーログが出力される）． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>センサポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>識別したカラー </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6f0760f8a0781fd5397f3365c6d6ac87"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t ev3_color_sensor_get_reflect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>カラーセンサで反射光の強さを測定する． </p>
+<p>不正のセンサポート番号を指定した場合，常に0を返す（エラーログが出力される）． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>センサポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>反射光の強さ（0〜100） </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gad86c95ba26932e80b8a58dc95aaee39d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ev3_color_sensor_get_rgb_raw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structrgb__raw__t.html">rgb_raw_t</a> *&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>カラーセンサでRGB Raw値を測定する． </p>
+<p>不正のセンサポート番号を指定した場合，valは更新しない（エラーログが出力される）． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>センサポート番号 </td></tr>
+    <tr><td class="paramname">val</td><td>取得した値を格納する変数のポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa679135221ab97ead4d35a7819c228c3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t ev3_gyro_sensor_get_angle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ジャイロセンサで角位置を測定する． </p>
+<p>不正のセンサポート番号を指定した場合，常に0を返す（エラーログが出力される）． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>センサポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>角位置（単位は度） </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga5853577f47d1006fff6f050257fca384"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t ev3_gyro_sensor_get_rate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ジャイロセンサで角速度を測定する </p>
+<p>不正のセンサポート番号を指定した場合，常に0を返す（エラーログが出力される）． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>センサポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>角位置（単位は度/秒） </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga3ea1432e34aa420afe5444c6a93c4f86"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_gyro_sensor_reset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ジャイロセンサの角位置をゼロにリセットする． </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>センサポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_ID</td><td>不正のセンサポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga3ba6293eb700f5a1b51fda768b3c9a5f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t ev3_infrared_sensor_get_distance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>IRセンサで距離を測定する． </p>
+<p>不正のセンサポート番号を指定した場合，常に0を返す（エラーログが出力される）． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>センサポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>距離（単位はパーセント） </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga141015aa29b5bb64913a9ebfe036a60d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structir__remote__t.html">ir_remote_t</a> ev3_infrared_sensor_get_remote </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>IRセンサでIRビーコンのボタン入力を検出する． </p>
+<p>不正のセンサポート番号を指定した場合，常に0のパタンを返す（エラーログが出力される）． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>センサポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>全て（４つ）のチャンネルのボタン入力のパタン </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gad49c80d2d9294899af33dfa91039da48"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structir__seek__t.html">ir_seek_t</a> ev3_infrared_sensor_seek </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>IRセンサでIRビーコンの方位と距離を測定する． </p>
+<p>不正のセンサポート番号を指定した場合，常に0の方位と-128の距離を返す（エラーログが出力される）． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>センサポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>全て（４つ）のチャンネルの方位と距離 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga554534f2f5a6ac558b29a9b01b5e8da3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_sensor_config </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__ev3sensor.html#ga089f166159fb19f10d81c65c1d8793a2">sensor_type_t</a>&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>センサポートを設定する． </p>
+<p>センサポートに接続しているセンサのタイプを設定する．既に設定した場合も新しいセンサタイプを指定できる． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>センサポート番号 </td></tr>
+    <tr><td class="paramname">type</td><td>センサタイプ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_ID</td><td>不正のセンサポート番号 </td></tr>
+    <tr><td class="paramname">E_PAR</td><td>不正のセンサタイプ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gabfc4a1d1c1c48d2407154f3e72e9ba88"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER_UINT ev3_sensor_get_type </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>センサポートのセンサタイプを取得する． </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>センサポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">&gt;=0</td><td>指定したセンサポートのセンサタイプ </td></tr>
+    <tr><td class="paramname">E_ID</td><td>不正のセンサポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0bd7ec7b7ac2fbaaa6cbe46eff3a829d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool_t ev3_touch_sensor_is_pressed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>タッチセンサの状態を検出する． </p>
+<p>不正のセンサポート番号を指定した場合，常に <em>false</em> を返す（エラーログが出力される）． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>センサポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>押されている状態 </td></tr>
+    <tr><td class="paramname">false</td><td>押されていない状態 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga956536aaab7677c2b512b2d3bd4e498f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t ev3_ultrasonic_sensor_get_distance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>超音波センサで距離を測定する． </p>
+<p>不正のセンサポート番号を指定した場合，常に0を返す（エラーログが出力される）． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>センサポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>距離（単位はセンチ） </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga719db52bd7f8ad451d4d4b5bbad7706e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool_t ev3_ultrasonic_sensor_listen </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>超音波センサで超音波信号を検出する． </p>
+<p>不正のセンサポート番号を指定した場合，常に <em>false</em> を返す（エラーログが出力される）． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>センサポート番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>超音波信号を検出した </td></tr>
+    <tr><td class="paramname">false</td><td>超音波信号を検出しなかった </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gab7a4ea002540a5a757fd6916fa200302"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool_t ht_nxt_accel_sensor_measure </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>axes</em>[3]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>加速度センサ（HiTechnic社製）で加速度を測定する． </p>
+<p>不正のセンサポート番号を指定した場合，常に <em>false</em> を返す（エラーログが出力される）． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>センサポート番号 </td></tr>
+    <tr><td class="paramname">axes</td><td>x軸、y軸、z軸の3方向の加速度を格納するための配列 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>axes[]は更新された </td></tr>
+    <tr><td class="paramname">false</td><td>axes[]は変更されなかった（前回のI2C操作が完成していない） </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0ec1343baa9ff742a9d2354af9b601f4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool_t nxt_temp_sensor_measure </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3sensor.html#ga18141cc7c7997858eb8c73c52dab6869">sensor_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>temp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>NXT温度センサ（9749）で温度を測定する． </p>
+<p>不正のセンサポート番号を指定した場合，常に <em>false</em> を返す（エラーログが出力される）． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>センサポート番号 </td></tr>
+    <tr><td class="paramname">temp</td><td>温度データ（°C）を格納するための変数へのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>tempは更新された </td></tr>
+    <tr><td class="paramname">false</td><td>tempは変更されなかった（前回のI2C操作が完成していない） </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">2017年06月26日(月) 06時58分08秒作成 - EV3RT C API Reference / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
+  </ul>
+</div>
+</body>
+</html>

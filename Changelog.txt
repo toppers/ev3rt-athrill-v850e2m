@@ -1,0 +1,202 @@
+2017-04-12 Version Beta 7
+* Sensors
+ - Support IR (infrared) sensor
+   - Add test in HelloEV3
+ - Ultrasonic sensor test in HelloEV3 supports resetting
+ - ev3_sensor_config() will not enter sleep now
+   - 2ms busy-waiting for analog sensors
+* Bluetooth
+ - Bluetooth PAN (Personal Area Network) is supported
+   - NAP (Network Access Point) mode with DHCP server
+   - Default IP address: 10.0.10.1
+ - Experimental support for SPP master
+   - Allow communication between EV3 bricks
+   - Bluetooth device address will be shown at startup
+ - Enable DMA mode by default to reduce CPU usage
+* Application Loader
+ - Support loading from HTTP via Bluetooth PAN
+   - Add 'make upload' command under workspace
+* Miscellaneous
+  - Support compilation with GCC 6.3.1 (gcc-arm-none-eabi-6-2017-q1-update)
+  - Fix compilation error when global destructors are used
+    - Currently, global destructors can exist but WILL NOT be called
+  - PIL (Platform Interface Layer) version is upated to 6
+  - Remove some legacy code
+
+2016-03-16 Version Beta 6-2
+* Sensors
+  - Configuring analog sensor with ev3_sensor_config() will wait 2ms to ensure that sensor value is updated
+* Miscellaneous
+  - SIO_PORT_DEFAULT can be set to LCD, BT or UART in rc.conf.ini now
+  - Optimize BTstack database cache flush overhead, and this can also speed up USB eject handling
+  - PIL (Platform Interface Layer) version is upated to 5
+  - Remove some legacy code
+
+2016-03-14 Version Beta 6-1
+* Sensors
+  - Fix a bug that analog sensors won't work until port is configured as UART sensor port
+* SD card
+  - Fix a bug that causes unformatted SD card error in USB mode with some SD card >= 8 GiB
+  - Optimize performance by supporting multiple block operations
+* Bluetooth
+  - Working in USB mode is supported by caching database in memory
+  - Improve stability by handling TX interrupt more properly
+* Experimental USB support
+  - Unplugging the cable physically is no longer needed for app loader
+  - Shutdown now requires USB to be ejected for preventing filesystem corruption
+  - Optimize USB I/O performance by using data buffers
+* Development in C++
+  - Imported the newest C++ API library from 
+    https://github.com/ETrobocon/etroboEV3/tree/master/Library
+* Miscellaneous
+  - Support compilation with GCC 5.2.1 (gcc-arm-none-eabi-5_2-2015q4)
+  - Optimize application load time
+  - Print EV3RT version and Bluetooth chip information in boot messages
+  - Add Bluetooth test in HelloEV3
+  - ev3api.h includes configuration header (module_cfg.h/kernel_cfg.h) now
+
+2016-02-28 Version Beta 6
+* Sensors
+  - Support RGB-RAW mode of EV3 color sensor
+  - Support I2C sensors
+	- Add API for HiTechnic NXT Acceleration Sensor
+	- Add API for NXT Temperature Sensor (9749)
+* Application Loader
+  - CRE_DTQ/CRE_PDQ/CRE_MTX are supported in dynamic loading mode
+* Bluetooth
+  - Support chip CC2560A used by recent EV3 models
+* Experimental USB support
+  - EV3 brick can act as SD card reader by connecting the PC port (mini USB)
+  - Application will be terminated if USB is connected
+  - Note 1: Bluetooth may not work when USB is connected
+  - Note 2: Unplugging the USB cable without ejecting the SD card may prevent
+    USB function from working until EV3 is restarted. (especially in OS X)
+* Miscellaneous
+  - Boot much faster by optimizing initialize_sections()
+  - Source code in GitHub is used from this release, some changes including:
+    - workspace is located in 'hrp2/sdk/workspace' now
+	- 'make app=<app_dir_name>' is used to build app module for dynamic loading mode now
+	- 'make img=<app_dir_name>' is used to build uImage for standalone mode now
+  - Updated NGKI specification to release 1.7.1 from release 1.7.0.
+
+2015-12-04 Version Beta 5-2
+* Application Loader
+  - Fixed a bug that flags and semaphores can't be accessed (E_OACV) in dynamic loading mode.
+
+2015-09-09 Version Beta 5-1
+* Bluetooth
+  - Fixed a bug that reserves HCI packet buffer when it is unavailable.
+
+2015-06-01 Version Beta 5
+* Update Application Loader
+  - The file list can display up to 100 applications now
+  - Hide some non-executable files (such as *.wav) from the file list
+* Development in C++
+  - Added a C++ API library
+* Sample programs
+  - Added sample program 'ev3way-cpp'
+  - Fixed a bug in 'linetrace' that 'lasterror' will not be updated correctly.
+* Miscellaneous
+  - Updated HRP2 kernel to release 2.2.1
+  - Fixed a bug that causes OS X to improper static library
+  - Port 1 works as a sensor port by default now and can still be configured
+    as a serial port in rc.conf.ini (DisablePort1=1)
+  - The C++ API reference and TOPPERS New Generation Kernel Specification
+    are included in the release package now
+
+2015-04-22 Version Beta 4
+* Development in C++
+  - Supported global constructors
+  - However, calling functions which may BLOCK (e.g. wai_sem) in global
+    constructors cause undefined behaviour.
+* Added EV3RT console feature
+  - Long-press BACK button to show the console
+  - Syslog can be viewed from LCD screen now
+  - 'stdout' (for printf) is EV3RT console now
+  - Merged with Application Loader
+* Bluetooth
+  - Supported Windows 8.1 (Generic Bluetooth Radio)
+  - Added 'ev3_bluetooth_is_connected()' API
+  - Bluetooth SIO port will be opened and closed automatically according
+    to the status of connection now.
+  - Reading or writing a closed Bluetooth port will not block now.
+    Instead, ZERO will be returned by read() and write() functions.
+  - CR ('\r') will not be automatically added before LF ('\n') now.
+  - Link keys will be stored to micro SD card now.
+  - Local name and PIN code can be configured in '/ev3rt/etc/rc.conf.ini' now.
+  - Updated BTstack to r3253
+* Supported static libraries initially
+  - Static libs are stored in 'workspace/common/lib'
+  - Both C and C++ are supported
+  - See 'test-cpp' for usage
+  - Added C++ API library provided by ET-Robocon technical committee. See 'test-cppev3' for usage.
+* Miscellaneous
+  - Fixed a bug in unloading application that causes leaks in app heap memory
+  - Fixed a bug in EDMA driver that causes MMC/SD and LCD to freeze
+  - Fixed a bug in Makefile.lum that causes OS X to build improper static library
+  - Replaced 'PRU_SUART_Emulation.bin' with 'PRU_SUART.bin'.
+    This might fixed the problem that UART sensors don't work on port 3 & 4
+	of some EV3 bricks.
+  - Fixed a bug that _dmloader_rmv_ldm() function doesn't delete semaphores
+    and flags correctly.
+  - Fixed a bug in loader that causes infinite loop when canceling receiving.
+  - Optimized initialization stage of EV3RT platform
+  - Supported GCC ARM Embedded 4.9 update 1. Use PORTABLE_STRNICMP to replace deprecated istrnicmp.
+  - Removed some unused files
+
+2015-02-14 Version Beta 3-1
+* Development in C++
+  - Supported multiple source files (*.cpp)
+
+2015-02-11 Version Beta 3
+* Updated EV3 API for C language
+  - Added API for battery
+* Update Application Loader
+  - Received files are stored in '/ev3rt/apps/' now. (overwrite existing)
+* Removed 'ev3_power_off()' API. EV3 can be powered off by:
+  - Holding BACK+LEFT+RIGHT buttons
+  - Using Application Loader
+* New sample programs
+  - HaWe brickbench (workspace/hwbrickbench)
+* Miscellaneous
+  - Added missing libraries (-lm -lc) in dynamic loading mode
+  - Source and header files of API are prefixed with 'ev3api_' now
+  - PIL (Platform interface layer) version is upated to 3
+
+2014-12-15 Version Beta 2
+* Updated EV3 API for C language
+  - Added API for LCD (draw string, display image, etc.)
+  - Added API for EV3 cyclic handlers
+  - Updated API for buttons
+    - ev3_button_is_pressed()
+  - Updated API for motors
+    - ev3_motor_get_power()
+* Supported development in C++
+  - Both standalone & dynamic loading mode are supported
+  - Modified linker script to compile properly
+* New sample programs
+  - Sample for C++ (workspace/test-cpp)
+  - Sample for Trike (workspace/trike)
+* Programs in GUI
+  - HelloEV3 & dynamic loader have a GUI menu now
+  - Gyroboy uses LCD to show connection of ports
+* RTOS features
+  - Static API EV3_CRE_CYC is supported to create EV3 cyclic handlers
+    - Both standalone & dynamic loading mode are supported
+  - CRE_SEM and CRE_FLG are also supported in dynamic loading mode now
+* Application development
+  - Standalone & dynamic loading mode share the same cfg file (app.cfg) now
+    - app_mod.cfg (for dynamic loading in Beta 1) is no longer used
+  - Dynamic loader can recover from application crashes now
+* New core services (or device drivers)
+  - Implemented ST7586 LCD driver
+    - Auto refresh (frame rate: 25 fps by default)
+	- DMA is used to reduced the overhead of refreshing to a very low level
+  - Implemented service for EV3 cyclic handlers
+* Miscellaneous
+  - EV3 can be powered off by holding back, left and right buttons now
+  - PIL (Platform interface layer) version is upated to 2
+  - Updated installation guide and user manual.
+
+2014-10-22 Version Beta 1
+* Released Beta 1.

@@ -1,0 +1,598 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>EV3RT C API Reference: LCD</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EV3RT C API Reference
+   &#160;<span id="projectnumber">Beta 7</span>
+   </div>
+   <div id="projectbrief">An RTOS-based development platform for LEGO Mindstorms EV3.</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('group__ev3api-lcd.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">データ構造</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">LCD</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>LCDに関するAPI．  
+<a href="#details">[詳解]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+データ構造</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structimage__t.html">image_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像のオブジェクトの構造体．  <a href="structimage__t.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:ga63b8fc001bdc7600b8eb34809dbbbc7e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga63b8fc001bdc7600b8eb34809dbbbc7e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-lcd.html#ga63b8fc001bdc7600b8eb34809dbbbc7e">EV3_LCD_WIDTH</a>&#160;&#160;&#160;(178)</td></tr>
+<tr class="memdesc:ga63b8fc001bdc7600b8eb34809dbbbc7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD画面の幅 <br /></td></tr>
+<tr class="separator:ga63b8fc001bdc7600b8eb34809dbbbc7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga956e56f606b10ab5a04882d96aaf3d97"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga956e56f606b10ab5a04882d96aaf3d97"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-lcd.html#ga956e56f606b10ab5a04882d96aaf3d97">EV3_LCD_HEIGHT</a>&#160;&#160;&#160;(128)</td></tr>
+<tr class="memdesc:ga956e56f606b10ab5a04882d96aaf3d97"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD画面の高さ <br /></td></tr>
+<tr class="separator:ga956e56f606b10ab5a04882d96aaf3d97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:gacfa26216c22f39c9d2861015e37b1903"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-lcd.html#gacfa26216c22f39c9d2861015e37b1903">lcdfont_t</a> { <br />
+&#160;&#160;<a class="el" href="group__ev3api-lcd.html#ggacfa26216c22f39c9d2861015e37b1903a9fe43837bbb4586662d8c8a66ff6d358">EV3_FONT_SMALL</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3api-lcd.html#ggacfa26216c22f39c9d2861015e37b1903a9724ff2a62acd060ff0df6797b2ac9e2">EV3_FONT_MEDIUM</a>
+<br />
+ }<tr class="memdesc:gacfa26216c22f39c9d2861015e37b1903"><td class="mdescLeft">&#160;</td><td class="mdescRight">フォントを表す番号  <a href="group__ev3api-lcd.html#gacfa26216c22f39c9d2861015e37b1903">[詳解]</a><br /></td></tr>
+<tr class="separator:gacfa26216c22f39c9d2861015e37b1903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</td></tr>
+<tr class="memitem:ga29a41d6aaa6742b6ff7841023a7781fb"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-lcd.html#ga29a41d6aaa6742b6ff7841023a7781fb">lcdcolor_t</a> { <br />
+&#160;&#160;<a class="el" href="group__ev3api-lcd.html#gga29a41d6aaa6742b6ff7841023a7781fba29effcfea2a5e1a625020dd301f2512c">EV3_LCD_WHITE</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="group__ev3api-lcd.html#gga29a41d6aaa6742b6ff7841023a7781fba2c3795c2a09dff8824a49df0bc66b467">EV3_LCD_BLACK</a> = 1
+<br />
+ }<tr class="memdesc:ga29a41d6aaa6742b6ff7841023a7781fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCDカラーを表す番号  <a href="group__ev3api-lcd.html#ga29a41d6aaa6742b6ff7841023a7781fb">[詳解]</a><br /></td></tr>
+<tr class="separator:ga29a41d6aaa6742b6ff7841023a7781fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:ga7e98bcaf675c46fab88afc38e90cc077"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-lcd.html#ga7e98bcaf675c46fab88afc38e90cc077">ev3_lcd_set_font</a> (<a class="el" href="group__ev3api-lcd.html#gacfa26216c22f39c9d2861015e37b1903">lcdfont_t</a> font)</td></tr>
+<tr class="memdesc:ga7e98bcaf675c46fab88afc38e90cc077"><td class="mdescLeft">&#160;</td><td class="mdescRight">デフォルトのフォントを設定する．  <a href="#ga7e98bcaf675c46fab88afc38e90cc077">[詳解]</a><br /></td></tr>
+<tr class="separator:ga7e98bcaf675c46fab88afc38e90cc077"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec36b70c4609aeeb40672df567c4a41a"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-lcd.html#gaec36b70c4609aeeb40672df567c4a41a">ev3_font_get_size</a> (<a class="el" href="group__ev3api-lcd.html#gacfa26216c22f39c9d2861015e37b1903">lcdfont_t</a> font, int32_t *p_width, int32_t *p_height)</td></tr>
+<tr class="memdesc:gaec36b70c4609aeeb40672df567c4a41a"><td class="mdescLeft">&#160;</td><td class="mdescRight">フォントのサイズを取得する．  <a href="#gaec36b70c4609aeeb40672df567c4a41a">[詳解]</a><br /></td></tr>
+<tr class="separator:gaec36b70c4609aeeb40672df567c4a41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9d053062bacfad3421e077c45934ce62"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-lcd.html#ga9d053062bacfad3421e077c45934ce62">ev3_image_load</a> (const <a class="el" href="structmemfile__t.html">memfile_t</a> *p_memfile, <a class="el" href="structimage__t.html">image_t</a> *p_image)</td></tr>
+<tr class="memdesc:ga9d053062bacfad3421e077c45934ce62"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリファイルから画像をロードする．  <a href="#ga9d053062bacfad3421e077c45934ce62">[詳解]</a><br /></td></tr>
+<tr class="separator:ga9d053062bacfad3421e077c45934ce62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9a557b39a31afd0fa6b8dc0c1aafedfd"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-lcd.html#ga9a557b39a31afd0fa6b8dc0c1aafedfd">ev3_image_free</a> (<a class="el" href="structimage__t.html">image_t</a> *p_image)</td></tr>
+<tr class="memdesc:ga9a557b39a31afd0fa6b8dc0c1aafedfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">画像のオブジェクトを解放する．  <a href="#ga9a557b39a31afd0fa6b8dc0c1aafedfd">[詳解]</a><br /></td></tr>
+<tr class="separator:ga9a557b39a31afd0fa6b8dc0c1aafedfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad9949e40456ca903ee2bdcf8b8b8effe"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-lcd.html#gad9949e40456ca903ee2bdcf8b8b8effe">ev3_lcd_draw_string</a> (const char *str, int32_t x, int32_t y)</td></tr>
+<tr class="memdesc:gad9949e40456ca903ee2bdcf8b8b8effe"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定位置で文字列を描く．  <a href="#gad9949e40456ca903ee2bdcf8b8b8effe">[詳解]</a><br /></td></tr>
+<tr class="separator:gad9949e40456ca903ee2bdcf8b8b8effe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga755de913d9fc48f816f2ed5c5076c400"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-lcd.html#ga755de913d9fc48f816f2ed5c5076c400">ev3_lcd_draw_line</a> (int32_t x0, int32_t y0, int32_t x1, int32_t y1)</td></tr>
+<tr class="memdesc:ga755de913d9fc48f816f2ed5c5076c400"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定座標で線を引く．  <a href="#ga755de913d9fc48f816f2ed5c5076c400">[詳解]</a><br /></td></tr>
+<tr class="separator:ga755de913d9fc48f816f2ed5c5076c400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeca9890ee5e82ad8fe48f8d50b3bd24f"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-lcd.html#gaeca9890ee5e82ad8fe48f8d50b3bd24f">ev3_lcd_fill_rect</a> (int32_t x, int32_t y, int32_t w, int32_t h, <a class="el" href="group__ev3api-lcd.html#ga29a41d6aaa6742b6ff7841023a7781fb">lcdcolor_t</a> color)</td></tr>
+<tr class="memdesc:gaeca9890ee5e82ad8fe48f8d50b3bd24f"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩形を描いて色を塗る．  <a href="#gaeca9890ee5e82ad8fe48f8d50b3bd24f">[詳解]</a><br /></td></tr>
+<tr class="separator:gaeca9890ee5e82ad8fe48f8d50b3bd24f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6d5385e6593c709c665d4a8366b6155a"><td class="memItemLeft" align="right" valign="top">ER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ev3api-lcd.html#ga6d5385e6593c709c665d4a8366b6155a">ev3_lcd_draw_image</a> (const <a class="el" href="structimage__t.html">image_t</a> *p_image, int32_t x, int32_t y)</td></tr>
+<tr class="memdesc:ga6d5385e6593c709c665d4a8366b6155a"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定座標で画像を表示する．  <a href="#ga6d5385e6593c709c665d4a8366b6155a">[詳解]</a><br /></td></tr>
+<tr class="separator:ga6d5385e6593c709c665d4a8366b6155a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<p>LCDに関するAPI． </p>
+<h2 class="groupheader">列挙型詳解</h2>
+<a class="anchor" id="ga29a41d6aaa6742b6ff7841023a7781fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__ev3api-lcd.html#ga29a41d6aaa6742b6ff7841023a7781fb">lcdcolor_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LCDカラーを表す番号 </p>
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a class="anchor" id="gga29a41d6aaa6742b6ff7841023a7781fba29effcfea2a5e1a625020dd301f2512c"></a>EV3_LCD_WHITE&#160;</td><td class="fielddoc">
+<p>白 </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="gga29a41d6aaa6742b6ff7841023a7781fba2c3795c2a09dff8824a49df0bc66b467"></a>EV3_LCD_BLACK&#160;</td><td class="fielddoc">
+<p>黒 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a class="anchor" id="gacfa26216c22f39c9d2861015e37b1903"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__ev3api-lcd.html#gacfa26216c22f39c9d2861015e37b1903">lcdfont_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>フォントを表す番号 </p>
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a class="anchor" id="ggacfa26216c22f39c9d2861015e37b1903a9fe43837bbb4586662d8c8a66ff6d358"></a>EV3_FONT_SMALL&#160;</td><td class="fielddoc">
+<p>小さいサイズのフォント </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ggacfa26216c22f39c9d2861015e37b1903a9724ff2a62acd060ff0df6797b2ac9e2"></a>EV3_FONT_MEDIUM&#160;</td><td class="fielddoc">
+<p>普通サイズのフォント </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="gaec36b70c4609aeeb40672df567c4a41a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_font_get_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3api-lcd.html#gacfa26216c22f39c9d2861015e37b1903">lcdfont_t</a>&#160;</td>
+          <td class="paramname"><em>font</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t *&#160;</td>
+          <td class="paramname"><em>p_width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t *&#160;</td>
+          <td class="paramname"><em>p_height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>フォントのサイズを取得する． </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">font</td><td>フォントの番号 </td></tr>
+    <tr><td class="paramname">p_width</td><td>取得したフォントの幅を格納する場所へのポインタ．NULLの場合は格納しない． </td></tr>
+    <tr><td class="paramname">p_height</td><td>取得したフォントの高さを格納する場所へのポインタ．NULLの場合は格納しない． </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_ID</td><td>不正ID番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga9a557b39a31afd0fa6b8dc0c1aafedfd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_image_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structimage__t.html">image_t</a> *&#160;</td>
+          <td class="paramname"><em>p_image</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>画像のオブジェクトを解放する． </p>
+<p>画像のオブジェクトにより確保されたリソース（メモリ領域）を解放する．正常終了の場合，<em>p_image</em> の <em>data</em> はNULLにクリアする． </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_image</td><td>解放する画像のオブジェクトのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_PAR</td><td><em>p_image</em> はNULL </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga9d053062bacfad3421e077c45934ce62"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_image_load </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmemfile__t.html">memfile_t</a> *&#160;</td>
+          <td class="paramname"><em>p_memfile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structimage__t.html">image_t</a> *&#160;</td>
+          <td class="paramname"><em>p_image</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>メモリファイルから画像をロードする． </p>
+<p>指定したメモリファイルから画像のオブジェクトを生成する．現時点では，BMP形式のモノクロ画像ファイルしかサポートしない． エラーが発生する場合，<em>p_image</em> の <em>data</em> はNULLにクリアする. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_memfile</td><td>画像ファイルが格納されるメモリファイルのオブジェクト </td></tr>
+    <tr><td class="paramname">p_image</td><td>生成した画像のオブジェクトを格納する場所へのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_NOMEM</td><td>メモリ不足 </td></tr>
+    <tr><td class="paramname">E_NOSPT</td><td>画像ファイルの形式は未対応 </td></tr>
+    <tr><td class="paramname">E_OBJ</td><td>画像ファイルは破損 </td></tr>
+    <tr><td class="paramname">E_PAR</td><td>メモリファイルは無効 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6d5385e6593c709c665d4a8366b6155a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_lcd_draw_image </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structimage__t.html">image_t</a> *&#160;</td>
+          <td class="paramname"><em>p_image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指定座標で画像を表示する． </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_image</td><td>画像のオブジェクト </td></tr>
+    <tr><td class="paramname">x</td><td>左上隅の水平方向の位置 </td></tr>
+    <tr><td class="paramname">y</td><td>左上隅の垂直方向の位置 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_PAR</td><td>画像のオブジェクトは無効 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga755de913d9fc48f816f2ed5c5076c400"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_lcd_draw_line </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指定座標で線を引く． </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x0</td><td>始点の水平方向の位置 </td></tr>
+    <tr><td class="paramname">y0</td><td>始点の垂直方向の位置 </td></tr>
+    <tr><td class="paramname">x1</td><td>終点の水平方向の位置 </td></tr>
+    <tr><td class="paramname">y1</td><td>終点の垂直方向の位置 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gad9949e40456ca903ee2bdcf8b8b8effe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_lcd_draw_string </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指定位置で文字列を描く． </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>左上隅の水平方向の位置 </td></tr>
+    <tr><td class="paramname">y</td><td>左上隅の垂直方向の位置 </td></tr>
+    <tr><td class="paramname">str</td><td>文字列 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaeca9890ee5e82ad8fe48f8d50b3bd24f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_lcd_fill_rect </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__ev3api-lcd.html#ga29a41d6aaa6742b6ff7841023a7781fb">lcdcolor_t</a>&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>矩形を描いて色を塗る． </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>左上隅の水平方向の位置 </td></tr>
+    <tr><td class="paramname">y</td><td>左上隅の垂直方向の位置 </td></tr>
+    <tr><td class="paramname">w</td><td>矩形の幅 </td></tr>
+    <tr><td class="paramname">h</td><td>矩形の高さ </td></tr>
+    <tr><td class="paramname">color</td><td>カラー </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7e98bcaf675c46fab88afc38e90cc077"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ER ev3_lcd_set_font </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__ev3api-lcd.html#gacfa26216c22f39c9d2861015e37b1903">lcdfont_t</a>&#160;</td>
+          <td class="paramname"><em>font</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>デフォルトのフォントを設定する． </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">font</td><td>フォントの番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">E_OK</td><td>正常終了 </td></tr>
+    <tr><td class="paramname">E_ID</td><td>不正ID番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">2017年06月26日(月) 06時58分08秒作成 - EV3RT C API Reference / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
+  </ul>
+</div>
+</body>
+</html>

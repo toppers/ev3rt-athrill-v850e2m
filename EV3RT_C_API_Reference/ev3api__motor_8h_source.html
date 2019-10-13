@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>EV3RT C API Reference: /Users/yutaka/program/tmp/ev3rt/hrp2/sdk/common/ev3api/src/ev3api_motor.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EV3RT C API Reference
+   &#160;<span id="projectnumber">Beta 7</span>
+   </div>
+   <div id="projectbrief">An RTOS-based development platform for LEGO Mindstorms EV3.</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ev3api__motor_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ev3api_motor.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">   30</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4a45d2a35f4d83d7416273b9d6e5fb3c10">   31</a></span>&#160;    <a class="code" href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4a45d2a35f4d83d7416273b9d6e5fb3c10">EV3_PORT_A</a> = 0,     </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4a64918ce114f44b89908009151b325ac6">   32</a></span>&#160;    <a class="code" href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4a64918ce114f44b89908009151b325ac6">EV3_PORT_B</a> = 1,     </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4a8077d672488fb19e0f864a65508b097e">   33</a></span>&#160;    <a class="code" href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4a8077d672488fb19e0f864a65508b097e">EV3_PORT_C</a> = 2,     </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4aa1b994259795f86fdf26c690850202bf">   34</a></span>&#160;    <a class="code" href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4aa1b994259795f86fdf26c690850202bf">EV3_PORT_D</a> = 3,     </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4a09134b8ce0f2f80e12555be3121bcc53">   35</a></span>&#160;    <a class="code" href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4a09134b8ce0f2f80e12555be3121bcc53">TNUM_MOTOR_PORT</a> = 4 </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;} <a class="code" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="group__ev3motor.html#ga5f0f3e75314ae11b050988a1ba3e2075">   46</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075a142827795767d88db173c85270e06e35">   47</a></span>&#160;    <a class="code" href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075a142827795767d88db173c85270e06e35">NONE_MOTOR</a> = 0,    </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075aa17ca356ce12346af151348aae72761c">   48</a></span>&#160;    <a class="code" href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075aa17ca356ce12346af151348aae72761c">MEDIUM_MOTOR</a>,      </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075ac2fe66302f9229b1360844843688f469">   49</a></span>&#160;    <a class="code" href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075ac2fe66302f9229b1360844843688f469">LARGE_MOTOR</a>,       </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075a4bd7adaded0610289cb20d7b4b6ebba1">   50</a></span>&#160;    <a class="code" href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075a4bd7adaded0610289cb20d7b4b6ebba1">UNREGULATED_MOTOR</a>, </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075a1857435c0c694eb4c80d560f778d982c">   51</a></span>&#160;    <a class="code" href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075a1857435c0c694eb4c80d560f778d982c">TNUM_MOTOR_TYPE</a>    </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;} <a class="code" href="group__ev3motor.html#ga5f0f3e75314ae11b050988a1ba3e2075">motor_type_t</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;ER <a class="code" href="group__ev3motor.html#ga25f485fbe38e4234b29e4f1e6a87bd3e">ev3_motor_config</a>(<a class="code" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> port, <a class="code" href="group__ev3motor.html#ga5f0f3e75314ae11b050988a1ba3e2075">motor_type_t</a> type);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;ER_UINT <a class="code" href="group__ev3motor.html#ga6565458195489126606bd5144b5b400d">ev3_motor_get_type</a>(<a class="code" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> port);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;int32_t <a class="code" href="group__ev3motor.html#ga0486d0a9d93975eb339f7b5e0afeb999">ev3_motor_get_counts</a>(<a class="code" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> port);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;ER <a class="code" href="group__ev3motor.html#ga08da6ad2f59add3e33d4d208b0cc98e8">ev3_motor_reset_counts</a>(<a class="code" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> port);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;ER <a class="code" href="group__ev3motor.html#gaf5c96b6a7e3fdc7e13ba3466359294a0">ev3_motor_set_power</a>(<a class="code" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> port, <span class="keywordtype">int</span> power);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__ev3motor.html#ga67eb23319041faa1ef588c58d34f07e5">ev3_motor_get_power</a>(<a class="code" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> port);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;ER <a class="code" href="group__ev3motor.html#ga27585a7d658c0a5eec3ea4d7297c4e6b">ev3_motor_stop</a>(<a class="code" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> port, bool_t brake);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;ER <a class="code" href="group__ev3motor.html#ga057b79d7b6ec476812df854133d28e86">ev3_motor_rotate</a>(<a class="code" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> port, <span class="keywordtype">int</span> degrees, uint32_t speed_abs, bool_t blocking);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;ER <a class="code" href="group__ev3motor.html#ga772dadf1354388584c36ba26f3baf7cf">ev3_motor_steer</a>(<a class="code" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> left_motor, <a class="code" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> right_motor, <span class="keywordtype">int</span> power, <span class="keywordtype">int</span> turn_ratio);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">#if 0 // Legacy code or unfinished work</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;ER ev3_motor_reset(ID port);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;ER ev3_motor_set_speed(ID port, <span class="keywordtype">int</span> speed);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;ER <a class="code" href="group__ev3motor.html#gaf5c96b6a7e3fdc7e13ba3466359294a0">ev3_motor_set_power</a>(ID port, <span class="keywordtype">int</span> power);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;ER ev3_motors_init(<a class="code" href="group__ev3motor.html#ga5f0f3e75314ae11b050988a1ba3e2075">motor_type_t</a> typeA, <a class="code" href="group__ev3motor.html#ga5f0f3e75314ae11b050988a1ba3e2075">motor_type_t</a> typeB, <a class="code" href="group__ev3motor.html#ga5f0f3e75314ae11b050988a1ba3e2075">motor_type_t</a> typeC, <a class="code" href="group__ev3motor.html#ga5f0f3e75314ae11b050988a1ba3e2075">motor_type_t</a> typeD);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="comment"> * TODO: documented this</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="comment"> * -100 &lt;= speed &lt;= 100, -100(left) &lt;= turn_ration &lt;= 100(right)</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="comment"> * Motor with smaller port number will be treated as left motor.</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="comment">//extern void ev3_motor_sync(MotorPort portA, MotorPort portB, int speed, int turn_ratio);</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="comment">//extern ER ev3_motor_steer_for_degrees(ID left_motor, ID right_motor, int power, int turn_ratio, int degrees);</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;ER ev3_motor_set_counts(<a class="code" href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a> port, int32_t counts);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="group__ev3motor_html_ga0486d0a9d93975eb339f7b5e0afeb999"><div class="ttname"><a href="group__ev3motor.html#ga0486d0a9d93975eb339f7b5e0afeb999">ev3_motor_get_counts</a></div><div class="ttdeci">int32_t ev3_motor_get_counts(motor_port_t port)</div><div class="ttdoc">モータの角位置を取得する． </div><div class="ttdef"><b>Definition:</b> ev3api_motor.c:203</div></div>
+<div class="ttc" id="group__ev3motor_html_gga0f54b84f89f86be757f847d408a2f2f4a8077d672488fb19e0f864a65508b097e"><div class="ttname"><a href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4a8077d672488fb19e0f864a65508b097e">EV3_PORT_C</a></div><div class="ttdoc">ポートC </div><div class="ttdef"><b>Definition:</b> ev3api_motor.h:33</div></div>
+<div class="ttc" id="group__ev3motor_html_gga5f0f3e75314ae11b050988a1ba3e2075ac2fe66302f9229b1360844843688f469"><div class="ttname"><a href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075ac2fe66302f9229b1360844843688f469">LARGE_MOTOR</a></div><div class="ttdoc">サーボモータL </div><div class="ttdef"><b>Definition:</b> ev3api_motor.h:49</div></div>
+<div class="ttc" id="group__ev3motor_html_ga0f54b84f89f86be757f847d408a2f2f4"><div class="ttname"><a href="group__ev3motor.html#ga0f54b84f89f86be757f847d408a2f2f4">motor_port_t</a></div><div class="ttdeci">motor_port_t</div><div class="ttdoc">モータポートを表す番号 </div><div class="ttdef"><b>Definition:</b> ev3api_motor.h:30</div></div>
+<div class="ttc" id="group__ev3motor_html_gga5f0f3e75314ae11b050988a1ba3e2075a142827795767d88db173c85270e06e35"><div class="ttname"><a href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075a142827795767d88db173c85270e06e35">NONE_MOTOR</a></div><div class="ttdoc">モータ未接続 </div><div class="ttdef"><b>Definition:</b> ev3api_motor.h:47</div></div>
+<div class="ttc" id="group__ev3motor_html_gaf5c96b6a7e3fdc7e13ba3466359294a0"><div class="ttname"><a href="group__ev3motor.html#gaf5c96b6a7e3fdc7e13ba3466359294a0">ev3_motor_set_power</a></div><div class="ttdeci">ER ev3_motor_set_power(motor_port_t port, int power)</div><div class="ttdoc">モータのパワーを設定する </div><div class="ttdef"><b>Definition:</b> ev3api_motor.c:264</div></div>
+<div class="ttc" id="group__ev3motor_html_gga5f0f3e75314ae11b050988a1ba3e2075aa17ca356ce12346af151348aae72761c"><div class="ttname"><a href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075aa17ca356ce12346af151348aae72761c">MEDIUM_MOTOR</a></div><div class="ttdoc">サーボモータM </div><div class="ttdef"><b>Definition:</b> ev3api_motor.h:48</div></div>
+<div class="ttc" id="group__ev3motor_html_gga5f0f3e75314ae11b050988a1ba3e2075a1857435c0c694eb4c80d560f778d982c"><div class="ttname"><a href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075a1857435c0c694eb4c80d560f778d982c">TNUM_MOTOR_TYPE</a></div><div class="ttdoc">モータタイプの数 </div><div class="ttdef"><b>Definition:</b> ev3api_motor.h:51</div></div>
+<div class="ttc" id="group__ev3motor_html_gga0f54b84f89f86be757f847d408a2f2f4aa1b994259795f86fdf26c690850202bf"><div class="ttname"><a href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4aa1b994259795f86fdf26c690850202bf">EV3_PORT_D</a></div><div class="ttdoc">ポートD </div><div class="ttdef"><b>Definition:</b> ev3api_motor.h:34</div></div>
+<div class="ttc" id="group__ev3motor_html_ga5f0f3e75314ae11b050988a1ba3e2075"><div class="ttname"><a href="group__ev3motor.html#ga5f0f3e75314ae11b050988a1ba3e2075">motor_type_t</a></div><div class="ttdeci">motor_type_t</div><div class="ttdoc">サポートするモータタイプ </div><div class="ttdef"><b>Definition:</b> ev3api_motor.h:46</div></div>
+<div class="ttc" id="group__ev3motor_html_ga27585a7d658c0a5eec3ea4d7297c4e6b"><div class="ttname"><a href="group__ev3motor.html#ga27585a7d658c0a5eec3ea4d7297c4e6b">ev3_motor_stop</a></div><div class="ttdeci">ER ev3_motor_stop(motor_port_t port, bool_t brake)</div><div class="ttdoc">モータを停止する </div><div class="ttdef"><b>Definition:</b> ev3api_motor.c:310</div></div>
+<div class="ttc" id="group__ev3motor_html_ga25f485fbe38e4234b29e4f1e6a87bd3e"><div class="ttname"><a href="group__ev3motor.html#ga25f485fbe38e4234b29e4f1e6a87bd3e">ev3_motor_config</a></div><div class="ttdeci">ER ev3_motor_config(motor_port_t port, motor_type_t type)</div><div class="ttdoc">モータポートを設定する． </div><div class="ttdef"><b>Definition:</b> ev3api_motor.c:157</div></div>
+<div class="ttc" id="group__ev3motor_html_ga08da6ad2f59add3e33d4d208b0cc98e8"><div class="ttname"><a href="group__ev3motor.html#ga08da6ad2f59add3e33d4d208b0cc98e8">ev3_motor_reset_counts</a></div><div class="ttdeci">ER ev3_motor_reset_counts(motor_port_t port)</div><div class="ttdoc">モータの角位置をゼロにリセットする． </div><div class="ttdef"><b>Definition:</b> ev3api_motor.c:238</div></div>
+<div class="ttc" id="group__ev3motor_html_gga5f0f3e75314ae11b050988a1ba3e2075a4bd7adaded0610289cb20d7b4b6ebba1"><div class="ttname"><a href="group__ev3motor.html#gga5f0f3e75314ae11b050988a1ba3e2075a4bd7adaded0610289cb20d7b4b6ebba1">UNREGULATED_MOTOR</a></div><div class="ttdoc">未調整モータ </div><div class="ttdef"><b>Definition:</b> ev3api_motor.h:50</div></div>
+<div class="ttc" id="group__ev3motor_html_gga0f54b84f89f86be757f847d408a2f2f4a09134b8ce0f2f80e12555be3121bcc53"><div class="ttname"><a href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4a09134b8ce0f2f80e12555be3121bcc53">TNUM_MOTOR_PORT</a></div><div class="ttdoc">モータポートの数 </div><div class="ttdef"><b>Definition:</b> ev3api_motor.h:35</div></div>
+<div class="ttc" id="group__ev3motor_html_ga057b79d7b6ec476812df854133d28e86"><div class="ttname"><a href="group__ev3motor.html#ga057b79d7b6ec476812df854133d28e86">ev3_motor_rotate</a></div><div class="ttdeci">ER ev3_motor_rotate(motor_port_t port, int degrees, uint32_t speed_abs, bool_t blocking)</div><div class="ttdoc">モータを指定した角度だけ回転させる </div><div class="ttdef"><b>Definition:</b> ev3api_motor.c:330</div></div>
+<div class="ttc" id="group__ev3motor_html_gga0f54b84f89f86be757f847d408a2f2f4a64918ce114f44b89908009151b325ac6"><div class="ttname"><a href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4a64918ce114f44b89908009151b325ac6">EV3_PORT_B</a></div><div class="ttdoc">ポートB </div><div class="ttdef"><b>Definition:</b> ev3api_motor.h:32</div></div>
+<div class="ttc" id="group__ev3motor_html_gga0f54b84f89f86be757f847d408a2f2f4a45d2a35f4d83d7416273b9d6e5fb3c10"><div class="ttname"><a href="group__ev3motor.html#gga0f54b84f89f86be757f847d408a2f2f4a45d2a35f4d83d7416273b9d6e5fb3c10">EV3_PORT_A</a></div><div class="ttdoc">ポートA </div><div class="ttdef"><b>Definition:</b> ev3api_motor.h:31</div></div>
+<div class="ttc" id="group__ev3motor_html_ga772dadf1354388584c36ba26f3baf7cf"><div class="ttname"><a href="group__ev3motor.html#ga772dadf1354388584c36ba26f3baf7cf">ev3_motor_steer</a></div><div class="ttdeci">ER ev3_motor_steer(motor_port_t left_motor, motor_port_t right_motor, int power, int turn_ratio)</div><div class="ttdoc">２つのモータでロボットのステアリング操作を行う． </div><div class="ttdef"><b>Definition:</b> ev3api_motor.c:356</div></div>
+<div class="ttc" id="group__ev3motor_html_ga67eb23319041faa1ef588c58d34f07e5"><div class="ttname"><a href="group__ev3motor.html#ga67eb23319041faa1ef588c58d34f07e5">ev3_motor_get_power</a></div><div class="ttdeci">int ev3_motor_get_power(motor_port_t port)</div><div class="ttdoc">モータのパワーを取得する </div><div class="ttdef"><b>Definition:</b> ev3api_motor.c:221</div></div>
+<div class="ttc" id="group__ev3motor_html_ga6565458195489126606bd5144b5b400d"><div class="ttname"><a href="group__ev3motor.html#ga6565458195489126606bd5144b5b400d">ev3_motor_get_type</a></div><div class="ttdeci">ER_UINT ev3_motor_get_type(motor_port_t port)</div><div class="ttdoc">モータポートのモータタイプを取得する． </div><div class="ttdef"><b>Definition:</b> ev3api_motor.c:190</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><b>ev3api_motor.h</b></li>
+    <li class="footer">2017年06月26日(月) 06時58分08秒作成 - EV3RT C API Reference / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
+  </ul>
+</div>
+</body>
+</html>

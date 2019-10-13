@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>EV3RT C API Reference: /Users/yutaka/program/tmp/ev3rt/hrp2/sdk/common/ev3api/src/ev3api_fs.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EV3RT C API Reference
+   &#160;<span id="projectnumber">Beta 7</span>
+   </div>
+   <div id="projectbrief">An RTOS-based development platform for LEGO Mindstorms EV3.</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ev3api__fs_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ev3api_fs.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structmemfile__t.html">   30</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structmemfile__t.html#a368f7094dc38acca20612bbb392552f4">   31</a></span>&#160;    <span class="keywordtype">void</span>*    <a class="code" href="structmemfile__t.html#a368f7094dc38acca20612bbb392552f4">buffer</a>;   </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structmemfile__t.html#a523b3798dc64d2e36483e66196110e82">   32</a></span>&#160;    uint32_t <a class="code" href="structmemfile__t.html#a523b3798dc64d2e36483e66196110e82">filesz</a>;   </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structmemfile__t.html#a4741a4da4c1364a2940b4815a50764d0">   33</a></span>&#160;    uint32_t <a class="code" href="structmemfile__t.html#a4741a4da4c1364a2940b4815a50764d0">buffersz</a>; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;} <a class="code" href="structmemfile__t.html">memfile_t</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="group__ev3api-fs.html#ga94da27886a8d380953ee3f2f623623c3">   36</a></span>&#160;<span class="preprocessor">#define TMAX_FILENAME_LEN (255)    </span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="structfileinfo__t.html">   46</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structfileinfo__t.html#ab2c6b258f02add8fdf4cfc7c371dd772">   47</a></span>&#160;    uint32_t <a class="code" href="structfileinfo__t.html#ab2c6b258f02add8fdf4cfc7c371dd772">size</a>;                          </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structfileinfo__t.html#a6ab759d8c1c4a264888440e1f0b874fa">   48</a></span>&#160;    uint16_t <a class="code" href="structfileinfo__t.html#a6ab759d8c1c4a264888440e1f0b874fa">date</a>;                          </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="structfileinfo__t.html#a93658cf9f03a3303cdb292e655c657e7">   49</a></span>&#160;    uint16_t <a class="code" href="structfileinfo__t.html#a93658cf9f03a3303cdb292e655c657e7">time</a>;                          </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structfileinfo__t.html#afdc3e9e0bf6660afb965e323b7a31747">   50</a></span>&#160;    bool_t   <a class="code" href="structfileinfo__t.html#afdc3e9e0bf6660afb965e323b7a31747">is_dir</a>;                        </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="structfileinfo__t.html#a820dd1e6bad249e10bb3d237a40d86cd">   51</a></span>&#160;    bool_t   <a class="code" href="structfileinfo__t.html#a820dd1e6bad249e10bb3d237a40d86cd">is_readonly</a>;                   </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="structfileinfo__t.html#a5822d4f2e6eb806f147423fc1a56ae6f">   52</a></span>&#160;    bool_t   <a class="code" href="structfileinfo__t.html#a5822d4f2e6eb806f147423fc1a56ae6f">is_hidden</a>;                     </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="structfileinfo__t.html#a71708dbcdba7461a977328afab955e42">   53</a></span>&#160;    <span class="keywordtype">char</span>     name[<a class="code" href="group__ev3api-fs.html#ga94da27886a8d380953ee3f2f623623c3">TMAX_FILENAME_LEN</a> + 1];   </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;} <a class="code" href="structfileinfo__t.html">fileinfo_t</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;ER_ID <a class="code" href="group__ev3api-fs.html#ga532e8cc92304f0101e0deeb6cd9fadbf">ev3_sdcard_opendir</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *path);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;ER <a class="code" href="group__ev3api-fs.html#ga8baeceaf1dc86c7e9d1a5dbdbd80e34b">ev3_sdcard_readdir</a>(ID dirid, <a class="code" href="structfileinfo__t.html">fileinfo_t</a> *p_fileinfo);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;ER <a class="code" href="group__ev3api-fs.html#gaffdeffb3f095a47382d48a352cd2472a">ev3_sdcard_closedir</a>(ID dirid);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;ER <a class="code" href="group__ev3api-fs.html#gaa75435a927bdaa6b1b6209b990a2cda1">ev3_memfile_load</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *path, <a class="code" href="structmemfile__t.html">memfile_t</a> *p_memfile);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;ER <a class="code" href="group__ev3api-fs.html#ga7e92f18ee9f6b9875c0191a777983570">ev3_memfile_free</a>(<a class="code" href="structmemfile__t.html">memfile_t</a> *p_memfile);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="group__ev3api-fs.html#gadfc0b70260f2ffd57afd8229806bd6bc">  165</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="group__ev3api-fs.html#ggadfc0b70260f2ffd57afd8229806bd6bca6e9c07a8e969e82e3f97dd0586ac3257">  166</a></span>&#160;    <a class="code" href="group__ev3api-fs.html#ggadfc0b70260f2ffd57afd8229806bd6bca6e9c07a8e969e82e3f97dd0586ac3257">EV3_SERIAL_DEFAULT</a> = 0, </div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="group__ev3api-fs.html#ggadfc0b70260f2ffd57afd8229806bd6bcab2511b1dfe8205d4d61726bcc15c5ec3">  167</a></span>&#160;    <a class="code" href="group__ev3api-fs.html#ggadfc0b70260f2ffd57afd8229806bd6bcab2511b1dfe8205d4d61726bcc15c5ec3">EV3_SERIAL_UART</a> = 1,    </div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="group__ev3api-fs.html#ggadfc0b70260f2ffd57afd8229806bd6bca62bed1745396ddbd9884f19a6d32617d">  168</a></span>&#160;    <a class="code" href="group__ev3api-fs.html#ggadfc0b70260f2ffd57afd8229806bd6bca62bed1745396ddbd9884f19a6d32617d">EV3_SERIAL_BT</a> = 2,      </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;} <a class="code" href="group__ev3api-fs.html#gadfc0b70260f2ffd57afd8229806bd6bc">serial_port_t</a>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;FILE* <a class="code" href="group__ev3api-fs.html#gaac019d412e55aa7e82791ef708cec551">ev3_serial_open_file</a>(<a class="code" href="group__ev3api-fs.html#gadfc0b70260f2ffd57afd8229806bd6bc">serial_port_t</a> port);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;bool_t <a class="code" href="group__ev3api-fs.html#ga5879be35470c24601cbc8a647bae2081">ev3_bluetooth_is_connected</a>();</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
+<div class="ttc" id="group__ev3api-fs_html_ga7e92f18ee9f6b9875c0191a777983570"><div class="ttname"><a href="group__ev3api-fs.html#ga7e92f18ee9f6b9875c0191a777983570">ev3_memfile_free</a></div><div class="ttdeci">ER ev3_memfile_free(memfile_t *p_memfile)</div><div class="ttdoc">メモリファイルを解放する． </div><div class="ttdef"><b>Definition:</b> ev3api_fs.c:81</div></div>
+<div class="ttc" id="structfileinfo__t_html_afdc3e9e0bf6660afb965e323b7a31747"><div class="ttname"><a href="structfileinfo__t.html#afdc3e9e0bf6660afb965e323b7a31747">fileinfo_t::is_dir</a></div><div class="ttdeci">bool_t is_dir</div><div class="ttdoc">フォルダであることを表すフラグ </div><div class="ttdef"><b>Definition:</b> ev3api_fs.h:50</div></div>
+<div class="ttc" id="structfileinfo__t_html_a93658cf9f03a3303cdb292e655c657e7"><div class="ttname"><a href="structfileinfo__t.html#a93658cf9f03a3303cdb292e655c657e7">fileinfo_t::time</a></div><div class="ttdeci">uint16_t time</div><div class="ttdoc">ファイルのLast modified time </div><div class="ttdef"><b>Definition:</b> ev3api_fs.h:49</div></div>
+<div class="ttc" id="structmemfile__t_html_a523b3798dc64d2e36483e66196110e82"><div class="ttname"><a href="structmemfile__t.html#a523b3798dc64d2e36483e66196110e82">memfile_t::filesz</a></div><div class="ttdeci">uint32_t filesz</div><div class="ttdoc">ファイルの実際のサイズ </div><div class="ttdef"><b>Definition:</b> ev3api_fs.h:32</div></div>
+<div class="ttc" id="structfileinfo__t_html_a5822d4f2e6eb806f147423fc1a56ae6f"><div class="ttname"><a href="structfileinfo__t.html#a5822d4f2e6eb806f147423fc1a56ae6f">fileinfo_t::is_hidden</a></div><div class="ttdeci">bool_t is_hidden</div><div class="ttdoc">隠しファイルであることを表すフラグ </div><div class="ttdef"><b>Definition:</b> ev3api_fs.h:52</div></div>
+<div class="ttc" id="group__ev3api-fs_html_ggadfc0b70260f2ffd57afd8229806bd6bca6e9c07a8e969e82e3f97dd0586ac3257"><div class="ttname"><a href="group__ev3api-fs.html#ggadfc0b70260f2ffd57afd8229806bd6bca6e9c07a8e969e82e3f97dd0586ac3257">EV3_SERIAL_DEFAULT</a></div><div class="ttdoc">デフォルトのシリアルポート（ログタスク用ポート） </div><div class="ttdef"><b>Definition:</b> ev3api_fs.h:166</div></div>
+<div class="ttc" id="structfileinfo__t_html"><div class="ttname"><a href="structfileinfo__t.html">fileinfo_t</a></div><div class="ttdoc">ファイル情報の構造体． </div><div class="ttdef"><b>Definition:</b> ev3api_fs.h:46</div></div>
+<div class="ttc" id="structfileinfo__t_html_ab2c6b258f02add8fdf4cfc7c371dd772"><div class="ttname"><a href="structfileinfo__t.html#ab2c6b258f02add8fdf4cfc7c371dd772">fileinfo_t::size</a></div><div class="ttdeci">uint32_t size</div><div class="ttdoc">ファイルのサイズ </div><div class="ttdef"><b>Definition:</b> ev3api_fs.h:47</div></div>
+<div class="ttc" id="structfileinfo__t_html_a6ab759d8c1c4a264888440e1f0b874fa"><div class="ttname"><a href="structfileinfo__t.html#a6ab759d8c1c4a264888440e1f0b874fa">fileinfo_t::date</a></div><div class="ttdeci">uint16_t date</div><div class="ttdoc">ファイルのLast modified date </div><div class="ttdef"><b>Definition:</b> ev3api_fs.h:48</div></div>
+<div class="ttc" id="group__ev3api-fs_html_gadfc0b70260f2ffd57afd8229806bd6bc"><div class="ttname"><a href="group__ev3api-fs.html#gadfc0b70260f2ffd57afd8229806bd6bc">serial_port_t</a></div><div class="ttdeci">serial_port_t</div><div class="ttdoc">シリアルポートを表す番号 </div><div class="ttdef"><b>Definition:</b> ev3api_fs.h:165</div></div>
+<div class="ttc" id="group__ev3api-fs_html_ga8baeceaf1dc86c7e9d1a5dbdbd80e34b"><div class="ttname"><a href="group__ev3api-fs.html#ga8baeceaf1dc86c7e9d1a5dbdbd80e34b">ev3_sdcard_readdir</a></div><div class="ttdeci">ER ev3_sdcard_readdir(ID dirid, fileinfo_t *p_fileinfo)</div><div class="ttdoc">ディレクトリ内のファイル情報を読み込む． </div><div class="ttdef"><b>Definition:</b> ev3api_fs.c:129</div></div>
+<div class="ttc" id="group__ev3api-fs_html_ga532e8cc92304f0101e0deeb6cd9fadbf"><div class="ttname"><a href="group__ev3api-fs.html#ga532e8cc92304f0101e0deeb6cd9fadbf">ev3_sdcard_opendir</a></div><div class="ttdeci">ER_ID ev3_sdcard_opendir(const char *path)</div><div class="ttdoc">ディレクトリをオープンする． </div><div class="ttdef"><b>Definition:</b> ev3api_fs.c:124</div></div>
+<div class="ttc" id="structmemfile__t_html"><div class="ttname"><a href="structmemfile__t.html">memfile_t</a></div><div class="ttdoc">メモリファイルの構造体．メモリファイルのデータは，SDカードではなく，メモリに格納される． ...</div><div class="ttdef"><b>Definition:</b> ev3api_fs.h:30</div></div>
+<div class="ttc" id="group__ev3api-fs_html_gaa75435a927bdaa6b1b6209b990a2cda1"><div class="ttname"><a href="group__ev3api-fs.html#gaa75435a927bdaa6b1b6209b990a2cda1">ev3_memfile_load</a></div><div class="ttdeci">ER ev3_memfile_load(const char *path, memfile_t *p_memfile)</div><div class="ttdoc">SDカードのファイルをメモリファイルとしてロードする． </div><div class="ttdef"><b>Definition:</b> ev3api_fs.c:14</div></div>
+<div class="ttc" id="group__ev3api-fs_html_gaffdeffb3f095a47382d48a352cd2472a"><div class="ttname"><a href="group__ev3api-fs.html#gaffdeffb3f095a47382d48a352cd2472a">ev3_sdcard_closedir</a></div><div class="ttdeci">ER ev3_sdcard_closedir(ID dirid)</div><div class="ttdoc">ディレクトリをクローズする． </div><div class="ttdef"><b>Definition:</b> ev3api_fs.c:148</div></div>
+<div class="ttc" id="group__ev3api-fs_html_ga5879be35470c24601cbc8a647bae2081"><div class="ttname"><a href="group__ev3api-fs.html#ga5879be35470c24601cbc8a647bae2081">ev3_bluetooth_is_connected</a></div><div class="ttdeci">bool_t ev3_bluetooth_is_connected()</div><div class="ttdoc">Bluetooth (Serial Port Profile)が接続されているかどうかをチェックする． </div><div class="ttdef"><b>Definition:</b> ev3api_fs.c:152</div></div>
+<div class="ttc" id="structmemfile__t_html_a4741a4da4c1364a2940b4815a50764d0"><div class="ttname"><a href="structmemfile__t.html#a4741a4da4c1364a2940b4815a50764d0">memfile_t::buffersz</a></div><div class="ttdeci">uint32_t buffersz</div><div class="ttdoc">バッファの最大サイズ </div><div class="ttdef"><b>Definition:</b> ev3api_fs.h:33</div></div>
+<div class="ttc" id="structfileinfo__t_html_a820dd1e6bad249e10bb3d237a40d86cd"><div class="ttname"><a href="structfileinfo__t.html#a820dd1e6bad249e10bb3d237a40d86cd">fileinfo_t::is_readonly</a></div><div class="ttdeci">bool_t is_readonly</div><div class="ttdoc">読み出し専用であることを表すフラグ </div><div class="ttdef"><b>Definition:</b> ev3api_fs.h:51</div></div>
+<div class="ttc" id="group__ev3api-fs_html_ggadfc0b70260f2ffd57afd8229806bd6bca62bed1745396ddbd9884f19a6d32617d"><div class="ttname"><a href="group__ev3api-fs.html#ggadfc0b70260f2ffd57afd8229806bd6bca62bed1745396ddbd9884f19a6d32617d">EV3_SERIAL_BT</a></div><div class="ttdoc">Bluetooth仮想シリアルポート </div><div class="ttdef"><b>Definition:</b> ev3api_fs.h:168</div></div>
+<div class="ttc" id="group__ev3api-fs_html_ggadfc0b70260f2ffd57afd8229806bd6bcab2511b1dfe8205d4d61726bcc15c5ec3"><div class="ttname"><a href="group__ev3api-fs.html#ggadfc0b70260f2ffd57afd8229806bd6bcab2511b1dfe8205d4d61726bcc15c5ec3">EV3_SERIAL_UART</a></div><div class="ttdoc">UARTポート（センサポート1） </div><div class="ttdef"><b>Definition:</b> ev3api_fs.h:167</div></div>
+<div class="ttc" id="group__ev3api-fs_html_ga94da27886a8d380953ee3f2f623623c3"><div class="ttname"><a href="group__ev3api-fs.html#ga94da27886a8d380953ee3f2f623623c3">TMAX_FILENAME_LEN</a></div><div class="ttdeci">#define TMAX_FILENAME_LEN</div><div class="ttdoc">ファイル名の最大の長さ </div><div class="ttdef"><b>Definition:</b> ev3api_fs.h:36</div></div>
+<div class="ttc" id="structmemfile__t_html_a368f7094dc38acca20612bbb392552f4"><div class="ttname"><a href="structmemfile__t.html#a368f7094dc38acca20612bbb392552f4">memfile_t::buffer</a></div><div class="ttdeci">void * buffer</div><div class="ttdoc">このファイルが格納されているバッファへのポインタ．NULLは無効なメモリファイル． </div><div class="ttdef"><b>Definition:</b> ev3api_fs.h:31</div></div>
+<div class="ttc" id="group__ev3api-fs_html_gaac019d412e55aa7e82791ef708cec551"><div class="ttname"><a href="group__ev3api-fs.html#gaac019d412e55aa7e82791ef708cec551">ev3_serial_open_file</a></div><div class="ttdeci">FILE * ev3_serial_open_file(serial_port_t port)</div><div class="ttdoc">シリアルポートをファイルとしてオープンする． </div><div class="ttdef"><b>Definition:</b> ev3api_fs.c:97</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><b>ev3api_fs.h</b></li>
+    <li class="footer">2017年06月26日(月) 06時58分08秒作成 - EV3RT C API Reference / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
+  </ul>
+</div>
+</body>
+</html>
