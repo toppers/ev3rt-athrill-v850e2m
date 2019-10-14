@@ -233,6 +233,7 @@ x_sense_lock(void)
 
 /* cre_intで有効な割込み番号の指定  */
 #define VALID_INTNO_CREINT          VALID_INTNO_CFGINT((intno))
+#define VALID_INTNO(intno)			VALID_INTNO_CFGINT((intno))
 
 /*
  *  chg_ipmで有効な割込み優先度の範囲の判定

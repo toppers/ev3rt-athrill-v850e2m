@@ -174,11 +174,13 @@ CFLAGS = $(COPTS) $(CDEFS) $(INCLUDES)
 APPLNAME = app
 APPLDIRS = $(SRCDIR)/OBJ ../common ../common/ev3api ../common/ev3api/include 
 APPLDIRS += ../common/ev3api/src ../../target/v850_gcc ../../target/v850_gcc/pil/include
-APPLDIRS += ../../target/v850_gcc/TLSF-2.4.6/include
+APPLDIRS += ../../target/v850_gcc/TLSF-2.4.6/include ../../target/v850_gcc/TLSF-2.4.6/src
+APPLDIRS += ../../target/v850_gcc/athrill
+APPLDIRS += ../../../../../../athrill/trunk/apl/include
 APPL_CFG = app.cfg
 APPL_CDL = app.cdl
 CDEFS += -DTOPPERS_SUPPORT_PROTECT
-APPL_LIBS = -Wl,--gc-sections -nostartfiles  -lnosys
+APPL_LIBS =  -nostartfiles  -lnosys
 
 
 APPL_DIRS := $(APPLDIRS) $(SRCDIR)/library
