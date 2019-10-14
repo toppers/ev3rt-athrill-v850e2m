@@ -6,4 +6,4 @@
 #
 #  生成スクリプトのコア依存部（チップ依存部は飛ばす）
 #
-IncludeTrb("chip_check.trb")
+#IncludeTrb("chip_check.trb")
