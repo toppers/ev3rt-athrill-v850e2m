@@ -42,7 +42,21 @@ SECTIONS
 	} > INTROM
 
 	. = ALIGN(4);
-	.rodata : { *(.rodata) } > INTROM
+	.rodata : {
+        . = ALIGN(4);
+        *(.rodata)
+        *(.rodata.*)
+        *(.data.rel.ro)
+        . = ALIGN(4);
+        __init_array_start = .;
+        *(SORT(.init_array.*))
+        *(.init_array)
+        __init_array_end = .;
+        __fini_array_start = .;
+        *(SORT(.fini_array.*))
+        *(.fini_array)
+        __fini_array_end = .;
+	 } > INTROM
 
 	_textend = .;
 

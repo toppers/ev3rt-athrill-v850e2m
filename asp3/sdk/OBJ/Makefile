@@ -131,6 +131,7 @@ TARGETDIR = $(SRCDIR)/target/$(TARGET)
 #  ターゲット依存の定義のインクルード
 #
 include $(TARGETDIR)/Makefile.target
+include $(TARGETDIR)/platform/Makefile
 
 #
 #  TECS生成ファイルのディレクトリの定義
@@ -174,6 +175,8 @@ CFLAGS = $(COPTS) $(CDEFS) $(INCLUDES)
 APPLNAME = app
 APPLDIRS = $(SRCDIR)/OBJ ../common ../common/ev3api ../common/ev3api/include 
 APPLDIRS += ../common/ev3api/src ../../target/v850_gcc ../../target/v850_gcc/pil/include
+APPLDIRS += ../../target/v850_gcc/platform/src
+APPLDIRS += ../../target/v850_gcc/platform/include
 APPLDIRS += ../../target/v850_gcc/TLSF-2.4.6/include ../../target/v850_gcc/TLSF-2.4.6/src
 APPLDIRS += ../../target/v850_gcc/athrill
 APPLDIRS += ../../../../../../athrill/trunk/apl/include
@@ -192,6 +195,7 @@ else
 	APPL_COBJS := app.o
 endif
 APPL_COBJS := $(APPL_COBJS) log_output.o vasyslog.o t_perror.o strerror.o
+APPL_COBJS += ev3main.o
 APPL_CFLAGS := $(APPL_CFLAGS)
 ifdef APPLDIRS
 	INCLUDES := $(INCLUDES) $(foreach dir,$(APPLDIRS),-I$(dir))
