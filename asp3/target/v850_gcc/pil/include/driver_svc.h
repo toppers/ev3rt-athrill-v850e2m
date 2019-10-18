@@ -21,7 +21,7 @@ cal_svc(FN fncd, intptr_t par1, intptr_t par2,
 	if (fp->svcrtn == NULL) {
 		return E_OBJ;
 	}
-	return fp->svcrtn(fncd, par1, par2, par3, par4, par5);
+	return fp->svcrtn(par1, par2, par3, par4, par5, fncd);
 }
 
 

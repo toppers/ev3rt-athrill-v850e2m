@@ -53,21 +53,8 @@ void brick_button_task(intptr_t unused) {
 				ISR handler = button_handlers[i];
 				intptr_t exinf = button_exinfs[i];
 
-#if 0 // TODO: A bug in 'ret_service' will always clear 'waifbd' in TCB
-				ercd = dis_wai(TSK_SELF);
-				assert(ercd == E_OK);
-                T_RTSK rtsk;
-                ercd = ref_tsk(TSK_SELF, &rtsk);
-				assert(ercd == E_OK);
-                syslog(LOG_ERROR, "waifbd: %d", rtsk.waifbd);
-#endif
+				//syslog(LOG_NOTICE, "### brick_button_task(%d):0x%x!!", i, handler);
                 if (handler != NULL) handler(exinf);
-#if 0
-				ercd = ena_wai(TSK_SELF);
-				assert(ercd == E_OK);
-                if (ercd != E_OK)
-	                syslog(LOG_ERROR, "%s(): ena_wai() failed, ercd: %d", __FUNCTION__, ercd);
-#endif
 			}
 	}
 	syslog(LOG_ERROR, "%s(): Fatal error, ercd: %d", __FUNCTION__, ercd);
@@ -122,11 +109,15 @@ void brick_button_cyc(intptr_t unused) {
 
 	for (i = 0; i < TNUM_BRICK_BUTTON; ++i) {
 		bool_t pressed = gpio_get_value(button_pin[i]);
+		//syslog(LOG_NOTICE, "button_pressed[%d]=%d pressed=%d", i, button_pressed[i], pressed);
 		if (button_pressed[i] && !pressed) { // Clicked
-			if (i == BRICK_BUTTON_BACK && ignore_back_click_once)
+			if (i == BRICK_BUTTON_BACK && ignore_back_click_once) {
 				ignore_back_click_once = false;
-			else
+			}
+			else {
+				//syslog(LOG_NOTICE, "### pressed!!");
 				SVC_PERROR(iset_flg(current_button_flag, 1 << i));
+			}
 		}
 		button_pressed[i] = pressed;
 	}
