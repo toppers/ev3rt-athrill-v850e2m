@@ -7,7 +7,7 @@ OUTPUT_ARCH(v850-rh850)
 MEMORY
 {
 	INTROM(raxi) : org = 0x00000000, len = 512k
-	INTRAM(wax)  : org = 0x05FF7000, len = 1024k
+	INTRAM(wax)  : org = 0x05FF7000, len = 10240k
 };
 
 PROVIDE(__stack = 0);

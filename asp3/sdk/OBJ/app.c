@@ -267,7 +267,8 @@ void idle_task(intptr_t unused) {
 }
 
 void main_task(intptr_t unused) {
-    // Draw information
+#if 0
+	// Draw information
     lcdfont_t font = EV3_FONT_MEDIUM;
     ev3_lcd_set_font(font);
     int32_t fontw, fonth;
@@ -280,12 +281,13 @@ void main_task(intptr_t unused) {
     ev3_lcd_draw_string(lcdstr, 0, fonth * 2);
     sprintf(lcdstr, "Port%c:Right motor", 'A' + right_motor);
     ev3_lcd_draw_string(lcdstr, 0, fonth * 3);
-
+#endif
     // Register button handlers
     ev3_button_set_on_clicked(BACK_BUTTON, button_clicked_handler, BACK_BUTTON);
     ev3_button_set_on_clicked(ENTER_BUTTON, button_clicked_handler, ENTER_BUTTON);
     ev3_button_set_on_clicked(LEFT_BUTTON, button_clicked_handler, LEFT_BUTTON);
 
+#if 0
     // Configure sensors
     ev3_sensor_config(gyro_sensor, GYRO_SENSOR);
 
@@ -302,7 +304,9 @@ void main_task(intptr_t unused) {
 
     // Start task for printing message while idle
 	act_tsk(IDLE_TASK);
+#endif
 
+#if 0
     while(1) {
         while (!ev3_bluetooth_is_connected()) tslp_tsk(100);
     	uint8_t c = fgetc(bt);
@@ -361,4 +365,10 @@ void main_task(intptr_t unused) {
     		fprintf(bt, "Unknown key '%c' pressed.\n", c);
     	}
     }
+#else
+    syslog(LOG_NOTICE, "#### waiting for button pressed");
+    while(1) {
+        tslp_tsk(100);
+    }
+#endif
 }

@@ -227,10 +227,12 @@ bool_t platform_is_ready() {
 }
 
 void platform_pause_application(bool_t pause) {
+#if 0
 	if (pause)
 		rsm_tsk(PLATFORM_BUSY_TASK);
 	else
 		sus_tsk(PLATFORM_BUSY_TASK);
+#endif
 }
 
 /**
