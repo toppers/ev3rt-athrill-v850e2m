@@ -87,12 +87,12 @@ EVTTIM _kernel_current_time;
 void brick_button_cyc(intptr_t unused) {
 	int i;
 	static const int button_pin[TNUM_BRICK_BUTTON] = {
-	    [BRICK_BUTTON_LEFT]   = TODO_GPIO,
-	    [BRICK_BUTTON_RIGHT]  = TODO_GPIO,
-	    [BRICK_BUTTON_UP]     = TODO_GPIO,
-	    [BRICK_BUTTON_DOWN]   = TODO_GPIO,
-	    [BRICK_BUTTON_ENTER]  = TODO_GPIO,
-	    [BRICK_BUTTON_BACK]   = TODO_GPIO
+	    [BRICK_BUTTON_LEFT]   = EV3_GPIO_8,
+	    [BRICK_BUTTON_RIGHT]  = EV3_GPIO_9,
+	    [BRICK_BUTTON_UP]     = EV3_GPIO_10,
+	    [BRICK_BUTTON_DOWN]   = EV3_GPIO_11,
+	    [BRICK_BUTTON_ENTER]  = EV3_GPIO_12,
+	    [BRICK_BUTTON_BACK]   = EV3_GPIO_13
 	};
 
     // Support force shutdown feature
@@ -130,7 +130,7 @@ void brick_button_cyc(intptr_t unused) {
 		}
 		button_pressed[i] = pressed;
 	}
-
+	gpio_out_flush();
 }
 
 static void initialize(intptr_t unused) {
@@ -214,9 +214,21 @@ ER _brick_misc_command(misccmd_t misccmd, intptr_t exinf) {
         break;
 
     case MISCCMD_SET_LED:
-    	//TODO
+        if((exinf & ~(TA_LED_RED | TA_LED_GREEN)) != 0)
+            return E_PAR;
+        if (exinf & TA_LED_RED) {
+        	gpio_set_value(EV3_GPIO_0, TRUE);
+        }
+        else {
+        	gpio_set_value(EV3_GPIO_0, FALSE);
+        }
+        if (exinf & TA_LED_GREEN) {
+        	gpio_set_value(EV3_GPIO_1, TRUE);
+        }
+        else {
+        	gpio_set_value(EV3_GPIO_1, FALSE);
+        }
         break;
-
     case CMD_BUSY_WAIT_INIT:
     	//TODO
     	break;

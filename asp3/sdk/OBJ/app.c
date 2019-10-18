@@ -282,6 +282,7 @@ void main_task(intptr_t unused) {
     sprintf(lcdstr, "Port%c:Right motor", 'A' + right_motor);
     ev3_lcd_draw_string(lcdstr, 0, fonth * 3);
 #endif
+    ev3_led_set_color(LED_GREEN);
     // Register button handlers
     ev3_button_set_on_clicked(BACK_BUTTON, button_clicked_handler, BACK_BUTTON);
     ev3_button_set_on_clicked(ENTER_BUTTON, button_clicked_handler, ENTER_BUTTON);
