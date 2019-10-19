@@ -248,11 +248,9 @@ void balance_task(intptr_t unused) {
 }
 
 static void button_clicked_handler(intptr_t button) {
-	int16_t temp;
     switch(button) {
     case ENTER_BUTTON:
-    	uart_dri_get_data_temp(NXT_TEMP_SENSOR, &temp, sizeof(temp));
-        syslog(LOG_NOTICE, "Enter button clicked:temp=%d", temp);
+        syslog(LOG_NOTICE, "Enter button clicked");
         ev3_led_set_color(LED_OFF);
 
         break;
@@ -315,6 +313,7 @@ void main_task(intptr_t unused) {
     // Configure sensors
     ev3_sensor_config(EV3_PORT_1, NXT_TEMP_SENSOR);
     ev3_sensor_config(EV3_PORT_2, GYRO_SENSOR);
+    ev3_sensor_config(EV3_PORT_3, ULTRASONIC_SENSOR);
 #if 0
 
     // Configure motors
@@ -394,6 +393,20 @@ void main_task(intptr_t unused) {
 #else
     syslog(LOG_NOTICE, "#### waiting for button pressed");
     while(1) {
+    	static int16_t temp = 0;
+    	static int16_t prev_temp = 0;
+    	uart_dri_get_data_temp(NXT_TEMP_SENSOR, &temp, sizeof(temp));
+    	if (temp != prev_temp) {
+    		syslog(LOG_NOTICE, "TEMP:%d", temp);
+    		prev_temp = temp;
+    	}
+    	static int16_t dist = 0;
+    	static int16_t prev_dist = 0;
+    	dist = ev3_ultrasonic_sensor_get_distance(EV3_PORT_3);
+    	if (dist != prev_dist) {
+    		syslog(LOG_NOTICE, "DISTANCE:%d [m]", dist);
+    		prev_dist = dist;
+    	}
         tslp_tsk(100);
     }
 #endif
