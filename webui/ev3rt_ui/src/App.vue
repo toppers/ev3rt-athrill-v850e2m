@@ -46,6 +46,11 @@
           <Slider msg='temp' value='0' min='0' max='100' step='1'></Slider>
         </td>
       </tr>
+      <tr>
+        <td>
+          <Slider msg='ultrasonic' value='0' min='0' max='500' step='5'></Slider>
+        </td>
+      </tr>
     </table>
   </div>
 </template>
