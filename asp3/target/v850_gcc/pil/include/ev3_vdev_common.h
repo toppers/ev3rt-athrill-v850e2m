@@ -13,7 +13,7 @@
 #define EV3_GPIO_BTN_BITS_BACK	(5U)
 
 
-#define EV3_SENSOR_OFF				(1U)
+#define EV3_SENSOR_OFF				(2U)
 #define EV3_SENSOR_OFF_TYPE(index)	(EV3_SENSOR_OFF + ((index) * 2U))
 #define EV3_SENSOR_INX_AMBIENT		(0U)
 #define EV3_SENSOR_INX_COLOR		(1U)

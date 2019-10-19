@@ -248,10 +248,13 @@ void balance_task(intptr_t unused) {
 }
 
 static void button_clicked_handler(intptr_t button) {
+	int16_t temp;
     switch(button) {
     case ENTER_BUTTON:
-        syslog(LOG_NOTICE, "Enter button clicked.");
+    	uart_dri_get_data_temp(NXT_TEMP_SENSOR, &temp, sizeof(temp));
+        syslog(LOG_NOTICE, "Enter button clicked:temp=%d", temp);
         ev3_led_set_color(LED_OFF);
+
         break;
     case BACK_BUTTON:
         syslog(LOG_NOTICE, "Back button clicked.");
@@ -309,9 +312,10 @@ void main_task(intptr_t unused) {
     ev3_button_set_on_clicked(UP_BUTTON, button_clicked_handler, UP_BUTTON);
     ev3_button_set_on_clicked(DOWN_BUTTON, button_clicked_handler, DOWN_BUTTON);
 
-#if 0
     // Configure sensors
-    ev3_sensor_config(gyro_sensor, GYRO_SENSOR);
+    ev3_sensor_config(EV3_PORT_1, NXT_TEMP_SENSOR);
+    ev3_sensor_config(EV3_PORT_2, GYRO_SENSOR);
+#if 0
 
     // Configure motors
     ev3_motor_config(left_motor, LARGE_MOTOR);
