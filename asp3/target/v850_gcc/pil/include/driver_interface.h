@@ -25,20 +25,6 @@ extern ER_UINT extsvc_sound_command(intptr_t cmd, intptr_t par2, intptr_t par3, 
  * Interfaces
  */
 
-/**
- * Configure the mode of a UART sensor port.
- * @param port a sensor port
- * @param mode the target mode, or MODE_NONE_UART_SENSOR (disconnect mode)
- * @retval E_OK  success
- * @retval E_PAR invalid port number
- */
-static inline ER uart_sensor_config(uint8_t port, uint8_t mode) {
-#if defined(TOPPERS_SUPPORT_PROTECT)
-	return cal_svc(TFN_UART_SENSOR_CONFIG, port, mode, 0, 0, 0);
-#else
-	return extsvc_uart_sensor_config(port, mode, 0, 0, 0, 0);
-#endif
-}
 
 /**
  * Execute a motor command.

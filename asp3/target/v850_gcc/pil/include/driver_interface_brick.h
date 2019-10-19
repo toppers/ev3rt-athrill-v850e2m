@@ -29,11 +29,6 @@ typedef enum {
  * Definitions for UART sensor.
  */
 
-typedef struct {
-	volatile int8_t   (*raw)[MAX_DEVICE_DATALENGTH]; //!< A pointer to raw values from UART sensor
-	volatile uint16_t *actual;                       //!< Current raw value is raw[*actual]
-	volatile int8_t   *status;                       //!< Bitmap of UART sensor's status
-} uart_data_t;
 
 #define UART_PORT_CHANGED  (0x01) //!< Mask for status: input port changed, derived from UART_PORT_CHANGED in 'lms2012.h'
 #define UART_DATA_READY    (0x08) //!< Mask for status: data is ready, derived from UART_DATA_READY in 'lms2012.h'
@@ -61,16 +56,6 @@ typedef struct {
     volatile uint16_t *actual; //!< Current raw value is pin1[*actual], pin6[*actual]
 } analog_data_t;
 
-/**
- * Definitions for I2C sensor.
- */
-
-typedef struct {
-	volatile uint8_t  *raw;    //!< Raw value from I2C sensor
-	volatile uint8_t  *status; //!< Status of I2C sensor
-} i2c_data_t;
-
-#define I2C_TRANS_IDLE (0)
 
 /**
  * Definitions of motor.
@@ -85,9 +70,7 @@ typedef struct {
  * Brick information structure used to share data with API
  */
 typedef struct {
-	uart_data_t     *uart_sensors;   //!< Pointer of an array with type uart_data_t[TNUM_INPUT_PORT]
 	analog_data_t   *analog_sensors; //!< Pointer of an array with type analog_data_t[TNUM_INPUT_PORT]
-	i2c_data_t      *i2c_sensors; //!< Pointer of an array with type i2c_data_t[TNUM_INPUT_PORT]
 	motor_data_t    *motor_data;     //!< Pointer of an array with type motor_data_t[TNUM_OUTPUT_PORT]
 	uint8_t         *motor_ready;    //!< Pointer of a bitmap with type uint8_t
 	volatile bool_t *button_pressed; //!< Pointer of an array with type bool_t[TNUM_BRICK_BUTTON]

@@ -83,6 +83,7 @@ typedef struct {
     uint16_t r; //!< \~English Red value   \~Japanese 赤
     uint16_t g; //!< \~English Green value \~Japanese 緑
     uint16_t b; //!< \~English Blue value  \~Japanese 青
+    uint16_t padding;
 } rgb_raw_t;
 
 /** 
@@ -285,7 +286,7 @@ int8_t ev3_infrared_sensor_get_distance(sensor_port_t port);
  * \return     Struct with heading/distance for all channels.
  *
  * \~Japanese
- * \brief      IRセンサでIRビーコンの方位と距離を測定する． 
+ * \brief      IRセンサでIRビーコンの方位と距離を測定する．
  * \details    不正のセンサポート番号を指定した場合，常に0の方位と-128の距離を返す（エラーログが出力される）．
  * \param port センサポート番号
  * \return     全て（４つ）のチャンネルの方位と距離
