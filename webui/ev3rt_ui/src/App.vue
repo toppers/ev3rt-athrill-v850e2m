@@ -40,19 +40,27 @@
         </td>
       </tr>
     </table>
-
+    <table>
+      <tr>
+        <td>
+          <Slider msg='temp' value='0' min='0' max='100' step='1'></Slider>
+        </td>
+      </tr>
+    </table>
   </div>
 </template>
 
 <script>
 import PushButton from './components/PushButton.vue'
 import LedLight from './components/LedLight.vue'
+import Slider from './components/Slider.vue'
 
 export default {
   name: 'app',
   components: {
     PushButton,
-    LedLight
+    LedLight,
+    Slider
   }
 }
 </script>
