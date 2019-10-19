@@ -22,7 +22,7 @@ typedef struct {
 } RosSubConfigType;
 
 #define ROS_PUB_CONFIG_NUM  2U
-#define ROS_SUB_CONFIG_NUM  6U
+#define ROS_SUB_CONFIG_NUM  (6U + 28U)
 
 
 #define UDP_SERVER_IPADDR	"127.0.0.1"
