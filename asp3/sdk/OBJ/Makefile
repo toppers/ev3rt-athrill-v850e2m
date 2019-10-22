@@ -183,6 +183,8 @@ APPLDIRS += ../../target/v850_gcc/drivers/brick/src
 APPLDIRS += ../../target/v850_gcc/drivers/brick/include
 APPLDIRS += ../../target/v850_gcc/drivers/uart/src
 APPLDIRS += ../../target/v850_gcc/drivers/uart/include
+APPLDIRS += ../../target/v850_gcc/drivers/motor/src
+APPLDIRS += ../../target/v850_gcc/drivers/motor/include
 APPLDIRS += ../../target/v850_gcc/drivers/common/include
 APPLDIRS += ../../target/v850_gcc/TLSF-2.4.6/include ../../target/v850_gcc/TLSF-2.4.6/src
 APPLDIRS += ../../target/v850_gcc/athrill
@@ -207,6 +209,7 @@ APPL_COBJS += ev3_svc.o
 APPL_COBJS += driver_interface_brick.o
 APPL_COBJS += brick_dri.o
 APPL_COBJS += uart_dri.o
+APPL_COBJS += motor_dri.o
 APPL_COBJS += gpio_dri.o
 
 APPL_CFLAGS := $(APPL_CFLAGS)

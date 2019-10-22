@@ -25,7 +25,7 @@ const SVCINIB _kernel_svcinib_table[SVC_TABLE_NUM] = {
 	{ NULL, 0 },	// 20
 	{ NULL, 0 },	// 21
 	{ NULL, 0 },	// 22
-	{ NULL, 0 },	// 23
+	{ (EXTSVC)(extsvc_motor_command), 1024 },	// 23
 	{ (EXTSVC)(extsvc_fetch_brick_info), 1024 },	//24
 	{ (EXTSVC)(extsvc_button_set_on_clicked), 1024 },	//25
 	{ (EXTSVC)(extsvc_brick_misc_command), 1024 },	//26

@@ -247,12 +247,21 @@ void balance_task(intptr_t unused) {
     }
 }
 
+static int power = 0;
+static bool_t brake = 0;
 static void button_clicked_handler(intptr_t button) {
     switch(button) {
     case ENTER_BUTTON:
-        syslog(LOG_NOTICE, "Enter button clicked");
+        syslog(LOG_NOTICE, "Enter button clicked.");
         ev3_led_set_color(LED_OFF);
-
+        if (brake) {
+            ev3_motor_stop(EV3_PORT_A, 1);
+            brake = 0;
+        }
+        else {
+            ev3_motor_stop(EV3_PORT_A, 0);
+            brake = 1;
+        }
         break;
     case BACK_BUTTON:
         syslog(LOG_NOTICE, "Back button clicked.");
@@ -268,10 +277,14 @@ static void button_clicked_handler(intptr_t button) {
     case UP_BUTTON:
     	syslog(LOG_NOTICE, "Up button clicked.");
         ev3_led_set_color(LED_ORANGE);
+        power += 10;
+        ev3_motor_set_power(EV3_PORT_A, power);
     	break;
     case DOWN_BUTTON:
     	syslog(LOG_NOTICE, "Down button clicked.");
         ev3_led_set_color(LED_OFF);
+        power -= 10;
+        ev3_motor_set_power(EV3_PORT_A, power);
     	break;
     }
 }
@@ -314,12 +327,12 @@ void main_task(intptr_t unused) {
     ev3_sensor_config(EV3_PORT_1, NXT_TEMP_SENSOR);
     ev3_sensor_config(EV3_PORT_2, GYRO_SENSOR);
     ev3_sensor_config(EV3_PORT_3, ULTRASONIC_SENSOR);
-#if 0
 
     // Configure motors
     ev3_motor_config(left_motor, LARGE_MOTOR);
     ev3_motor_config(right_motor, LARGE_MOTOR);
 
+#if 0
     // Start task for self-balancing
     act_tsk(BALANCE_TASK);
 
@@ -407,6 +420,14 @@ void main_task(intptr_t unused) {
     		syslog(LOG_NOTICE, "DISTANCE:%d [m]", dist);
     		prev_dist = dist;
     	}
+    	static int32_t motor_angle = 0;
+    	static int32_t prev_motor_angle = 0;
+    	motor_angle = ev3_motor_get_counts(EV3_PORT_A);
+    	if (motor_angle != prev_motor_angle) {
+    		syslog(LOG_NOTICE, "ANGLE_A:%d [deg]", motor_angle);
+    		prev_motor_angle = motor_angle;
+    	}
+
         tslp_tsk(100);
     }
 #endif
