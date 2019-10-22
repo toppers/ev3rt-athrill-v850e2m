@@ -4,6 +4,9 @@
 /*
  * RX
  */
+/*
+ * Button
+ */
 #define EV3_GPIO_BTN_OFF	(0U)
 #define EV3_GPIO_BTN_BITS_LEFT	(0U)
 #define EV3_GPIO_BTN_BITS_RIGHT	(1U)
@@ -12,8 +15,10 @@
 #define EV3_GPIO_BTN_BITS_ENTER	(4U)
 #define EV3_GPIO_BTN_BITS_BACK	(5U)
 
-
-#define EV3_SENSOR_OFF				(1U)
+/*
+ * Sensor
+ */
+#define EV3_SENSOR_OFF				(2U)
 #define EV3_SENSOR_OFF_TYPE(index)	(EV3_SENSOR_OFF + ((index) * 2U))
 #define EV3_SENSOR_INX_AMBIENT		(0U)
 #define EV3_SENSOR_INX_COLOR		(1U)
@@ -45,7 +50,21 @@
 #define EV3_SENSOR_INX_TOUCH		(27U)
 
 /*
+ * MOTOR(RX)
+ */
+#define EV3_SENSOR_MOTOR_OFF				(256U)
+#define EV3_SENSOR_MOTOR_OFF_TYPE(index)	(EV3_SENSOR_MOTOR_OFF + ((index) * 4U))
+#define EV3_SENSOR_MOTOR_INX_ANGLE_TOP	(0U)
+#define EV3_SENSOR_MOTOR_INX_ANGLE_A	(0U)
+#define EV3_SENSOR_MOTOR_INX_ANGLE_B	(1U)
+#define EV3_SENSOR_MOTOR_INX_ANGLE_C	(2U)
+#define EV3_SENSOR_MOTOR_INX_ANGLE_D	(3U)
+
+/*
  * TX
+ */
+/*
+ * LED
  */
 #define EV3_GPIO_LED_OFF	(0U)
 #define EV3_GPIO_LED_BITS_RED		(0U)
@@ -53,5 +72,21 @@
 #define EV3_GPIO_LED_BITS_YELLOW	(2U)
 #define EV3_GPIO_LED_BITS_BLUE		(3U)
 
+/*
+ * MOTOR(TX)
+ */
+#define EV3_MOTOR_OFF				(4U)
+#define EV3_MOTOR_OFF_TYPE(index)	(EV3_MOTOR_OFF + ((index) * 4U))
+#define EV3_MOTOR_INX_POWER_TOP		(0U)
+#define EV3_MOTOR_INX_POWER_A		(0U)
+#define EV3_MOTOR_INX_POWER_B		(1U)
+#define EV3_MOTOR_INX_POWER_C		(2U)
+#define EV3_MOTOR_INX_POWER_D		(3U)
+
+#define EV3_MOTOR_INX_STOP_TOP		(4U)
+#define EV3_MOTOR_INX_STOP_A		(4U)
+#define EV3_MOTOR_INX_STOP_B		(5U)
+#define EV3_MOTOR_INX_STOP_C		(6U)
+#define EV3_MOTOR_INX_STOP_D		(7U)
 
 #endif /* _EV3_VDEV_COMMON_H_ */

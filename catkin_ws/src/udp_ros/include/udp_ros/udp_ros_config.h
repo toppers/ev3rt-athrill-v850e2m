@@ -12,6 +12,7 @@ typedef struct {
 	const char *topic_name;
 	int byteoff;
 	int bitoff;
+	int bitsize;
 	Publisher pub;
 } RosPubConfigType;
 
@@ -21,8 +22,8 @@ typedef struct {
 	Subscriber sub;
 } RosSubConfigType;
 
-#define ROS_PUB_CONFIG_NUM  2U
-#define ROS_SUB_CONFIG_NUM  (6U + 28U)
+#define ROS_PUB_CONFIG_NUM  (2U + 8U)
+#define ROS_SUB_CONFIG_NUM  (6U + 28U + 4U)
 
 
 #define UDP_SERVER_IPADDR	"127.0.0.1"

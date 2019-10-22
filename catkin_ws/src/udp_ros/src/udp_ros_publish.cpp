@@ -8,10 +8,12 @@
 #include <unistd.h>
 #include <string.h>
 #include <stdio.h>
+#include <string>
+#include <sstream>
 
 static char udp_tx_buffer[UDP_BUFFER_SIZE];
 
-static void do_publish_one(int index) 
+static void do_publish_bit_one(int index) 
 {
     std_msgs::String msg;
     if ((udp_tx_buffer[ros_pub_config[index].byteoff] & (1U << ros_pub_config[index].bitoff)) != 0U) {
@@ -21,6 +23,28 @@ static void do_publish_one(int index)
         msg.data = "bit_off";
     }
     ros_pub_config[index].pub.publish(msg);
+}
+
+static void do_publish_bytes_one(int index) 
+{
+    std_msgs::String msg;
+    int *intptr = (int*)&udp_tx_buffer[ros_pub_config[index].byteoff];
+    std::ostringstream oss;
+
+    oss << "v:" << (*intptr);
+    msg.data = oss.str();
+
+    ros_pub_config[index].pub.publish(msg);
+}
+
+static void do_publish_one(int index) 
+{
+    if (ros_pub_config[index].bitsize == 1U) {
+        do_publish_bit_one(index);
+    }
+    else {
+        do_publish_bytes_one(index);
+    }
     return;
 }
 
