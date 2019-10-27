@@ -9,7 +9,8 @@
 #include "sil.h"
 
 #include "driver_common.h"
-
+#include "ev3_vdev.h"
+#include "prc_config.h"
 
 bool_t gpio_get_value(uint32_t pin) {
 	bool_t ret = FALSE;
@@ -57,5 +58,23 @@ void gpio_set_value(uint32_t pin, bool_t value) {
 }
 void gpio_out_flush(void)
 {
+	lock_cpu();
 	sil_wrb_mem((void*)VDEV_TX_FLAG_BASE, 1);
+
+#if 1
+	//TODO clear reset angle
+	if (sil_rew_mem((uint32_t*)EV3_MOTOR_ADDR_INX(EV3_MOTOR_INX_RESET_ANGLE_A)) != 0) {
+		sil_wrw_mem((uint32_t*)EV3_MOTOR_ADDR_INX(EV3_MOTOR_INX_RESET_ANGLE_A), 0U);
+	}
+	if (sil_rew_mem((uint32_t*)EV3_MOTOR_ADDR_INX(EV3_MOTOR_INX_RESET_ANGLE_B)) != 0) {
+		sil_wrw_mem((uint32_t*)EV3_MOTOR_ADDR_INX(EV3_MOTOR_INX_RESET_ANGLE_B), 0U);
+	}
+	if (sil_rew_mem((uint32_t*)EV3_MOTOR_ADDR_INX(EV3_MOTOR_INX_RESET_ANGLE_C)) != 0) {
+		sil_wrw_mem((uint32_t*)EV3_MOTOR_ADDR_INX(EV3_MOTOR_INX_RESET_ANGLE_C), 0U);
+	}
+	if (sil_rew_mem((uint32_t*)EV3_MOTOR_ADDR_INX(EV3_MOTOR_INX_RESET_ANGLE_D)) != 0) {
+		sil_wrw_mem((uint32_t*)EV3_MOTOR_ADDR_INX(EV3_MOTOR_INX_RESET_ANGLE_D), 0U);
+	}
+#endif
+	unlock_cpu();
 }

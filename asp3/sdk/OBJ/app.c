@@ -24,7 +24,7 @@
  * Left motor:  Port A
  * Right motor: Port D
  */
-const int gyro_sensor = EV3_PORT_2, left_motor = EV3_PORT_A, right_motor = EV3_PORT_D;
+const int gyro_sensor = EV3_PORT_2, left_motor = EV3_PORT_A, right_motor = EV3_PORT_B;
 
 /**
  * Constants for the self-balance control algorithm.
@@ -332,6 +332,17 @@ void main_task(intptr_t unused) {
     ev3_motor_config(left_motor, LARGE_MOTOR);
     ev3_motor_config(right_motor, LARGE_MOTOR);
 
+#if 1
+    ev3_motor_stop(left_motor, 1);
+    ev3_motor_stop(right_motor, 1);
+#else
+    ev3_motor_set_power(left_motor, 50);
+    ev3_motor_set_power(right_motor, 40);
+#endif
+
+    //ev3_motor_reset_counts(left_motor);
+    //ev3_motor_reset_counts(right_motor);
+
 #if 0
     // Start task for self-balancing
     act_tsk(BALANCE_TASK);
@@ -406,6 +417,7 @@ void main_task(intptr_t unused) {
 #else
     syslog(LOG_NOTICE, "#### waiting for button pressed");
     while(1) {
+#if 0
     	static int16_t temp = 0;
     	static int16_t prev_temp = 0;
     	uart_dri_get_data_temp(NXT_TEMP_SENSOR, &temp, sizeof(temp));
@@ -427,7 +439,10 @@ void main_task(intptr_t unused) {
     		syslog(LOG_NOTICE, "ANGLE_A:%d [deg]", motor_angle);
     		prev_motor_angle = motor_angle;
     	}
-
+#endif
+    	int32_t l_angle = ev3_motor_get_counts(left_motor);
+    	int32_t r_angle = ev3_motor_get_counts(right_motor);
+    	syslog(LOG_NOTICE, "l_angle=%d r_angle=%d", l_angle, r_angle);
         tslp_tsk(100);
     }
 #endif
