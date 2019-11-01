@@ -332,12 +332,13 @@ void main_task(intptr_t unused) {
     ev3_motor_config(left_motor, LARGE_MOTOR);
     ev3_motor_config(right_motor, LARGE_MOTOR);
 
-#if 1
+#if 0
     ev3_motor_stop(left_motor, 1);
     ev3_motor_stop(right_motor, 1);
 #else
-    ev3_motor_set_power(left_motor, 50);
-    ev3_motor_set_power(right_motor, 40);
+    //ev3_motor_set_power(left_motor, 50);
+    //ev3_motor_set_power(right_motor, 40);
+    ev3_motor_steer(left_motor, right_motor, 50, 0);
 #endif
 
     //ev3_motor_reset_counts(left_motor);
@@ -415,6 +416,7 @@ void main_task(intptr_t unused) {
     	}
     }
 #else
+    int timecount = 0;
     syslog(LOG_NOTICE, "#### waiting for button pressed");
     while(1) {
 #if 0
@@ -440,9 +442,18 @@ void main_task(intptr_t unused) {
     		prev_motor_angle = motor_angle;
     	}
 #endif
-    	int32_t l_angle = ev3_motor_get_counts(left_motor);
-    	int32_t r_angle = ev3_motor_get_counts(right_motor);
-    	syslog(LOG_NOTICE, "l_angle=%d r_angle=%d", l_angle, r_angle);
+    	//int32_t l_angle = ev3_motor_get_counts(left_motor);
+    	//int32_t r_angle = ev3_motor_get_counts(right_motor);
+    	//syslog(LOG_NOTICE, "l_angle=%d r_angle=%d", l_angle, r_angle);
+        if (timecount == 50) {
+            ev3_motor_steer(left_motor, right_motor, 50, 5);
+            syslog(LOG_NOTICE, "rotation right");
+        }
+        else if (timecount == 100) {
+            ev3_motor_steer(left_motor, right_motor, 50, -5);
+            syslog(LOG_NOTICE, "rotation left");
+        }
+        timecount++;
         tslp_tsk(100);
     }
 #endif

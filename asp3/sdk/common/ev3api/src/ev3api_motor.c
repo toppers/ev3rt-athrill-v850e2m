@@ -237,7 +237,46 @@ ER ev3_motor_rotate(motor_port_t port, int degrees, uint32_t speed_abs, bool_t b
 
 ER ev3_motor_steer(motor_port_t left_motor, motor_port_t right_motor, int power, int turn_ratio)
 {
-	//not supported
+	ER ercd;
+	int left_power;
+	int right_power;
+	int abs_turn_ratio = (turn_ratio < 0) ? -turn_ratio : turn_ratio;
+	int abs_power = (power < 0) ? -power : power;
+
+	CHECK_PORT(left_motor);
+	CHECK_PORT_CONN(left_motor);
+	CHECK_PORT(right_motor);
+	CHECK_PORT_CONN(right_motor);
+
+	if (abs_turn_ratio > 100) {
+		abs_turn_ratio = 100;
+	}
+	if (abs_power > 100) {
+		abs_power = 100;
+	}
+	left_power = abs_power;
+	right_power = abs_power;
+#if 0
+	if (right_motor > left_motor) {
+		turn_ratio = turn_ratio * (-1);
+	}
+#endif
+	if (turn_ratio > 0) {
+		right_power = (abs_power * (100 - abs_turn_ratio))  / 100 ;
+	}
+	else {
+		left_power = (abs_power * (100 - abs_turn_ratio))  / 100 ;
+	}
+	if (power < 0) {
+		left_power = left_power * (-1);
+		right_power = right_power * (-1);
+	}
+
+	(void)ev3_motor_set_power(left_motor, left_power);
+	(void)ev3_motor_set_power(right_motor, right_power);
 	return E_OK;
+
+error_exit:
+    return ercd;
 }
 
