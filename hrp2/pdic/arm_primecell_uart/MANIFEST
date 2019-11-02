@@ -1,5 +1,0 @@
-PACKAGE pdic_arm_primecell_uart
-
-MANIFEST
-arm_primecell_uart.c
-arm_primecell_uart.h
