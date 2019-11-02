@@ -18,8 +18,8 @@
 /*
  * Sensor
  */
-#define EV3_SENSOR_OFF				(2U)
-#define EV3_SENSOR_OFF_TYPE(index)	(EV3_SENSOR_OFF + ((index) * 2U))
+#define EV3_SENSOR_OFF				(4U)
+#define EV3_SENSOR_OFF_TYPE(index)	(EV3_SENSOR_OFF + ((index) * 4U))
 #define EV3_SENSOR_INX_AMBIENT		(0U)
 #define EV3_SENSOR_INX_COLOR		(1U)
 #define EV3_SENSOR_INX_REFLECT		(2U)

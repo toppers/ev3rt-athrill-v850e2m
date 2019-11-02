@@ -324,9 +324,10 @@ void main_task(intptr_t unused) {
     ev3_button_set_on_clicked(DOWN_BUTTON, button_clicked_handler, DOWN_BUTTON);
 
     // Configure sensors
-    ev3_sensor_config(EV3_PORT_1, NXT_TEMP_SENSOR);
-    ev3_sensor_config(EV3_PORT_2, GYRO_SENSOR);
-    ev3_sensor_config(EV3_PORT_3, ULTRASONIC_SENSOR);
+    //ev3_sensor_config(EV3_PORT_1, NXT_TEMP_SENSOR);
+    //ev3_sensor_config(EV3_PORT_2, GYRO_SENSOR);
+    //ev3_sensor_config(EV3_PORT_3, ULTRASONIC_SENSOR);
+    ev3_sensor_config(EV3_PORT_1, COLOR_SENSOR);
 
     // Configure motors
     ev3_motor_config(left_motor, LARGE_MOTOR);
@@ -338,7 +339,7 @@ void main_task(intptr_t unused) {
 #else
     //ev3_motor_set_power(left_motor, 50);
     //ev3_motor_set_power(right_motor, 40);
-    ev3_motor_steer(left_motor, right_motor, 50, 0);
+    ev3_motor_steer(left_motor, right_motor, 10, 0);
 #endif
 
     //ev3_motor_reset_counts(left_motor);
@@ -416,7 +417,7 @@ void main_task(intptr_t unused) {
     	}
     }
 #else
-    int timecount = 0;
+    //int timecount = 0;
     syslog(LOG_NOTICE, "#### waiting for button pressed");
     while(1) {
 #if 0
@@ -442,19 +443,41 @@ void main_task(intptr_t unused) {
     		prev_motor_angle = motor_angle;
     	}
 #endif
+#if 0
     	//int32_t l_angle = ev3_motor_get_counts(left_motor);
     	//int32_t r_angle = ev3_motor_get_counts(right_motor);
     	//syslog(LOG_NOTICE, "l_angle=%d r_angle=%d", l_angle, r_angle);
+        uint8_t reflect = ev3_color_sensor_get_reflect(EV3_PORT_1);
+    	syslog(LOG_NOTICE, "reflect=%d", reflect);
         if (timecount == 50) {
-            ev3_motor_steer(left_motor, right_motor, 50, 5);
+            ev3_motor_steer(left_motor, right_motor, 15, 30);
             syslog(LOG_NOTICE, "rotation right");
         }
         else if (timecount == 100) {
-            ev3_motor_steer(left_motor, right_motor, 50, -5);
+            ev3_motor_steer(left_motor, right_motor, 15, -40);
             syslog(LOG_NOTICE, "rotation left");
         }
         timecount++;
         tslp_tsk(100);
-    }
+#else
+
+    /**
+     * PID controller
+     */
+#define white 100
+#define black 10
+        static float lasterror = 0, integral = 0;
+        static float midpoint = (white - black) / 2 + black;
+        {
+            float error = midpoint - ev3_color_sensor_get_reflect(EV3_PORT_1);
+            integral = error + integral * 0.5;
+            float steer = 0.07 * error + 0.3 * integral + 1 * (error - lasterror);
+            ev3_motor_steer(left_motor, right_motor, 10, steer);
+            lasterror = error;
+        }
+        tslp_tsk(100);
+
 #endif
+#endif
+    }
 }
