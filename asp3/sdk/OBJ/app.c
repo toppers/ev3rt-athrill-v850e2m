@@ -299,21 +299,6 @@ void idle_task(intptr_t unused) {
 }
 
 void main_task(intptr_t unused) {
-#if 0
-	// Draw information
-    lcdfont_t font = EV3_FONT_MEDIUM;
-    ev3_lcd_set_font(font);
-    int32_t fontw, fonth;
-    ev3_font_get_size(font, &fontw, &fonth);
-    char lcdstr[100];
-    ev3_lcd_draw_string("App: Gyroboy", 0, 0);
-    sprintf(lcdstr, "Port%c:Gyro sensor", '1' + gyro_sensor);
-    ev3_lcd_draw_string(lcdstr, 0, fonth);
-    sprintf(lcdstr, "Port%c:Left motor", 'A' + left_motor);
-    ev3_lcd_draw_string(lcdstr, 0, fonth * 2);
-    sprintf(lcdstr, "Port%c:Right motor", 'A' + right_motor);
-    ev3_lcd_draw_string(lcdstr, 0, fonth * 3);
-#endif
     ev3_led_set_color(LED_GREEN);
     // Register button handlers
     ev3_button_set_on_clicked(BACK_BUTTON, button_clicked_handler, BACK_BUTTON);
@@ -323,143 +308,14 @@ void main_task(intptr_t unused) {
     ev3_button_set_on_clicked(UP_BUTTON, button_clicked_handler, UP_BUTTON);
     ev3_button_set_on_clicked(DOWN_BUTTON, button_clicked_handler, DOWN_BUTTON);
 
-    // Configure sensors
-    //ev3_sensor_config(EV3_PORT_1, NXT_TEMP_SENSOR);
-    //ev3_sensor_config(EV3_PORT_2, GYRO_SENSOR);
-    //ev3_sensor_config(EV3_PORT_3, ULTRASONIC_SENSOR);
     ev3_sensor_config(EV3_PORT_1, COLOR_SENSOR);
 
     // Configure motors
     ev3_motor_config(left_motor, LARGE_MOTOR);
     ev3_motor_config(right_motor, LARGE_MOTOR);
-
-#if 0
-    ev3_motor_stop(left_motor, 1);
-    ev3_motor_stop(right_motor, 1);
-#else
-    //ev3_motor_set_power(left_motor, 50);
-    //ev3_motor_set_power(right_motor, 40);
-    ev3_motor_steer(left_motor, right_motor, 10, 0);
-#endif
-
-    //ev3_motor_reset_counts(left_motor);
-    //ev3_motor_reset_counts(right_motor);
-
-#if 0
-    // Start task for self-balancing
-    act_tsk(BALANCE_TASK);
-
-    // Open Bluetooth file
-    bt = ev3_serial_open_file(EV3_SERIAL_BT);
-    assert(bt != NULL);
-
-    // Start task for printing message while idle
-	act_tsk(IDLE_TASK);
-#endif
-
-#if 0
-    while(1) {
-        while (!ev3_bluetooth_is_connected()) tslp_tsk(100);
-    	uint8_t c = fgetc(bt);
-    	sus_tsk(IDLE_TASK);
-    	switch(c) {
-    	case 'w':
-    		if(motor_control_drive < 0)
-    			motor_control_drive = 0;
-    		else
-    			motor_control_drive += 10;
-    		fprintf(bt, "motor_control_drive: %d\n", motor_control_drive);
-    		break;
-
-    	case 's':
-    		if(motor_control_drive > 0)
-    			motor_control_drive = 0;
-    		else
-    			motor_control_drive -= 10;
-    		fprintf(bt, "motor_control_drive: %d\n", motor_control_drive);
-    		break;
-
-    	case 'a':
-    		if(motor_control_steer < 0)
-    			motor_control_steer = 0;
-    		else
-    			motor_control_steer += 10;
-    		fprintf(bt, "motor_control_steer: %d\n", motor_control_steer);
-    		break;
-
-    	case 'd':
-    		if(motor_control_steer > 0)
-    			motor_control_steer = 0;
-    		else
-    			motor_control_steer -= 10;
-    		fprintf(bt, "motor_control_steer: %d\n", motor_control_steer);
-    		break;
-
-    	case 'h':
-    		fprintf(bt, "==========================\n");
-    		fprintf(bt, "Usage:\n");
-    		fprintf(bt, "Press 'w' to speed up\n");
-    		fprintf(bt, "Press 's' to speed down\n");
-    		fprintf(bt, "Press 'a' to turn left\n");
-    		fprintf(bt, "Press 'd' to turn right\n");
-    		fprintf(bt, "Press 'i' for idle task\n");
-    		fprintf(bt, "Press 'h' for this message\n");
-    		fprintf(bt, "==========================\n");
-    		break;
-
-    	case 'i':
-    		fprintf(bt, "Idle task started.\n");
-    		rsm_tsk(IDLE_TASK);
-    		break;
-
-    	default:
-    		fprintf(bt, "Unknown key '%c' pressed.\n", c);
-    	}
-    }
-#else
-    //int timecount = 0;
+   
     syslog(LOG_NOTICE, "#### waiting for button pressed");
     while(1) {
-#if 0
-    	static int16_t temp = 0;
-    	static int16_t prev_temp = 0;
-    	uart_dri_get_data_temp(NXT_TEMP_SENSOR, &temp, sizeof(temp));
-    	if (temp != prev_temp) {
-    		syslog(LOG_NOTICE, "TEMP:%d", temp);
-    		prev_temp = temp;
-    	}
-    	static int16_t dist = 0;
-    	static int16_t prev_dist = 0;
-    	dist = ev3_ultrasonic_sensor_get_distance(EV3_PORT_3);
-    	if (dist != prev_dist) {
-    		syslog(LOG_NOTICE, "DISTANCE:%d [m]", dist);
-    		prev_dist = dist;
-    	}
-    	static int32_t motor_angle = 0;
-    	static int32_t prev_motor_angle = 0;
-    	motor_angle = ev3_motor_get_counts(EV3_PORT_A);
-    	if (motor_angle != prev_motor_angle) {
-    		syslog(LOG_NOTICE, "ANGLE_A:%d [deg]", motor_angle);
-    		prev_motor_angle = motor_angle;
-    	}
-#endif
-#if 0
-    	//int32_t l_angle = ev3_motor_get_counts(left_motor);
-    	//int32_t r_angle = ev3_motor_get_counts(right_motor);
-    	//syslog(LOG_NOTICE, "l_angle=%d r_angle=%d", l_angle, r_angle);
-        uint8_t reflect = ev3_color_sensor_get_reflect(EV3_PORT_1);
-    	syslog(LOG_NOTICE, "reflect=%d", reflect);
-        if (timecount == 50) {
-            ev3_motor_steer(left_motor, right_motor, 15, 30);
-            syslog(LOG_NOTICE, "rotation right");
-        }
-        else if (timecount == 100) {
-            ev3_motor_steer(left_motor, right_motor, 15, -40);
-            syslog(LOG_NOTICE, "rotation left");
-        }
-        timecount++;
-        tslp_tsk(100);
-#else
 
     /**
      * PID controller
@@ -477,7 +333,5 @@ void main_task(intptr_t unused) {
         }
         tslp_tsk(100);
 
-#endif
-#endif
     }
 }
