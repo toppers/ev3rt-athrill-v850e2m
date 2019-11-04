@@ -13,7 +13,7 @@ KERNEL_COBJS := $(KERNEL_COBJS) target_config.o tlsf.o athrill-libgcc.o
 #
 #  コンパイルオプションとリンカスクリプトの定義
 #
-COPTS := $(COPTS) -mv850e -mdisable-callt
+COPTS := $(COPTS) -mv850e2v3 -mdisable-callt -mhard-float
 CDEFS := $(CDEFS) -DLABEL_ASM
 LDSCRIPT = $(TARGETDIR)/v850es_fk3.ld
 
