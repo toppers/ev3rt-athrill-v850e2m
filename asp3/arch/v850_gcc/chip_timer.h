@@ -69,7 +69,7 @@
  * 高分解能タイマのタイマ周期を，このマクロに定義する．タイマ周期が2^32の
  * 場合には，このマクロを定義しない．
  */
-#define TCYC_HRTCNT		65535
+//#define TCYC_HRTCNT		65535
 
 /*
  * (5-3-2) TSTEP_HRTCNT	高分解能タイマのカウント値の進み幅
@@ -111,7 +111,7 @@
  * んだ時点でタイマ周期を越えており，高分解能タイマが周回したことを見落と
  * す可能性があるためである．
  */
-#define HRTCNT_BOUND	(TCYC_HRTCNT - TCYC_INT_DELAY_CNT)
+#define HRTCNT_BOUND	(4000000002)
 
 /*
  *  高分解能タイマの起動処理
@@ -150,47 +150,43 @@ extern void target_hrt_raise_event(void);
  */
 extern void	target_hrt_handler(void);
 
+
 /*
  * TAAn制御レジスタ0
  */
 #define TAAnCTL0_BASE			UINT_C(0xFFFFF590)
-#define TAAnCTL0(CH)			(TAAnCTL0_BASE + ((CH) * 16U))
+#define TAAnCTL0(CH)			(TAAnCTL0_BASE + ((CH) * 4U))
 /*
  * TAAn制御レジスタ1
  */
-#define TAAnCTL1_BASE			UINT_C(0xFFFFF591)
-#define TAAnCTL1(CH)			(TAAnCTL1_BASE + ((CH) * 16U))
+#define TAAnCTL1_BASE			UINT_C(0xFFFFF5A0)
+#define TAAnCTL1(CH)			(TAAnCTL1_BASE + ((CH) * 4U))
+
 
 /*
  * TAAn キャプチャ／コンペア・レジスタ 0（ TAAnCCR0）
  */
-#define TAAnCCR0_BASE			UINT_C(0xFFFFF596)
-#define TAAnCCR0(CH)			(TAAnCCR0_BASE + ((CH) * 16U))
+#define TAAnCCR0_BASE			UINT_C(0xFFFFF5C0)
+#define TAAnCCR0(CH)			(TAAnCCR0_BASE + ((CH) * 4U))
 
 /*
  * TAAn キャプチャ／コンペア・レジスタ 1（ TAAnCCR1）
  */
-#define TAAnCCR1_BASE			UINT_C(0xFFFFF598)
-#define TAAnCCR1(CH)			(TAAnCCR1_BASE + ((CH) * 16U))
+#define TAAnCCR1_BASE			UINT_C(0xFFFFF5E0)
+#define TAAnCCR1(CH)			(TAAnCCR1_BASE + ((CH) * 4U))
 
 /*
  * TAAnカウンタ・リード・バッファ・レジスタ
  */
-#define TAAnCNT_BASE			UINT_C(0xFFFFF59A)
-#define TAAnCNT(CH)				(TAAnCNT_BASE + ((CH) * 16U))
+#define TAAnCNT_BASE			UINT_C(0xFFFFF610)
+#define TAAnCNT(CH)				(TAAnCNT_BASE + ((CH) * 4U))
 
 /*
  * TAAn オプション・レジスタ 0（ TAAnOPT0）
  */
-#define TAAnOPT0_BASE			UINT_C(0xFFFFF595)
-#define TAAnOPT0(CH)			(TAAnOPT0_BASE + ((CH) * 16U))
+#define TAAnOPT0_BASE			UINT_C(0xFFFFF630)
+#define TAAnOPT0(CH)			(TAAnOPT0_BASE + ((CH) * 4U))
 
-/*
- * TAAn オプション・レジスタ 1（ TAAnOPT1）
- */
-#define TAA1OPT1				UINT_C(0xFFFFF5AD)
-#define TAA3OPT1				UINT_C(0xFFFFF5CD)
-#define TAA6OPT1				UINT_C(0xFFFFF5FD)
 /*
  *  使用する差分タイマと現在値タイマのチャネル
  */

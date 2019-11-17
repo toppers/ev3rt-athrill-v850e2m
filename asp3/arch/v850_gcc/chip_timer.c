@@ -100,12 +100,12 @@ SetTimerStopTAA(uint8_t ch)
 /*
  *  TAAハードウェアカウンタ現在ティック値取得
  */
-Inline uint16_t
+Inline uint32_t
 GetCurrentTimeTAA(uint8_t ch)
 {
-	uint16_t	count;
+	uint32_t	count;
 
-	count = sil_reh_mem((void *) (TAAnCNT(ch)));
+	count = sil_rew_mem((void *) (TAAnCNT(ch)));
 	return(count);
 }
 /*
@@ -151,8 +151,8 @@ target_hrt_initialize(intptr_t exinf)
 	/*
 	 *  OSタイマの設定値を最大値にしておく．
 	 */
-	sil_wrh_mem((void *) TAAnCCR0(TIMER_CTIM_ID), 0xFFFF);
-	sil_wrh_mem((void *) TAAnCCR1(TIMER_CTIM_ID), 0xFFFF);
+	sil_wrw_mem((void *) TAAnCCR0(TIMER_CTIM_ID), 0xFFFFFFFF);
+	sil_wrw_mem((void *) TAAnCCR1(TIMER_CTIM_ID), 0xFFFFFFFF);
 
 	/*
 	 *  OSタイマを動作開始する．
@@ -196,16 +196,13 @@ target_hrt_set_event(HRTCNT hrtcnt)
 	/*
 	 *  hrtcnt後に割込みが発生するように設定する．
 	 */
-	curr = sil_reh_mem((void *) (TAAnCNT(TIMER_DTIM_ID)));
+	curr = sil_rew_mem((void *) (TAAnCNT(TIMER_DTIM_ID)));
 
 	intcnt = (curr + ((uint32_t)hrtcnt));
-	if (intcnt > 0xFFFF) {
-		intcnt -= 0xFFFF;
-	}
-	intcnt = ( (curr + ((uint32_t)hrtcnt)) & 0x0000FFFF);
+	//syslog(LOG_NOTICE, "intcnt=%u", intcnt);
 
 	/* 差分タイマのタイマ値設定 */
-	sil_wrh_mem((void *) TAAnCCR0(TIMER_DTIM_ID), (uint16_t)intcnt);
+	sil_wrw_mem((void *) TAAnCCR0(TIMER_DTIM_ID), intcnt);
 
 	/*
 	 * カウント開始
@@ -233,10 +230,10 @@ target_hrt_raise_event(void)
 	 */
 	curr = sil_reh_mem((void *) (TAAnCNT(TIMER_DTIM_ID)));
 
-	intcnt = ( (curr + 1U) & 0x0000FFFF);
+	intcnt = ( (curr + 1U) );
 
 	/* 差分タイマのタイマ値設定 */
-	sil_wrh_mem((void *) TAAnCCR0(TIMER_DTIM_ID), (uint16_t)intcnt);
+	sil_wrw_mem((void *) TAAnCCR0(TIMER_DTIM_ID), intcnt);
 
 	/*
 	 * カウント開始

@@ -314,7 +314,7 @@ void main_task(intptr_t unused) {
     ev3_motor_config(left_motor, LARGE_MOTOR);
     ev3_motor_config(right_motor, LARGE_MOTOR);
    
-    syslog(LOG_NOTICE, "#### waiting for button pressed");
+    syslog(LOG_NOTICE, "#### motor control start");
     while(1) {
 
     /**
@@ -331,7 +331,7 @@ void main_task(intptr_t unused) {
             ev3_motor_steer(left_motor, right_motor, 10, steer);
             lasterror = error;
         }
-        tslp_tsk(100);
+        tslp_tsk(100000); /* 100msec */
 
     }
 }
