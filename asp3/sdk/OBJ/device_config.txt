@@ -9,3 +9,4 @@ DEBUG_FUNC_ENABLE_SYNC_TIME	0
 DEBUG_FUNC_ENABLE_VDEV		1
 DEBUG_FUNC_VDEV_TX_PORTNO   4001
 DEBUG_FUNC_VDEV_RX_PORTNO   4002
+SERIAL_FILE_PATH		/mnt/c/project/esm/athrill-sample/ev3rt/ev3rt-beta7-release/asp3/sdk/OBJ/serial

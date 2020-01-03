@@ -298,6 +298,25 @@ void idle_task(intptr_t unused) {
     }
 }
 
+#define UDnTX_BASE				UINT_C(0xFFFFFA07)
+#define UDnTX(CH)				(UDnTX_BASE + ((CH) * 16U))
+typedef struct {
+	int step;
+	float data1;
+	float data2;
+	float data3;
+} LogDataType;
+static void put_log(LogDataType *data)
+{
+	int i = 0;
+	volatile char *addr = (char*)UDnTX(1);
+	char *p = (char*)data;
+	for (i = 0; i < sizeof(LogDataType); i++) {
+		*addr = p[i];
+	}
+	return;
+}
+
 void main_task(intptr_t unused) {
     ev3_led_set_color(LED_GREEN);
     // Register button handlers
@@ -314,6 +333,8 @@ void main_task(intptr_t unused) {
     ev3_motor_config(left_motor, LARGE_MOTOR);
     ev3_motor_config(right_motor, LARGE_MOTOR);
    
+    LogDataType log_data;
+    int i = 0;
     syslog(LOG_NOTICE, "#### motor control start");
     while(1) {
 
@@ -330,6 +351,11 @@ void main_task(intptr_t unused) {
             float steer = 0.07 * error + 0.3 * integral + 1 * (error - lasterror);
             ev3_motor_steer(left_motor, right_motor, 10, steer);
             lasterror = error;
+            log_data.step = i++;
+            log_data.data1 = midpoint;
+            log_data.data2 = error;
+            log_data.data3 = steer;
+            put_log(&log_data);
         }
         tslp_tsk(100000); /* 100msec */
 
