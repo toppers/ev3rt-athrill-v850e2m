@@ -298,6 +298,7 @@ void idle_task(intptr_t unused) {
     }
 }
 
+#if 0
 #define UDnTX_BASE				UINT_C(0xFFFFFA07)
 #define UDnTX(CH)				(UDnTX_BASE + ((CH) * 16U))
 typedef struct {
@@ -316,6 +317,7 @@ static void put_log(LogDataType *data)
 	}
 	return;
 }
+#endif
 
 void main_task(intptr_t unused) {
     ev3_led_set_color(LED_GREEN);
@@ -332,9 +334,11 @@ void main_task(intptr_t unused) {
     // Configure motors
     ev3_motor_config(left_motor, LARGE_MOTOR);
     ev3_motor_config(right_motor, LARGE_MOTOR);
-   
+  
+#if 0 
     LogDataType log_data;
     int i = 0;
+#endif
     syslog(LOG_NOTICE, "#### motor control start");
     while(1) {
 
@@ -351,11 +355,13 @@ void main_task(intptr_t unused) {
             float steer = 0.07 * error + 0.3 * integral + 1 * (error - lasterror);
             ev3_motor_steer(left_motor, right_motor, 10, steer);
             lasterror = error;
+#if 0
             log_data.step = i++;
             log_data.data1 = midpoint;
             log_data.data2 = error;
             log_data.data3 = steer;
             put_log(&log_data);
+#endif
         }
         tslp_tsk(100000); /* 100msec */
 
