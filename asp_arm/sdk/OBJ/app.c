@@ -363,7 +363,7 @@ void main_task(intptr_t unused) {
             put_log(&log_data);
 #endif
         }
-        tslp_tsk(100000); /* 100msec */
+        tslp_tsk(100); /* 100msec */
 
     }
 }

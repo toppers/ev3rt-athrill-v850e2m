@@ -1,2 +1,2 @@
--l 16 ../common/ev3api/src/ev3api_brick.c
+-l 265 ../common/ev3api/src/ev3api_motor.c
 
