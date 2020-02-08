@@ -1,0 +1,5 @@
+[DONE> core0 pc=0x18004d8c main_task(+d0) VMOV to_arm_register(1) Vn(V15[-nan]) Rt(R3[536870916 0x20000004]) : Vn(V15[-nan]) Rt(R3[-923 0xfffffc65]) CPSR(0x0)  
+[DONE> core0 pc=0x18004d90 main_task(+d4) STR imm32(16) add(0) index(1) wback(0) Rn(R11[536908252 0x200091dc]) Rt(R3[-923 0xfffffc65]) : Rn(R11[536908252 0x200091dc]) CPSR(0x13)  
+[DONE> core0 pc=0x18004d94 main_task(+d8) LDR imm32(16) add(0) index(1) wback(0) Rn(R11[536908252 0x200091dc]) Rt(R3[-923 0xfffffc65]) : Rt(R3[-923 0xfffffc65]) CPSR(0x13)  
+[DONE> core0 pc=0x18004d98 main_task(+dc) CMP Rn(R3[-923 0xfffffc65]) imm32(0) : compare(-923) CF[0010] CPSR(0xa0000013)  
+[DONE> core0 pc=0x18004d9c main_task(+e0) B EQ imm32(2428) PC(R15[402673060 0x18004da4]) : CPSR(0xa0000013) [Skip] 
