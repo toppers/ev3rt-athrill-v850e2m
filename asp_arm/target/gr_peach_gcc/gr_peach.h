@@ -48,7 +48,7 @@
 
 #define CORE_CLK_MHZ 		400			/* 400MHz */
 #define UART_CLK			66670000UL	/* 66.67MHz */
-#define OSTM_CLK			33330000UL	/* 33.33MHz */
+#define OSTM_CLK			 1000000UL	/* 1MHz */
 
 /*
  * 割込み待ち命令
