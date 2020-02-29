@@ -16,8 +16,14 @@ TOOLDIR = $(SRCDIR)/arch/$(TOOL)
 #  コンパイルオプション
 #
 INCLUDES := $(INCLUDES) -I$(COREDIR) -I$(TOOLDIR)
-LIBS := $(LIBS) /usr/lib/arm-none-eabi/newlib/fpu/libc.a
-LIBS += /usr/lib/gcc/arm-none-eabi/4.9.3/fpu/libgcc.a
+ifeq ($(ATHRILL_BUILD_TARGET), mac)
+    LIBS := $(LIBS) $(GCC_PATH)/arm-none-eabi/newlib/fpu/libc.a
+    LIBS += $(GCC_PATH)/lib/gcc/arm-none-eabi/9.2.1/arm/v5te/hard/libgcc.a
+    LIBS += $(GCC_PATH)/arm-none-eabi/lib/arm/v5te/hard/libnosys.a
+else
+    LIBS := $(LIBS) /usr/lib/arm-none-eabi/newlib/fpu/libc.a
+    LIBS += /usr/lib/gcc/arm-none-eabi/4.9.3/fpu/libgcc.a
+endif
 
 #
 #  カーネルに関する定義

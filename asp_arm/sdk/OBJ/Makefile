@@ -173,7 +173,7 @@ APPLDIRS += ../../target/$(TARGET)/athrill
 APPLDIRS += ../../../../../../athrill/trunk/apl/include
 APPL_CFG = app.cfg
 CDEFS += -DTOPPERS_SUPPORT_PROTECT
-APPL_LIBS =  -nostartfiles  -lnosys
+APPL_LIBS =  -nostartfiles  
 
 
 APPL_DIR = $(APPLDIRS) $(SRCDIR)/library
