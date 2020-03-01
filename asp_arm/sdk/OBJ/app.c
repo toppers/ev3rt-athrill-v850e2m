@@ -355,13 +355,6 @@ void main_task(intptr_t unused) {
             float steer = 0.07 * error + 0.3 * integral + 1 * (error - lasterror);
             ev3_motor_steer(left_motor, right_motor, 10, steer);
             lasterror = error;
-#if 0
-            log_data.step = i++;
-            log_data.data1 = midpoint;
-            log_data.data2 = error;
-            log_data.data3 = steer;
-            put_log(&log_data);
-#endif
         }
         tslp_tsk(100); /* 100msec */
 

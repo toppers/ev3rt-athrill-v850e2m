@@ -99,7 +99,7 @@ typedef uint32_t    CLOCK;
 /*
  *  設定できる最大のタイマ周期（単位は内部表現）
  */
-#define MAX_CLOCK        ((CLOCK) 0xffffffffU)
+#define MAX_CLOCK        ((CLOCK) 0xffffffU)
 
 /*
  *  タイマの現在値を割込み発生前の値とみなすかの判断
