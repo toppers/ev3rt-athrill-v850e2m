@@ -21,8 +21,13 @@ ifeq ($(ATHRILL_BUILD_TARGET), mac)
     LIBS += $(GCC_PATH)/lib/gcc/arm-none-eabi/9.2.1/arm/v5te/hard/libgcc.a
     LIBS += $(GCC_PATH)/arm-none-eabi/lib/arm/v5te/hard/libnosys.a
 else
+ifeq ($(ATHRILL_BUILD_TARGET), ubuntu18)
+    LIBS := $(LIBS) /usr/lib/arm-none-eabi/newlib/hard/libc.a
+    LIBS += /usr/lib/gcc/arm-none-eabi/6.3.1/hard/libgcc.a
+else
     LIBS := $(LIBS) /usr/lib/arm-none-eabi/newlib/fpu/libc.a
     LIBS += /usr/lib/gcc/arm-none-eabi/4.9.3/fpu/libgcc.a
+endif
 endif
 
 #
