@@ -34,9 +34,12 @@ static void motor_start(int port)
 
 static void motor_brake(int port, bool_t brake)
 {
-	int index = port + EV3_MOTOR_INX_STOP_TOP;
-	sil_wrw_mem((uint32_t*)EV3_MOTOR_ADDR_INX(index), brake);
-	return;
+    int index = port + EV3_MOTOR_INX_POWER_TOP;
+    sil_wrw_mem((uint32_t *)EV3_MOTOR_ADDR_INX(index), 0);
+
+    index = port + EV3_MOTOR_INX_STOP_TOP;
+    sil_wrw_mem((uint32_t *)EV3_MOTOR_ADDR_INX(index), brake);
+    return;
 }
 
 ER_UINT extsvc_motor_command(intptr_t cmd, intptr_t size, intptr_t par3, intptr_t par4, intptr_t par5, ID cdmid)
