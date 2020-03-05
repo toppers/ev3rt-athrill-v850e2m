@@ -1,0 +1,2 @@
+-l 194 ../../arch/arm_gcc/common/gic_support.S
+

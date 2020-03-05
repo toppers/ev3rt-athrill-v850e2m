@@ -1,0 +1,2 @@
+-l 61 ../../arch/arm_gcc/common/core_support.S
+
