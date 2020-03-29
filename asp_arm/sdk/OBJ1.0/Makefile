@@ -141,7 +141,7 @@ ifndef OMIT_WARNING_ALL
   COPTS := $(COPTS) -Wall
 endif
 ifndef OMIT_OPTIMIZATION
-  COPTS := $(COPTS) -O0 -gdwarf-2  -mfloat-abi=hard -mfpu=neon
+  COPTS := $(COPTS) -O2 -gdwarf-2  -mfloat-abi=hard -mfpu=neon
 endif
 CDEFS := $(CDEFS) 
 INCLUDES := -I. -I$(SRCDIR)/include -I$(SRCDIR)/arch -I$(SRCDIR) $(INCLUDES)

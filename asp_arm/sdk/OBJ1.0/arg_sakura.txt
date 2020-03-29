@@ -1,2 +1,2 @@
--l 194 ../../arch/arm_gcc/common/gic_support.S
+-l 41 ../../target/gr_peach_gcc/drivers/brick/src/brick_dri.c
 
