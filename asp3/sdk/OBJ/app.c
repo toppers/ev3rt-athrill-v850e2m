@@ -345,23 +345,31 @@ void main_task(intptr_t unused) {
     /**
      * PID controller
      */
+
+//#define LIGHT_BRIGHT
+#define LIGHT_DARK
+#ifdef LIGHT_DARK
+//dark
+#define white 78
+#define black 20
+#else
+//bright
 #define white 100
-#define black 10
+#define black 50
+#endif
         static float lasterror = 0, integral = 0;
         static float midpoint = (white - black) / 2 + black;
         {
             float error = midpoint - ev3_color_sensor_get_reflect(EV3_PORT_1);
-            integral = error + integral * 0.5;
-            float steer = 0.07 * error + 0.3 * integral + 1 * (error - lasterror);
+#ifdef LIGHT_BRIGHT
+            integral = error + integral * 0.01;
+            float steer = 0.9 * error + 0.1 * integral + 1 * (error - lasterror);
+#else
+            integral = error + integral * 0.05;
+            float steer = 0.7 * error + 0.1 * integral + 1 * (error - lasterror);
+#endif
             ev3_motor_steer(left_motor, right_motor, 10, steer);
             lasterror = error;
-#if 0
-            log_data.step = i++;
-            log_data.data1 = midpoint;
-            log_data.data2 = error;
-            log_data.data3 = steer;
-            put_log(&log_data);
-#endif
         }
         tslp_tsk(100000); /* 100msec */
 
