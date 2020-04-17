@@ -346,8 +346,8 @@ void main_task(intptr_t unused) {
      * PID controller
      */
 
-//#define LIGHT_BRIGHT
-#define LIGHT_DARK
+#define LIGHT_BRIGHT
+//#define LIGHT_DARK
 #ifdef LIGHT_DARK
 //dark
 #define white 78
