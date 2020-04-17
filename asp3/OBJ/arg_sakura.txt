@@ -1,2 +1,0 @@
--l 81 ../arch/v850_gcc/prc_insn.h
-
