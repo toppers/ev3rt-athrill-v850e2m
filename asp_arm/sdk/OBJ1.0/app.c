@@ -363,7 +363,7 @@ void main_task(intptr_t unused) {
             ev3_motor_steer(left_motor, right_motor, 10, steer);
             lasterror = error;
         }
-        tslp_tsk(100); /* 100msec */
+        tslp_tsk(20); /* 100msec */
 
     }
 }

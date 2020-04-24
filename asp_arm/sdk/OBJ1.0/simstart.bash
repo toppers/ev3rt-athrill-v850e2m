@@ -20,4 +20,4 @@ else
 	dd if=/dev/zero of=unity_mmap.bin bs=1k count=8
 fi
 
-athrill2 -c1 -t -1 -m memory.txt -d device_config.txt asp 
+athrill2 -c1 -t -1 -m memory_mmap.txt -d device_config_mmap.txt asp 
