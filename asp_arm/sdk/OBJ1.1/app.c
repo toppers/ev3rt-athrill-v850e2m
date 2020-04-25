@@ -351,13 +351,13 @@ void main_task(intptr_t unused) {
      * PID controller
      */
 #define white 100
-#define black 10
+#define black 50
         static float lasterror = 0, integral = 0;
         static float midpoint = (white - black) / 2 + black;
         {
             float error = midpoint - ev3_color_sensor_get_reflect(EV3_PORT_1);
-            integral = error + integral * 0.5;
-            float steer = 0.07 * error + 0.3 * integral + 1 * (error - lasterror);
+            integral = error + integral * 0.3;
+            float steer = 0.6 * error + 0.3 * integral + 1 * (error - lasterror);
             ev3_motor_steer(left_motor, right_motor, 10, steer);
             lasterror = error;
 
