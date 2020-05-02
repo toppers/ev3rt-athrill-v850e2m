@@ -64,8 +64,9 @@ void uart_dri_get_data_color(uint8_t mode, void *dest, SIZE size)
 	}
 	else if (dri_mode == DRI_COL_AMBIENT) {
 		*data8 = (uint8_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_AMBIENT);
-	}
-	else {
+	} else if ( dri_mode == DRI_COL_COLOR ) {
+		*data8 = (uint8_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_COLOR);
+	} else {
 		array[0] = (uint16_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_RGB_R);
 		array[1] = (uint16_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_RGB_G);
 		array[2] = (uint16_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_RGB_B);
