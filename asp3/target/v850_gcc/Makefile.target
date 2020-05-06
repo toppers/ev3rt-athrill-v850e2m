@@ -19,6 +19,12 @@ LDSCRIPT = $(TARGETDIR)/v850es_fk3.ld
 
 LDFLAGS := -nostartfiles -lgcc -lc $(LDFLAGS)
 CFG1_OUT_LDFLAGS := -nostdlib
+CFG1_OUT_LDSCRIPT = $(TARGETDIR)/v850es_fk3.ld
+
+#
+#  オフセットファイル生成のための定義
+#
+TARGET_OFFSET_TRB = $(TARGETDIR)/target_offset.trb
 
 #
 #  コンパイルオプション

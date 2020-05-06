@@ -11,7 +11,7 @@ include $(SDKDIR)/Makefile.sdk.conf
 
 # Configuration
 SRCLANG := c
-KERNEL := hrp2
+KERNEL := asp
 
 #
 # Functions
@@ -24,8 +24,8 @@ get_relpath = $(shell perl -MFile::Spec -e "print File::Spec->abs2rel(q($1),q($2
 KERNELDIR    := $(PWD)/$(SDKDIR)/$(EV3RT_BASE_DIR)
 OBJDIR       := $(PWD)/$(SDKDIR)/$(EV3RT_PRJ_OBJ_DIR)
 LIBKERNELDIR := $(PWD)/$(SDKDIR)/$(EV3RT_LIBKERNEL_DIR)
-TARGETDIR    := $(PWD)/$(KERNELDIR)/target/ev3_gcc
-
+#TARGETDIR    := $(PWD)/$(KERNELDIR)/target/ev3_gcc
+TARGETDIR    := $(PWD)/$(KERNELDIR)/target/v850_gcc
 # Object files
 OBJFILENAME := $(KERNEL)
 ifneq (, $(findstring CYGWIN, $(shell uname)))
@@ -67,21 +67,16 @@ img: $(APPLDIR) $(LIBKERNELDIR)/libkernel.a prepare-obj-folder
 else
 img: $(APPLDIR) prepare-obj-folder
 endif
-	@cd $(OBJDIR) && \
+	(cd $(OBJDIR) && \
 	make offset.h kernel_cfg.h && \
-	make -j8 > /dev/null && \
-	arm-none-eabi-objcopy -O binary \
-	    $(OBJFILENAME) $(call get_relpath,$(OBJBINARY),$(OBJDIR))
-	@mkimage -A arm -O linux -T kernel -C none -a 0xc0008000 -e 0xc0008000 \
-        -n "TOPPERS/$(KERNEL) Kernel (EV3)" \
-		-d $(call get_relpath,$(OBJBINARY),$(PWD)) uImage
-	@chmod +x uImage
-	@cp $(OBJDIR)/$(OBJFILENAME) $(PWD)
+	make -j8 > /dev/null ) && \
+	cp $(OBJDIR)/$(OBJFILENAME) $(PWD) && \
+	echo "$(APPLDIR)" > $(PWD)/appdir
 
 $(LIBKERNELDIR)/libkernel.a: prepare-obj-folder
 	@cd $(OBJDIR) && \
 	make clean && \
-	make libkernel.a > /dev/null && \
+	make libkernel.a && \
 	cp libkernel.a $(LIBKERNELDIR)/libkernel.a
 
 endif
@@ -144,26 +139,23 @@ realclean: clean
 #
 # Phony target for preparing $(OBJDIR) folder
 #
-temp_mkfilename := .ev3rt_temp_Makefile
 ifdef app
 configure_copts := -DBUILD_MODULE
 endif
 prepare-obj-folder: clean
-	@cp $(MKFILE_DIR)/$(MKFILENAME) $(APPLDIR)/$(temp_mkfilename)
 	@mkdir -p $(OBJDIR)
 	cd $(OBJDIR) && \
-	$(KERNELDIR)/configure -T ev3_gcc -A app \
+	$(KERNELDIR)/configure.rb  -T v850_gcc -A app \
 		-a $(call get_relpath,$(APPLDIR),$(OBJDIR)) \
-		-t $(call get_relpath,$(APPLDIR),$(OBJDIR)) \
 		-D $(call get_relpath,$(KERNELDIR),$(OBJDIR)) \
-		-L $(call get_relpath,$(LIBKERNELDIR),$(OBJDIR)) \
 		-l $(SRCLANG) \
-		-m $(temp_mkfilename) -o "$(configure_copts)" \
+		-m $(call get_relpath,$(MKFILE_DIR)/$(MKFILENAME),$(OBJDIR)) \
+		-o "$(configure_copts)" \
+		-t \
+		-d ./dep \
 		-U "$(APPLOBJS)" && \
-	rm $(APPLDIR)/$(temp_mkfilename) && \
-	mv $(temp_mkfilename) Makefile && \
 	make clean
-
+		# -S "banner.o syslog.o serial.o logtask.o" 
 
 .PHONY: clean realclean prepare-obj-folder img app
 
