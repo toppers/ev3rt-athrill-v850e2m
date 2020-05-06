@@ -5,7 +5,7 @@
 
 void uart_dri_get_data_ultrasonic(uint8_t mode, void *dest, SIZE size)
 {
-	uint16_t data;
+	uint32_t data;
 	const uint32_t *addr;
 	switch (mode) {
 	case 0:
@@ -18,7 +18,17 @@ void uart_dri_get_data_ultrasonic(uint8_t mode, void *dest, SIZE size)
 		return;
 	}
 	data = sil_rew_mem(addr);
-	memcpy(dest, (void*)&data, sizeof(data));
+
+	switch (mode) {
+	case 0:
+		// get_distance uses int16_t
+		*(int16_t*)dest = (int16_t)data;
+		break;
+	case 2:
+		*(bool_t*)dest = (bool_t)(!(data == 0));
+		break;
+	}
+	//memcpy(dest, (void*)&data, sizeof(data));
 	return;
 }
 void uart_dri_get_data_gyro(uint8_t mode, void *dest, SIZE size)
@@ -64,8 +74,9 @@ void uart_dri_get_data_color(uint8_t mode, void *dest, SIZE size)
 	}
 	else if (dri_mode == DRI_COL_AMBIENT) {
 		*data8 = (uint8_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_AMBIENT);
-	}
-	else {
+	} else if ( dri_mode == DRI_COL_COLOR ) {
+		*data8 = (uint8_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_COLOR);
+	} else {
 		array[0] = (uint16_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_RGB_R);
 		array[1] = (uint16_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_RGB_G);
 		array[2] = (uint16_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_RGB_B);

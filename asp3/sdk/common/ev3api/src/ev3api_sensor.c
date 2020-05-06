@@ -270,7 +270,7 @@ bool_t ev3_ultrasonic_sensor_listen(sensor_port_t port) {
 	CHECK_COND(ev3_sensor_get_type(port) == ULTRASONIC_SENSOR, E_OBJ);
 
 	// TODO: TEST THIS API!
-	uint8_t val;
+	bool_t val;
 	uart_sensor_fetch_data(port, US_LISTEN, &val, sizeof(val));
     return val;
 
