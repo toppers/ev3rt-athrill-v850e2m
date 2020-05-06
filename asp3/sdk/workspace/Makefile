@@ -8,15 +8,11 @@
 SDKDIR = ..
 WSPDIR = $(basename $(PWD))
 ASPMAKEFILE = Makefile.asp
+include ../common/Makefile.workspace
 
-include $(SDKDIR)/Makefile.sdk.conf
+APLDIR=`cat appdir`
+start: appdir
+	athrill2 -c1 -m $(APLDIR)/memory.txt -d $(APLDIR)/device_config.txt -t -1 asp
 
-.PHONY: all
-all: 
-	@mkdir -p  $(WSPDIR)/$(app)/deps
-	@make --file $(ASPMAKEFILE) -C $(app) all
-clean:
-	@make --file $(ASPMAKEFILE) -C $(app) clean
-
-.PHONY: clean
-
+appdir:
+	@echo "make asp first!"
