@@ -220,6 +220,14 @@ void *_realloc_r(void *reent, void *aptr, size_t nbytes) {
 //	return realloc_ex(aptr, nbytes, heap_for_domain(TDOM_SELF));
 }
 
+// TODO: for avoidng final link error
+void __dtors(void)
+{
+
+}
+
+void __dtors_end(void) {
+}
 
 //caddr_t _sbrk(int nbytes) {
 //	API_ERROR("This function should NEVER be called!");
