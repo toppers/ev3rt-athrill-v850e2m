@@ -145,7 +145,7 @@ endif
 prepare-obj-folder: clean
 	@mkdir -p $(OBJDIR)
 	cd $(OBJDIR) && \
-	$(KERNELDIR)/configure.rb  -T v850_gcc -A app \
+	ruby $(KERNELDIR)/configure.rb  -T v850_gcc -A app \
 		-a $(call get_relpath,$(APPLDIR),$(OBJDIR)) \
 		-D $(call get_relpath,$(KERNELDIR),$(OBJDIR)) \
 		-l $(SRCLANG) \
