@@ -12,7 +12,8 @@ include ../common/Makefile.workspace
 
 APLDIR=`cat appdir`
 start: appdir
-	athrill2 -c1 -m $(APLDIR)/memory.txt -d $(APLDIR)/device_config.txt -t -1 asp
+	#athrill2 -c1 -m $(APLDIR)/memory.txt -d $(APLDIR)/device_config.txt -t -1 asp
+	athrill2 -c1 -m ../common/memory.txt -d ../common/device_config.txt -t -1 asp
 
 appdir:
 	@echo "make asp first!"
