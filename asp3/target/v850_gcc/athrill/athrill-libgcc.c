@@ -6,7 +6,7 @@
 unsigned int athrill_device_func_call __attribute__ ((section(".athrill_device_section")));
 
 
-void *__dso_handle=0;
+//void *__dso_handle=0;
 
 void *malloc(size_t size)
 {
