@@ -153,6 +153,7 @@ prepare-obj-folder: clean
 		-o "$(configure_copts)" \
 		-t \
 		-d ./dep \
+		-C ../common/athrill_common.cdl \
 		-U "$(APPLOBJS)" && \
 	make clean
 		# -S "banner.o syslog.o serial.o logtask.o" 
