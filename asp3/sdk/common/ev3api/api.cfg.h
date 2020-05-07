@@ -3,7 +3,7 @@
  */
 
 #pragma once
-
+#include "ev3.h"
 #include "ev3api.h"
 
 /**

@@ -476,10 +476,26 @@ omit_svc.h:
 	@touch omit_svc.h
 
 #
+# テンポラリーコンフィグファイルの作成
+# tecsgen.cfgを強制的に読み込ませるためのもの
+#
+APPL_CFG_TMP=tmp_$(APPL_CFG)
+
+$(APPL_CFG_TMP):$(APPL_CFG)
+	if grep -sq  "tecsgen.cfg" $< ; then \
+		cat $< > $@ ; \
+	else \
+		echo "INCLUDE(\"tecsgen.cfg\")" >> $@; \
+		cat $< >> $@ ; \
+	fi; 
+
+
+
+#
 #  カーネルのコンフィギュレーションファイルの生成
 #
 cfg1_out.c cfg1_out.db: cfg1_out.timestamp ;
-cfg1_out.timestamp: $(APPL_CFG) $(TECSGEN_TIMESTAMP)
+cfg1_out.timestamp: $(APPL_CFG_TMP) $(TECSGEN_TIMESTAMP)
 	$(call print_cmd, "CFG[1]", $@)
 	$(CFG) --pass 1 $(CFG_KERNEL) $(INCLUDES) $(CFG_TABS) \
 						-M $(DEPDIR)/cfg1_out_c.d $(TARGET_KERNEL_CFG) $<
