@@ -155,7 +155,8 @@ TARGETDIR = $(SRCDIR)/target/$(TARGET)
 #
 #  ターゲット依存の定義のインクルード
 #
-include $(TARGETDIR)/Makefile.target
+#include $(TARGETDIR)/Makefile.target
+include $(TARGETDIR)/Makefile.ev3
 
 #
 #  TECS生成ファイルのディレクトリの定義
@@ -231,21 +232,21 @@ CDEFS += -DTOPPERS_SUPPORT_PROTECT
 APPL_DIRS := $(APPLDIRS) $(SRCDIR)/library
 APPL_ASMOBJS :=
 ifdef USE_CXX
-	APPL_CXXOBJS := @(APPLOBJS)
+	APPL_CXXOBJS := @(APPLOBJS) $(APPLNAME).o
 	APPL_COBJS +=
 else
-	APPL_COBJS += @(APPLOBJS)
+	APPL_COBJS += @(APPLOBJS) $(APPLNAME).o
 endif
 APPL_COBJS := $(APPL_COBJS) $(TECS_USER_COBJS) $(TECS_OUTOFDOMAIN_COBJS) \
 				log_output.o vasyslog.o t_perror.o strerror.o
 # TODO:move to other place
-APPL_COBJS += ev3main.o
-APPL_COBJS += ev3_svc.o
-APPL_COBJS += driver_interface_brick.o
-APPL_COBJS += brick_dri.o
-APPL_COBJS += uart_dri.o
-APPL_COBJS += motor_dri.o
-APPL_COBJS += gpio_dri.o
+#APPL_COBJS += ev3main.o
+#APPL_COBJS += ev3_svc.o
+#APPL_COBJS += driver_interface_brick.o
+#APPL_COBJS += brick_dri.o
+#APPL_COBJS += uart_dri.o
+#APPL_COBJS += motor_dri.o
+#APPL_COBJS += gpio_dri.o
 
 APPL_CFLAGS := $(APPL_CFLAGS)
 ifdef APPLDIRS
@@ -434,14 +435,16 @@ ALL3_OBJS = $(START_OBJS) $(APPL_OBJS) $(SYSSVC_OBJS) $(CFG3_OBJS) \
 											$(END_OBJS) $(HIDDEN_OBJS)
 ALL_OBJS = $(START_OBJS) $(APPL_OBJS) $(SYSSVC_OBJS) $(CFG_OBJS) \
 											$(END_OBJS) $(HIDDEN_OBJS)
-ALL_LIBS = -lkernel $(LIBS)
+#ALL_LIBS = -lkernel $(LIBS)
 ifdef KERNEL_LIB
+        ALL_LIBS = $(APPL_LIBS) $(SYSSVC_LIBS) -lkernel $(LIBS)
 	LIBS_DEP = $(KERNEL_LIB)/libkernel.a $(filter %.a,$(LIBS))
 	OBJ_LDFLAGS := $(OBJ_LDFLAGS) -L$(KERNEL_LIB)
 	CFG2_OUT_LDFLAGS := $(CFG2_OUT_LDFLAGS) -L$(KERNEL_LIB)
 	CFG3_OUT_LDFLAGS := $(CFG3_OUT_LDFLAGS) -L$(KERNEL_LIB)
 	REALCLEAN_FILES := libkernel.a $(REALCLEAN_FILES)
 else
+	ALL_LIBS = $(APPL_LIBS) $(SYSSVC_LIBS) libkernel.a $(LIBS)
 	LIBS_DEP = libkernel.a $(filter %.a,$(LIBS))
 	OBJ_LDFLAGS := $(OBJ_LDFLAGS) -L.
 	CFG2_OUT_LDFLAGS := $(CFG2_OUT_LDFLAGS) -L.
