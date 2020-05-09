@@ -48,10 +48,11 @@ SECTIONS
         *(.rodata.*)
         *(.data.rel.ro)
         . = ALIGN(4);
-        __init_array_start = .;
+        ___init_array_start = .;
+	*(.ctors)
         *(SORT(.init_array.*))
         *(.init_array)
-        __init_array_end = .;
+        ___init_array_end = .;
         __fini_array_start = .;
         *(SORT(.fini_array.*))
         *(.fini_array)
