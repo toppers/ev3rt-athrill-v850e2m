@@ -225,6 +225,7 @@ APPL_CDL = @(CDLFILE)
 #APPLDIRS += ../../target/v850_gcc/TLSF-2.4.6/include ../../target/v850_gcc/TLSF-2.4.6/src
 APPLDIRS += ../../target/v850_gcc/athrill
 APPLDIRS += ../../../../../../athrill/trunk/apl/include
+APPLDIRS += ../../../../../../athrill/trunk/apl/src
 
 
 CDEFS += -DTOPPERS_SUPPORT_PROTECT
