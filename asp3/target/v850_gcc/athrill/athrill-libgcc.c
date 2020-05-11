@@ -44,6 +44,7 @@ void __register_exitproc(void)
 {
 
 }
+#if 0
 void __sinit(void)
 {
 
@@ -61,15 +62,51 @@ void _cleanup_r(void)
 {
 
 }
+#endif
 
 static const char *ev3rtfs_top_dir = "_ev3rtfs";
 static int is_top_dir_set = 0;
 
+
+int _close_r _PARAMS ((struct _reent *unused, int fd))
+{
+	return athrill_newlib_close_r(fd);
+}
+
+_off_t _lseek_r _PARAMS ((struct _reent *unused, int fd, _off_t offset, int whence))
+{
+	return (_off_t) athrill_newlib_lseek_r(fd,offset,whence);
+}
+
+int _open_r _PARAMS ((struct _reent *unused, char *file_name, int flags, int mode))
+{
+	if ( !is_top_dir_set ) {
+		// check and set top_dir(only for first time)
+		if ( athrill_set_virtfs_top((sys_addr)ev3rtfs_top_dir) == -1 ) {
+			return 0;
+		}
+		is_top_dir_set = 1;
+	}
+
+	return athrill_newlib_open_r(file_name, flags, mode);
+}
+
+_ssize_t _read_r _PARAMS ((struct _reent *unused, int fd, void *buf, size_t size))
+{
+	return (_ssize_t)athrill_newlib_read_r(fd, buf, size);	
+}
+
+_ssize_t _write_r _PARAMS ((struct _reent *unused, int fd, const void *buf, size_t size))
+{
+	return (_ssize_t)athrill_newlib_write_r(fd, buf, size);
+}
+
+#if 0 // For fopen optimization
  FILE * _EXFUN(fopen, (const char *__restrict file_name, const char *__restrict mode))
 {
 	if ( !is_top_dir_set ) {
 		// check and set top_dir(only for first time)
-		if ( athrill_set_virtfs_top(ev3rtfs_top_dir) == -1 ) {
+		if ( athrill_set_virtfs_top((sys_addr)ev3rtfs_top_dir) == -1 ) {
 			return 0;
 		}
 		is_top_dir_set = 1;
@@ -97,7 +134,7 @@ int _EXFUN(fflush, (FILE *fp))
 	return athrill_posix_fflush((sys_addr)fp);
 }
 
-
+#endif
 
 FILE * _EXFUN(fdopen, (int a, const char *b))
 {
