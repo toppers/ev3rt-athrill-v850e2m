@@ -1,5 +1,6 @@
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "athrill_syscall.h"
 
@@ -51,30 +52,54 @@ void __srefill_r(void)
 {
 
 }
-void _fflush_r(void)
+int  _EXFUN(_fflush_r, (struct _reent *_a, FILE *_b))
 {
-
+	// TODO:
+	return -1;
 }
 void _cleanup_r(void)
 {
 
 }
-void fflush(void)
-{
 
+static const char *ev3rtfs_top_dir = "_ev3rtfs";
+static int is_top_dir_set = 0;
+
+ FILE * _EXFUN(fopen, (const char *__restrict file_name, const char *__restrict mode))
+{
+	if ( !is_top_dir_set ) {
+		// check and set top_dir(only for first time)
+		if ( athrill_set_virtfs_top(ev3rtfs_top_dir) == -1 ) {
+			return 0;
+		}
+		is_top_dir_set = 1;
+	}
+	return (FILE *)athrill_posix_fopen((sys_addr)file_name,(sys_addr)mode);
+}
+int fclose(FILE *fp)
+{
+	return athrill_posix_fclose((sys_addr)fp);
 }
 
-int fopen(void *fp, char *flag)
+size_t _EXFUN(fread, (_PTR __restrict buf, size_t size, size_t n, FILE *__restrict fp))
 {
-	//TODO syscall
-	return 0;
+	return athrill_posix_fread((sys_addr)buf, size, n, (sys_addr)fp);
 }
-int fclose(void *fp)
+
+size_t _EXFUN(fwrite, (const _PTR __restrict buf, size_t size, size_t n, FILE * fp))
 {
-	//TODO syscall
-	return 0;
+	return athrill_posix_fwrite((sys_addr)buf, size, n, (sys_addr)fp);
 }
-void *fdopen(int fd, const char *flag)
+
+
+int _EXFUN(fflush, (FILE *fp))
+{
+	return athrill_posix_fflush((sys_addr)fp);
+}
+
+
+
+FILE * _EXFUN(fdopen, (int a, const char *b))
 {
 	//TODO syscall
 	return NULL;
