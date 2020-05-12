@@ -114,6 +114,27 @@ data_init_start:
 data_init_end:
 
 	/*
+	 *  sdataセクションの初期化（ROM化対応）
+	 *
+	 *  __srdata_start から __srdata_end までを，__sdata_start 以降に
+	 *  コピーする．
+	 */
+	Lea		__srdata_start, r6
+	Lea		__srdata_end,   r7
+	Lea		__sdata_start,  r8
+sdata_init_start:
+	cmp		r6, r7
+	be		sdata_init_end
+	ld.w	0[r6], r9
+	st.w	r9, 0[r8]
+	add		4, r6
+	add		4, r8
+	br		sdata_init_start
+sdata_init_end:
+
+
+
+	/*
 	 *  software_init_hook を呼出し（0 でない場合）
 	 *
 	 *  ソフトウェア環境（特にライブラリ）に依存して必要な初期化処
