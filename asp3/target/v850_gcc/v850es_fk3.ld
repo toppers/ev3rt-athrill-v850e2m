@@ -93,6 +93,20 @@ SECTIONS
 
 
 
+	__srdata_start = 0x00200000 ;
+	.sdata	:  AT(__srdata_start)
+	{
+		. = ALIGN(4);
+		__sdata_start = . ;
+		PROVIDE (__gp = . + 0x8000);
+		*(.sdata)
+		. = ALIGN(4);
+		_esdata	=  . ;
+	} > INTRAM
+
+	__srdata_end = __srdata_start + SIZEOF(.sdata);
+
+
 	.bss	   :
 	{
 	  . = ALIGN(4);
