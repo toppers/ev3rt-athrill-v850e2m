@@ -8,7 +8,7 @@ unsigned int athrill_device_func_call __attribute__ ((section(".athrill_device_s
 
 
 //void *__dso_handle=0;
-
+#if 0
 void *malloc(size_t size)
 {
 	return (void*)athrill_posix_malloc((sys_uint32)size);
@@ -27,7 +27,7 @@ void *realloc(void *ptr, size_t size)
 {
 	return (void*)athrill_posix_realloc((sys_addr)ptr, (sys_uint32)size);
 }
-
+#endif 
 int raise(int sig)
 {
 	return 0;
@@ -134,10 +134,10 @@ int _EXFUN(fflush, (FILE *fp))
 	return athrill_posix_fflush((sys_addr)fp);
 }
 
-#endif
 
 FILE * _EXFUN(fdopen, (int a, const char *b))
 {
 	//TODO syscall
 	return NULL;
 }
+#endif
