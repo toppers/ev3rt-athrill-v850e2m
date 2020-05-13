@@ -7,7 +7,6 @@ OUTPUT_ARCH(v850-rh850)
 MEMORY
 {
 	INTROM(raxi) :  org = 0x00000000, len = 512k
-	INTSROM(raxi) : org = 0x00200000, len = 512k
 	INTRAM(wax)  : org = 0x05FF7000, len = 10240k
 };
 
@@ -69,22 +68,22 @@ SECTIONS
 	{
 		. = ALIGN(4);
 		__data_start = . ;
-		*(.data)
-		PROVIDE (__gp = .);
         	*(.rosdata)
+		*(.sdata)
+		PROVIDE (__gp = .);
+		*(.data)
 		. = ALIGN(4);
 		_edata	=  . ;
 	} > INTRAM
 
 	__idata_end = __idata_start + SIZEOF(.data);
+	. = ALIGN(4);
 
-	__srdata_start = 0x00200000 ;
+	__srdata_start = . ;
 	.sdata	:  AT(__srdata_start)
 	{
 		. = ALIGN(4);
 		__sdata_start = . ;
-		*(.sdata)
-		*(.rosdata)
 		. = ALIGN(4);
 		_esdata	=  . ;
 	} > INTRAM
@@ -97,8 +96,8 @@ SECTIONS
 	  . = ALIGN(4);
 	  __bss_start = .;
 	  *(.bss)
-	  *(COMMON)
 	  *(.appheap)
+	  *(COMMON)
 	  . = ALIGN(4);
 	  __bss_end = .;
 	} > INTRAM
