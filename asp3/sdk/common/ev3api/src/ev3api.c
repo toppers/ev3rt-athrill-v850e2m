@@ -25,18 +25,18 @@ void _app_init_task(intptr_t unused) {
 	// (Busy) wait platform to finish initialization. Busy-waiting is necessary to keep other application tasks from running.
 	brick_misc_command(CMD_BUSY_WAIT_INIT, 0);
 
-#if 0 //TODO
 	// Fetch global brick info
 	ER ercd = fetch_brick_info(&_global_ev3_brick_info);
 	assert(ercd == E_OK);
 	assert(_global_ev3_brick_info.button_pressed != NULL);
 
+#if 0 //TODO
 	// Initialize APIs
 	_initialize_ev3api_lcd();
+#endif
 	_initialize_ev3api_motor();
 	_initialize_ev3api_newlib();
 	_initialize_ev3api_sensor();
-#endif
 
 	// Call C++ global constructors Ref: http://wiki.osdev.org/Calling_Global_Constructors
 	extern func_ptr __init_array_start[0], __init_array_end[0];
@@ -44,6 +44,7 @@ void _app_init_task(intptr_t unused) {
 	func_ptr* func;
 	for (func = __init_array_start; func != __init_array_end; func++)
 		(*func)();
+
 
 #if 0 //TODO
 	// Initialize EV3_CYC_HDR

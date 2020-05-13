@@ -82,8 +82,8 @@ void _initialize_ev3api_sensor() {
 	brickinfo_t brickinfo;
 	ER ercd = fetch_brick_info(&brickinfo);
 	assert(ercd == E_OK);
-	pAnalogSensorData = brickinfo.analog_sensors;
-	assert(pAnalogSensorData != NULL);
+	//pAnalogSensorData = brickinfo.analog_sensors;
+	//assert(pAnalogSensorData != NULL);
 }
 
 ER ev3_sensor_config(sensor_port_t port, sensor_type_t type)
