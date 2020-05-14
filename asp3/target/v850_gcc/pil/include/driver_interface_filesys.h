@@ -56,7 +56,9 @@ ER _filesys_closedir(ID dirid);
 /**
  * Extended service call wrappers which can be used to implement APIs
  */
+#define EV3_ATHRILL
 
+#ifndef EV3_ATHRILL
 static inline ER filesys_opendir(const char *path) {
 	ER_UINT ercd = cal_svc(TFN_FILESYS_OPENDIR, (intptr_t)path, 0, 0, 0, 0);
 	assert(ercd != E_NOMEM);
@@ -74,6 +76,12 @@ static inline ER filesys_closedir(ID dirid) {
 	assert(ercd != E_NOMEM);
 	return ercd;
 }
+#else
+// defined in athrill-libgcc.c
+extern ER filesys_opendir(const char *path);
+extern ER filesys_readdir(ID dirid, fatfs_filinfo_t *p_fileinfo);
+extern ER filesys_closedir(ID dirid);
+#endif
 
 /**
  * Extended Service Call Stubs
