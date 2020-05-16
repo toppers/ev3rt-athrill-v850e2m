@@ -217,6 +217,8 @@ ER ev3_motor_stop(motor_port_t port, bool_t brake)
 	CHECK_PORT(port);
 	CHECK_PORT_CONN(port);
 
+	ev3_motor_set_power(port,0);
+
     char buf[3];
     buf[0] = opOUTPUT_STOP;
     buf[1] = port;
