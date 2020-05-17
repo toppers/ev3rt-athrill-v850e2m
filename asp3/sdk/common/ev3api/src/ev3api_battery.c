@@ -9,6 +9,7 @@
 #include "ev3api.h"
 #include "platform_interface_layer.h"
 #include "api_common.h"
+#include "uart_dri.h"
 
 /**
  * Constants from 'c_ui.c'
@@ -21,10 +22,14 @@ static const float VCE = 0.05f;
 static const float AMP_VIN = 0.5f;
 
 int ev3_battery_current_mA() {
-	return adc_count_to_mv(*_global_ev3_brick_info.battery_current) / (AMP_CIN * SHUNT_IN);
+	int data;
+	uart_dri_get_data_battery(0, &data, sizeof(data));
+	return data;	
 }
 
 int ev3_battery_voltage_mV() {
-	int C_in_mV = adc_count_to_mv(*_global_ev3_brick_info.battery_current) / AMP_CIN;
-	return adc_count_to_mv(*_global_ev3_brick_info.battery_voltage) / AMP_VIN + C_in_mV + VCE * 1000;
+	int data;
+	uart_dri_get_data_battery(1, &data, sizeof(data));
+	return data;	
+
 }

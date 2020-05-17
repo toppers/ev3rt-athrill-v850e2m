@@ -10,5 +10,6 @@ extern void uart_dri_get_data_color(uint8_t mode, void *dest, SIZE size);
 extern void uart_dri_get_data_ir(uint8_t mode, void *dest, SIZE size);
 extern void uart_dri_get_data_accel(uint8_t mode, void *dest, SIZE size);
 extern void uart_dri_get_data_temp(uint8_t mode, void *dest, SIZE size);
+extern void uart_dri_get_data_battery(uint8_t mode, void *dest, SIZE size);
 
 #endif /* _UART_DRI_H_ */

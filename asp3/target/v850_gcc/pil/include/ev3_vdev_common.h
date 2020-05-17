@@ -48,6 +48,8 @@
 #define EV3_SENSOR_INX_AXES_Z		(25U)
 #define EV3_SENSOR_INX_TEMP			(26U)
 #define EV3_SENSOR_INX_TOUCH		(27U)
+#define EV3_BATTERY_INX_CURRENT		(28U)
+#define EV3_BATTERY_INX_VOLTAGE		(29U)
 
 /*
  * MOTOR(RX)
@@ -94,5 +96,10 @@
 #define EV3_MOTOR_INX_RESET_ANGLE_B		(9U)
 #define EV3_MOTOR_INX_RESET_ANGLE_C		(10U)
 #define EV3_MOTOR_INX_RESET_ANGLE_D		(12U)
+
+#define EV3_GYRO_OFF                (52U)
+#define EV3_GYRO_OFF_TYPE(index)           (EV3_GYRO_OFF + ((index) * 4U))
+#define EV3_GYRO_INX_RESET_TOP      (0U)
+#define EV3_GYRO_INX_RESET          (0U)
 
 #endif /* _EV3_VDEV_COMMON_H_ */
