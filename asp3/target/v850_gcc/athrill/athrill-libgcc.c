@@ -3,6 +3,8 @@
 #include <stdio.h>
 
 #include "athrill_syscall.h"
+#include "ev3api.h"
+#include "driver_interface_filesys.h"
 
 unsigned int athrill_device_func_call __attribute__ ((section(".athrill_device_section")));
 
@@ -100,6 +102,31 @@ _ssize_t _write_r _PARAMS ((struct _reent *unused, int fd, const void *buf, size
 {
 	return (_ssize_t)athrill_newlib_write_r(fd, buf, size);
 }
+
+ER filesys_opendir(const char *path) {
+	
+	if ( !is_top_dir_set ) {
+		// check and set top_dir(only for first time)
+		if ( athrill_set_virtfs_top((sys_addr)ev3rtfs_top_dir) == -1 ) {
+			return 0;
+		}
+		is_top_dir_set = 1;
+	}
+	
+	return athrill_ev3_opendir((sys_addr)path);
+}
+
+ER filesys_readdir(ID dirid, fatfs_filinfo_t *p_fileinfo) {
+
+	return athrill_ev3_readdir(dirid, p_fileinfo);
+}
+
+ER filesys_closedir(ID dirid) {
+
+	return athrill_ev3_closedir(dirid);
+
+}
+
 
 #if 0 // For fopen optimization
  FILE * _EXFUN(fopen, (const char *__restrict file_name, const char *__restrict mode))

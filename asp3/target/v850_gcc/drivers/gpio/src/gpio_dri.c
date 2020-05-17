@@ -75,6 +75,9 @@ void gpio_out_flush(void)
 	if (sil_rew_mem((uint32_t*)EV3_MOTOR_ADDR_INX(EV3_MOTOR_INX_RESET_ANGLE_D)) != 0) {
 		sil_wrw_mem((uint32_t*)EV3_MOTOR_ADDR_INX(EV3_MOTOR_INX_RESET_ANGLE_D), 0U);
 	}
+	if (sil_rew_mem((uint32_t *)EV3_GYRO_ADDR_RESET) != 0 ) {
+		sil_wrw_mem( (uint32_t *)EV3_GYRO_ADDR_RESET, 0U);
+	}
 #endif
 	unlock_cpu();
 }

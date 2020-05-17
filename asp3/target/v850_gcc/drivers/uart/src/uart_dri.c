@@ -42,6 +42,13 @@ void uart_dri_get_data_gyro(uint8_t mode, void *dest, SIZE size)
 	case 1:
 		addr = (const uint32_t *)EV3_SENSOR_ADDR_RATE;
 		break;
+	case 4:
+	    {
+			// Gyro Reset sends reset (write command)
+			uint32_t *waddr = (uint32_t *)EV3_GYRO_ADDR_RESET;
+			sil_wrw_mem(waddr,1);
+			return;
+		}
 	default:
 		return;
 	}
@@ -124,4 +131,16 @@ void uart_dri_get_data_temp(uint8_t mode, void *dest, SIZE size)
 	int16_t *array = (int16_t*)dest;
 	array[0] = (uint16_t)sil_rew_mem((const uint32_t *)EV3_SENSOR_ADDR_TMP);
 	return;
+}
+
+void uart_dri_get_data_battery(uint8_t mode, void *dest, SIZE size)
+{
+	// mode 0 : current / mode 1: voltage
+	int32_t *p = (int32_t*)dest;
+	int32_t data;
+	const uint32_t *addr = ((mode == 0 ) ? (const uint32_t *)EV3_BATTERY_ADDR_CURRENT:  (const uint32_t *)EV3_BATTERY_ADDR_VOLTAGE);
+	data = (uint32_t)sil_rew_mem(addr);
+	*p = data;
+	return;
+
 }
