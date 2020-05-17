@@ -117,13 +117,14 @@ ER filesys_opendir(const char *path) {
 }
 
 ER filesys_readdir(ID dirid, fatfs_filinfo_t *p_fileinfo) {
-	// TODO:
-	return 0;
+
+	return athrill_ev3_readdir(dirid, p_fileinfo);
 }
 
 ER filesys_closedir(ID dirid) {
-	// TODO:
-	return 0;
+
+	return athrill_ev3_closedir(dirid);
+
 }
 
 

@@ -40,6 +40,14 @@ void main_task(intptr_t unused) {
     ER_ID id = ev3_sdcard_opendir("test");
     CHECK(sdcard_opendir,id>0);
 
+    fileinfo_t file;
+    while ( ev3_sdcard_readdir(id,&file) == E_OK ) {
+	 syslog(LOG_NOTICE,"readdir name=%s is_dir=%d\n",file.name,file.is_dir);
+	tslp_tsk(1000000);
+    }
+
+    CHECK(sdcard_close, ev3_sdcard_closedir(id)==0);
+
 
     while(1) {;}
 
