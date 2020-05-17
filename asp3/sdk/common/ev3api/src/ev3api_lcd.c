@@ -39,17 +39,21 @@ ER ev3_font_get_size(lcdfont_t font, int32_t *width, int32_t *height) {
 }
 
 ER ev3_lcd_draw_string(const char *str, int32_t x, int32_t y) {
-	bitmap_draw_string(str, lcd_screen, x, y, fonts[default_font], ROP_COPY);
+// TODO: #41 temporary comment out
+//	bitmap_draw_string(str, lcd_screen, x, y, fonts[default_font], ROP_COPY);
 	return E_OK;
 }
 
 ER ev3_lcd_fill_rect(int32_t x, int32_t y, int32_t w, int32_t h, lcdcolor_t color) {
-	bitmap_bitblt(NULL, 0, 0, lcd_screen, x, y, w, h, color == EV3_LCD_BLACK ? ROP_SET : ROP_CLEAR);
+// TODO: #41 temporary comment out
+//	bitmap_bitblt(NULL, 0, 0, lcd_screen, x, y, w, h, color == EV3_LCD_BLACK ? ROP_SET : ROP_CLEAR);
 	return E_OK;
 }
 
 ER ev3_image_load(const memfile_t *p_memfile, image_t *p_image) {
 	ER ercd;
+// TODO: #41 temporary 
+	return E_OK;
 
 	CHECK_COND(p_memfile != NULL && p_memfile->buffer != NULL, E_PAR);
 	CHECK_COND(p_image != NULL, E_PAR);
@@ -81,6 +85,9 @@ error_exit:
 
 ER ev3_image_free(image_t *p_image) {
 	ER ercd;
+// TODO: #41 temporary 
+	return E_OK;
+
 
 	CHECK_COND(p_image != NULL, E_PAR);
 
@@ -95,6 +102,9 @@ error_exit:
 
 ER ev3_lcd_draw_image(const image_t *p_image, int32_t x, int32_t y) {
 	ER ercd;
+
+// TODO: #41 temporary 
+	return E_OK;
 
 	CHECK_COND(p_image != NULL && p_image->data != NULL, E_PAR);
 
@@ -113,6 +123,10 @@ error_exit:
 
 ER ev3_lcd_draw_line(int32_t x0, int32_t y0, int32_t x1, int32_t y1) {
 	// TODO: refactor this
+
+// TODO: #41 temporary 
+	return E_OK;
+
 #define SOLID (0)
 #define setPixel(x,y) bitmap_set_pixel(lcd_screen, (x), (y), true)
 
@@ -200,7 +214,8 @@ void _initialize_ev3api_lcd() {
 	lcd_screen = _global_ev3_brick_info.lcd_screen;
 	fonts[EV3_FONT_SMALL] = _global_ev3_brick_info.font_w6h8;
 	fonts[EV3_FONT_MEDIUM] = _global_ev3_brick_info.font_w10h16;
-	assert(lcd_screen != NULL);
+	// TODO:temporary
+//	assert(lcd_screen != NULL);
 	assert(fonts[EV3_FONT_SMALL] != NULL);
 	assert(fonts[EV3_FONT_MEDIUM] != NULL);
 }
