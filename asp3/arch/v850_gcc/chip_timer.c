@@ -228,7 +228,7 @@ target_hrt_raise_event(void)
 	/*
 	 *  hrtcnt後に割込みが発生するように設定する．
 	 */
-	curr = sil_rew_mem((void *) (TAAnCNT(TIMER_DTIM_ID)));
+	curr = sil_reh_mem((void *) (TAAnCNT(TIMER_DTIM_ID)));
 
 	intcnt = ( (curr + 1U) );
 
