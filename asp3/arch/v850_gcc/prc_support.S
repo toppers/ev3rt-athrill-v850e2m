@@ -377,6 +377,11 @@ interrupt:
 	stsr	eipsw,  r6
 	sst.w	r6 ,   0[ep]
 	
+	/* lock_flag をクリアする */
+	Lea		_lock_flag , r14
+	st.w	r0 , 0[r14]
+	
+	
 	/* 割込み優先度マスクを，受け付けた割込みの割込み優先度に設定する */
 	/* 割込み発生前の割込みレベルを保存，発生中の割込みレベル(r11)に書き換え */
 	Lea		_current_intpri , r13
