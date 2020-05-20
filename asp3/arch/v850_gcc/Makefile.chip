@@ -36,7 +36,7 @@ CFG_ASMOBJS := kernel_cfg_asm.o $(CFG_ASMOBJS)
 #
 #  START_OBJSをstart.oに設定し，LDFLAGSに-nostdlibを追加する．
 #
-START_OBJS = start.o 
+START_OBJS = start.o v850_mul.o 
 
 $(START_OBJS): %.o: %.S
 	$(CC) -c $(CFLAGS) $(KERNEL_CFLAGS) $<
