@@ -13,6 +13,8 @@ APPL_LIBS+= athrill-libgcc.o
 WORKSPACE_LIB_TO_BUILD += athrill-libgcc.o
 #KERNEL_ASMOBJS := $(KERNEL_ASMOBJS) 
 
+athrill-syscall.o:kernel_cfg.h
+
 #
 #  コンパイルオプションとリンカスクリプトの定義
 #
