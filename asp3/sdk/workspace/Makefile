@@ -10,12 +10,17 @@ WSPDIR = $(basename $(PWD))
 ASPMAKEFILE = Makefile.asp
 include ../common/Makefile.workspace
 
-APLDIR=`cat appdir`
+ifeq ($(APPLDIR),)
+APPLDIR = $(shell cat appdir)
+include $(APPLDIR)/Makefile.inc
+endif
+
 start: appdir
 	#athrill2 -c1 -m $(APLDIR)/memory.txt -d $(APLDIR)/device_config.txt -t -1 asp
+	$(ADDITIONAL_PRE_APPL)
 	athrill2 -c1 -m ../common/memory.txt -d ../common/device_config.txt -t -1 asp
 
 debug: appdir
-	athrill2 -c1 -i -m ../common/memory.txt -d ../common/device_config.txt -t -1 asp
+	$(ADDITIONAL_PRE_APPL);athrill2 -c1 -i -m ../common/memory.txt -d ../common/device_config.txt -t -1 asp
 appdir:
 	@echo "make asp first!"
