@@ -111,21 +111,29 @@ serial_rea_dat(ID portid, char *buf, uint_t len)
 		serial_opn_por(portid);
 		fd = port_table[portid];
 	}
-	int i;
+	int i = 0;
 	char *p = buf;
-	for ( i = 0; i < len; i++ ) {
+	while ( i < len ) {
 		int ret;
 		while (1) {
 			ret = athrill_newlib_read_r(fd,p,1);
-			if ( ret == -1 && errno == EAGAIN ) continue;
-			
+			if ( ret == -1 && errno == EAGAIN ) {
+				tslp_tsk(100000);
+				continue;
+			}
 			break;
 		}
 		if ( ret == -1 && errno == 0 ) {
 			// This is EOF
+			if ( i == 0 ) {
+				// 1byteも取れていない場合は再度待つ
+				tslp_tsk(100000);
+				continue;
+			}
 			break;
 		}
-		p++;	
+		p++;
+		i++;
 	}
 
 	return i;
