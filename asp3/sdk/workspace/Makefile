@@ -21,6 +21,7 @@ start: appdir
 	athrill2 -c1 -m ../common/memory.txt -d ../common/device_config.txt -t -1 asp
 
 debug: appdir
-	$(ADDITIONAL_PRE_APPL);athrill2 -c1 -i -m ../common/memory.txt -d ../common/device_config.txt -t -1 asp
+	$(ADDITIONAL_PRE_APPL)
+	athrill2 -c1 -i -m ../common/memory.txt -d ../common/device_config.txt -t -1 asp
 appdir:
 	@echo "make asp first!"

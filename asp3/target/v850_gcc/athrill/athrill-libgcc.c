@@ -94,7 +94,7 @@ _ssize_t _read_r _PARAMS ((struct _reent *unused, int fd, void *buf, size_t size
 	// if read returns EAGAIN, repeat again after 10msec
 	_ssize_t ret;	
 	while ( (ret = athrill_newlib_read_r(fd, buf, size)) == -1 ) {
-		if ( errno != SYS_API_ERR_AGAIN ) break;
+		if ( errno != SYS_API_ERR_AGAIN && errno != 0 ) break;
 		tslp_tsk(100*1000); // 100msec(T.B.D.)
 	}
 	

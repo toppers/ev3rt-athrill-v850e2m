@@ -52,6 +52,15 @@
 #define TOPPERS_TARGET_SYSSVC_H
 
 /*
+ *  ID of SIO ports
+ */
+#define SIO_PORT_UART               (1)
+#define SIO_PORT_BT                 (2)
+#define SIO_PORT_LCD                (3)
+#define SIO_PORT_SPP_MASTER_TEST    (4)
+#define TNUM_PORT                   (4)
+
+/*
  *  トレースログに関する設定
  */
 #ifdef TOPPERS_ENABLE_TRACE

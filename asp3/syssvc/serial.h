@@ -48,6 +48,7 @@
 #define TOPPERS_SERIAL_H
 
 #include <kernel.h>
+#include "target_syssvc.h"
 
 #ifdef __cplusplus
 extern "C" {
