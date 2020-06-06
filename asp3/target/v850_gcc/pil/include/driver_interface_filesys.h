@@ -4,7 +4,7 @@
 
 #pragma once
 #include <driver_svc.h>
-#include "syssvc/serial.h"
+//#include "syssvc/serial.h"
 /**
  * File information structure following definitions of FILINFO in FatFS.
  */
