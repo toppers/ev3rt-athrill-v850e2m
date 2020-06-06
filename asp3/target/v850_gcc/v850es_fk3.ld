@@ -9,6 +9,7 @@ MEMORY
 	INTROM(raxi) :  org = 0x00000000, len = 512k
 	INTDATA(raxi) : org = 0x00200000, len = 512k
 	INTRAM(wax)  : org = 0x05FF7000, len = 10240k
+	INTRAM2(wax)  : org = 0x07FF7000, len = 10240k
 };
 
 PROVIDE(__stack = 0);
@@ -112,11 +113,18 @@ SECTIONS
 	  . = ALIGN(4);
 	  __bss_start = .;
 	  *(.bss)
-	  *(.appheap)
 	  *(COMMON)
 	  . = ALIGN(4);
 	  __bss_end = .;
 	} > INTRAM
+
+	.bss_noclr	   :
+	{
+	  . = ALIGN(4);
+	  *(.appheap)
+	  *(COMMON)
+	  . = ALIGN(4);
+	} > INTRAM2
 
 
 	.tdata ALIGN (4) :
