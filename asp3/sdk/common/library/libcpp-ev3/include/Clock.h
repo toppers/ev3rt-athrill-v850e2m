@@ -47,7 +47,7 @@ public:
      */
     inline void wait(uint32_t duration)
     {
-        dly_tsk(duration);
+        dly_tsk(duration * 1000);
     }
 
     /**
@@ -57,7 +57,7 @@ public:
      */
     inline void sleep(uint32_t duration)
     {
-        tslp_tsk(duration);
+        tslp_tsk(duration * 1000);
     }
 
 protected:

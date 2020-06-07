@@ -45,6 +45,10 @@
 
 #include "tSerialAdapter_tecsgen.h"
 #include "serial.h"
+#include "athrill_syscall.h"
+
+
+static int port_table[3] = {0};
 
 /*
  *  シリアルポートのオープン（サービスコール）
@@ -53,13 +57,18 @@ ER
 serial_opn_por(ID portid)
 {
 	if (sns_dpn()) {				/* コンテキストのチェック */
-		return(E_CTX);
+	//	return(E_CTX);
 	}
 	if (!(1 <= portid && portid <= N_CP_cSerialPort)) {
-		return(E_ID);				/* ポート番号のチェック */
+	//	return(E_ID);				/* ポート番号のチェック */
 	}
 
-	return(cSerialPort_open(portid - 1));
+	if ( port_table[portid] == 0 ) {
+		int fd = port_table[portid] = filesys_serial_open(portid);
+	}
+	return E_OK;
+
+//	return(cSerialPort_open(portid - 1));
 }
 
 /*
@@ -69,13 +78,18 @@ ER
 serial_cls_por(ID portid)
 {
 	if (sns_dpn()) {				/* コンテキストのチェック */
-		return(E_CTX);
+	//	return(E_CTX);
 	}
 	if (!(1 <= portid && portid <= N_CP_cSerialPort)) {
-		return(E_ID);				/* ポート番号のチェック */
+	//	return(E_ID);				/* ポート番号のチェック */
 	}
 
-	return(cSerialPort_close(portid - 1));
+	if ( port_table[portid] ) {
+		athrill_newlib_close_r(port_table[portid]);
+	}
+	return E_OK;
+
+//	return(cSerialPort_close(portid - 1));
 }
 
 /*
@@ -85,13 +99,46 @@ ER_UINT
 serial_rea_dat(ID portid, char *buf, uint_t len)
 {
 	if (sns_dpn()) {				/* コンテキストのチェック */
-		return(E_CTX);
+	//	return(E_CTX);
 	}
 	if (!(1 <= portid && portid <= N_CP_cSerialPort)) {
-		return(E_ID);				/* ポート番号のチェック */
+//		return(E_ID);				/* ポート番号のチェック */
 	}
 
-	return(cSerialPort_read(portid - 1, buf, len));
+	// シリアルの動きを再現するため、直接readを呼んでEOFをハンドリングする
+	int fd = port_table[portid];
+	if ( !fd ) {
+		serial_opn_por(portid);
+		fd = port_table[portid];
+	}
+	int i = 0;
+	char *p = buf;
+	while ( i < len ) {
+		int ret;
+		while (1) {
+			ret = athrill_newlib_read_r(fd,p,1);
+			if ( ret == -1 && errno == EAGAIN ) {
+				tslp_tsk(100000);
+				continue;
+			}
+			break;
+		}
+		if ( ret == -1 && errno == 0 ) {
+			// This is EOF
+			if ( i == 0 ) {
+				// 1byteも取れていない場合は再度待つ
+				tslp_tsk(100000);
+				continue;
+			}
+			break;
+		}
+		p++;
+		i++;
+	}
+
+	return i;
+	
+//	return(cSerialPort_read(portid - 1, buf, len));
 }
 
 /*
@@ -101,11 +148,22 @@ ER_UINT
 serial_wri_dat(ID portid, const char *buf, uint_t len)
 {
 	if (sns_dpn()) {				/* コンテキストのチェック */
-		return(E_CTX);
+	//	return(E_CTX);
 	}
 	if (!(1 <= portid && portid <= N_CP_cSerialPort)) {
-		return(E_ID);				/* ポート番号のチェック */
+//		return(E_ID);				/* ポート番号のチェック */
 	}
+
+	int fd = port_table[portid];
+	if ( !fd ) {
+		serial_opn_por(portid);
+		fd = port_table[portid];
+	}
+
+	return athrill_newlib_write_r(fd, buf,len);
+//			return fwrite(buf,1,len,port_table[portid]);
+
+
 
 	return(cSerialPort_write(portid - 1, buf, len));
 }

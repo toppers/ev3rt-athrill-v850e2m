@@ -96,7 +96,7 @@ error_exit:
 
 FILE* ev3_serial_open_file(serial_port_t port) {
 	int fd;
-
+#if 0
 	if (port == EV3_SERIAL_DEFAULT)
 		fd = SIO_STD_FILENO;
 	else if (port == EV3_SERIAL_UART)
@@ -107,6 +107,8 @@ FILE* ev3_serial_open_file(serial_port_t port) {
 		API_ERROR("Invalid port id %d.", port);
 		return NULL;
 	}
+#endif
+	fd = filesys_serial_open(port);
 
     FILE *fp = fdopen(fd, "a+");
     if (fp != NULL)
