@@ -19,4 +19,8 @@ extern ER_UINT extsvc_button_set_on_clicked(intptr_t button, intptr_t handler, i
 extern ER_UINT extsvc_brick_misc_command(intptr_t misccmd, intptr_t exinf, intptr_t par3, intptr_t par4, intptr_t par5, ID cdmid);
 extern ER_UINT extsvc_motor_command(intptr_t port, intptr_t mode, intptr_t par3, intptr_t par4, intptr_t par5, ID cdmid);
 
+// For returning OK
+extern ER_UINT extsvc_dummy_ok_func(intptr_t port, intptr_t mode, intptr_t par3, intptr_t par4, intptr_t par5, ID cdmid);
+#define DUMMY_RETURN_OK_FUNC (EXTSVC)extsvc_dummy_ok_func
+
 #endif /* _EV3_SVC_H_ */
