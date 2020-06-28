@@ -32,9 +32,10 @@ const SVCINIB _kernel_svcinib_table[SVC_TABLE_NUM] = {
 	{ NULL, 0 },	//27
 	{ NULL, 0 },	//28
 	{ NULL, 0 },	//29
-	{ NULL, 0 },	//30
-	{ NULL, 0 },	//31
-	{ NULL, 0 },	//32
+	// 30-32 are for sound api
+	{ DUMMY_RETURN_OK_FUNC, 1024 },	//30
+	{ DUMMY_RETURN_OK_FUNC, 1024 },	//31
+	{ DUMMY_RETURN_OK_FUNC, 1024 },	//32
 	{ NULL, 0 },	//33
 	{ NULL, 0 },	//34
 	{ NULL, 0 },	//35
@@ -46,3 +47,9 @@ const SVCINIB _kernel_svcinib_table[SVC_TABLE_NUM] = {
 	{ NULL, 0 },	//41
 	{ NULL, 0 },	//42
 };
+
+
+ER_UINT extsvc_dummy_ok_func(intptr_t port, intptr_t mode, intptr_t par3, intptr_t par4, intptr_t par5, ID cdmid)
+{
+	return E_OK;
+}
