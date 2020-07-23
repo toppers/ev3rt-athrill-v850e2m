@@ -56,10 +56,17 @@ void uart_dri_get_data_gyro(uint8_t mode, void *dest, SIZE size)
 	memcpy(dest, (void*)&data, sizeof(data));
 	return;
 }
-void uart_dri_get_data_touch(uint8_t mode, void *dest, SIZE size)
+void uart_dri_get_data_touch(uint8_t index, uint8_t mode, void *dest, SIZE size)
 {
 	uint16_t data ;
-	const uint32_t *addr = (const uint32_t *)EV3_SENSOR_ADDR_TOUCH;;
+	uint32_t *addr;
+
+	if (index == 0) {
+		addr = (uint32_t *)EV3_SENSOR_ADDR_TOUCH_0;
+	}
+	else {
+		addr = (uint32_t *)EV3_SENSOR_ADDR_TOUCH_1;
+	}
 	data = (uint16_t)sil_rew_mem(addr);
 	memcpy(dest, (void*)&data, sizeof(data));
 	return;

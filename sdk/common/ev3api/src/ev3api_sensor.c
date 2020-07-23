@@ -14,6 +14,8 @@
 #include "api_common.h"
 #include "uart_dri.h"
 
+static uint8_t get_sensor_index(sensor_port_t port, sensor_type_t type);
+
 /**
  * Check whether a port number is valid
  */
@@ -52,7 +54,12 @@ void uart_sensor_fetch_data(sensor_port_t port, uint8_t mode, void *dest, SIZE s
 			uart_dri_get_data_gyro(mode, dest, size);
 			break;
 		case TOUCH_SENSOR:
-			uart_dri_get_data_touch(mode, dest, size);
+			{
+				uint8_t index = get_sensor_index(port, type);
+				if (index != -1) {
+					uart_dri_get_data_touch(index, mode, dest, size);
+				}
+			}
 			break;
 		case COLOR_SENSOR:
 			uart_dri_get_data_color(mode, dest, size);
@@ -71,6 +78,24 @@ void uart_sensor_fetch_data(sensor_port_t port, uint8_t mode, void *dest, SIZE s
 	}
 	//TODO
 	return;
+}
+
+static uint8_t get_sensor_index(sensor_port_t port, sensor_type_t type)
+{
+	sensor_port_t i;
+	uint8_t index = 0;
+	for (i = 0; i < TNUM_SENSOR_PORT; i++) {
+		if (sensors[i] == type) {
+			if (port == i) {
+				return index;
+			}
+			index++;
+		}
+	}
+	/*
+	 * not found.
+	 */
+	return -1;
 }
 
 void _initialize_ev3api_sensor() {
