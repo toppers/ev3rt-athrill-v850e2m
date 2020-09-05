@@ -6,8 +6,8 @@ OUTPUT_ARCH(v850-rh850)
 
 MEMORY
 {
-	INTROM(raxi) :  org = 0x00000000, len = 512k
-	INTDATA(raxi) : org = 0x00200000, len = 512k
+	INTROM(raxi) :  org = 0x00000000, len = 2048k
+	INTDATA(raxi) : org = 0x00200000, len = 2048k
 	INTRAM(wax)  : org = 0x05FF7000, len = 10240k
 	INTRAM2(wax)  : org = 0x07FF7000, len = 10240k
 };

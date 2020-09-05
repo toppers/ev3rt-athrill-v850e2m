@@ -47,6 +47,8 @@ void uart_dri_get_data_gyro(uint8_t mode, void *dest, SIZE size)
 			// Gyro Reset sends reset (write command)
 			uint32_t *waddr = (uint32_t *)EV3_GYRO_ADDR_RESET;
 			sil_wrw_mem(waddr,1);
+			sil_wrw_mem((uint32_t *)EV3_SENSOR_ADDR_ANGLE,0);
+			sil_wrw_mem((uint32_t *)EV3_SENSOR_ADDR_RATE,0);
 			return;
 		}
 	default:
