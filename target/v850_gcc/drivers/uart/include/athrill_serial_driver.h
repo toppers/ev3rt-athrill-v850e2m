@@ -14,9 +14,12 @@ extern int athrill_serial_skip_newline(DrvInt32Type channel);
 
 extern void serial_fifo0_intr_rx(void);
 extern void serial_fifo0_intr_tx(void);
+extern void serial_fifo1_intr_rx(void);
+extern void serial_fifo1_intr_tx(void);
 
-#define ATHRILL_SERIAL_INTPRI				
 #define ATHRILL_SERIAL_FIFO_CH0_RX_INTNO	57
 #define ATHRILL_SERIAL_FIFO_CH0_TX_INTNO	65
+#define ATHRILL_SERIAL_FIFO_CH1_RX_INTNO	58
+#define ATHRILL_SERIAL_FIFO_CH1_TX_INTNO	66
 
 #endif /* _ATHRILL_SERIAL_H_ */

@@ -4,7 +4,7 @@
 /*
  * config
  */
-#define SERIAL_WAIT_TIME	10 /* msec */
+#define SERIAL_WAIT_TIME	1000 /* msec */
 #define SERIAL_RX_BUFFER_SIZE	128
 
 typedef struct {
@@ -203,4 +203,14 @@ void serial_fifo0_intr_rx(void)
 void serial_fifo0_intr_tx(void)
 {
 	athrill_serial_intr_tx(0);
+}
+
+void serial_fifo1_intr_rx(void)
+{
+	athrill_serial_intr_rx(1);
+}
+
+void serial_fifo1_intr_tx(void)
+{
+	athrill_serial_intr_tx(1);
 }
