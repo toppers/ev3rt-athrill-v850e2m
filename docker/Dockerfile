@@ -46,6 +46,7 @@ WORKDIR /root/workspace
 RUN  mkdir -p /root/workspace/ev3rt-athrill-v850e2m
 RUN  ln -s  /root/athrill /root/workspace/athrill
 RUN ln -s /root/workspace/ev3rt-athrill-v850e2m/docker/utils/start-athrill.bash .
+RUN ln -s  /root/workspace/ev3rt-athrill-v850e2m/docker/utils/start-athrill-mmap.bash .
 RUN ln -s /root/workspace/ev3rt-athrill-v850e2m/docker/utils/clean_build.bash .
 RUN ln -s /root/workspace/ev3rt-athrill-v850e2m/docker/utils/rebuild.bash .
 RUN ln -s /root/workspace/ev3rt-athrill-v850e2m/docker/utils/Makefile.workspace .

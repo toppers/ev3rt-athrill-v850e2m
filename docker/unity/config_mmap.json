@@ -1,0 +1,14 @@
+{
+	"AthrillPath": "/root/athrill/bin/linux/athrill2",
+	"TerminalPath": null,
+	"robots": [
+		{
+			"RobotName": "RoboModel",
+			"WorkspacePathWin": "/home/tmori/project/toppers/ev3rt-athrill-v850e2m/sdk/workspace",
+			"WorkspacePathUnix": "/home/tmori/project/toppers/ev3rt-athrill-v850e2m/sdk/workspace",
+			"ApplicationName": "base_practice_1",
+			"BinaryName": "asp",
+			"Udp": null
+		}
+	]
+}
