@@ -1,0 +1,18 @@
+{
+	"AthrillPath": "/root/athrill/bin/linux/athrill2",
+	"TerminalPath": null,
+	"robots": [
+		{
+			"RobotName": "RoboModel",
+			"WorkspacePathWin": "c:\\Users\\kanet\\project\\toppers\\hakoniwa-Unity-HackEV\\work\\simulator\\ev3rt-athrill-v850e2m\\sdk\\workspace",
+			"WorkspacePathUnix": "/root/workpaces/ev3rt-athrill-v850e2m/sdk/workspace",
+			"ApplicationName": "base_practice_1",
+			"BinaryName": "asp",
+			"Udp":
+			{
+				"AthrillIpAddr":"127.0.0.1",
+				"AthrillPort":54002,
+				"UnityPort":54001
+			}		}
+	]
+}
