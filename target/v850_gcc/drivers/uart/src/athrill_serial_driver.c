@@ -152,7 +152,7 @@ int athrill_serial_readline(DrvInt32Type channel, char* bufferp, DrvInt32Type bu
 			continue;
 		}
 		bufferp[i] = (DrvUint8Type)c;
-		if ((c == '\n') || (c == '\r')) {
+		if ((c == '\0') || (c == '\n') || (c == '\r')) {
 			bufferp[i + 1] = '\0';
 			break;
 		}
