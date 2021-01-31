@@ -100,7 +100,7 @@ int athrill_serial_set_baud(DrvInt32Type channel, DrvUint32Type baud)
 int athrill_serial_send(DrvInt32Type channel, const char* at_cmd)
 {
 	int len = strlen(at_cmd);
-	return athrill_serial_send_data(channel, at_cmd, len);
+	return athrill_serial_send_data(channel, at_cmd, (len + 1));
 }
 
 int athrill_serial_send_data(DrvInt32Type channel, const char* datap, DrvInt32Type datalen)
