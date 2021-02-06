@@ -16,17 +16,40 @@ void main_task(intptr_t unused) {
 	// Bluetooth仮想シリアルポートのファイルをオープンする
 	FILE *bt = ev3_serial_open_file(EV3_SERIAL_BT);
 
-	// 書式化した文字列をBluetooth仮想シリアルポートへ書き込む
-	fprintf(bt, "Bluetooth SPP ID: %d\n", EV3_SERIAL_BT);
 
-	// Bluetooth仮想シリアルポートから1文字を読み取る
 	int c;
+    int i = 0;
 	while(1) {
-		char *p = fgets(buffer, sizeof(buffer), bt);
-        if (p != NULL) {
-    		syslog(LOG_NOTICE,"Input was=%s\n",p);
-    		fprintf(bt, "Output echo: %s\n", p);
+#if 1
+        char *p = fgets(buffer, sizeof(buffer), bt);
+        if ((p != NULL) && (*p != '\0')) {
+#if 1
+            int j;
+            int len = strlen(buffer) + 1;
+            for (j = 0; j < len; j++) {
+                syslog(LOG_NOTICE, "%c[0x%x]", buffer[j], buffer[j]);
+            }
+#endif
+            syslog(LOG_NOTICE,"Input was=%s\n",buffer);
+            syslog(LOG_NOTICE,"Output is=%s\n",buffer);
+            fprintf(bt, "Output is=%s", buffer);
+            i++;
         }
+#else
+		int c = fgetc(bt);
+        if (c >= 0) {
+            syslog(LOG_NOTICE, "%c[0x%x]", c, c);
+            buffer[i++] = c;
+            if (c == '\n') {
+                if (i > 1) {
+                    syslog(LOG_NOTICE,"Input was=%s\n",buffer);
+                    syslog(LOG_NOTICE,"Output is=%s\n",buffer);
+                    fprintf(bt, "Output is=%s", buffer);
+                }
+                i = 0;
+            }
+        }
+#endif
 		tslp_tsk(1000000);
 	}
 }
