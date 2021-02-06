@@ -72,10 +72,13 @@ RUN echo 'export PATH=/root/tools/athrill-gcc-package/usr/local/athrill-gcc/bin/
 WORKDIR /root
 RUN  mkdir -p /root/athrill-device
 RUN git clone --depth 1 https://github.com/toppers/athrill.git && \
+    git clone --depth 1 https://github.com/toppers/athrill-device.git && \
     git clone --depth 1 https://github.com/toppers/athrill-target-v850e2m.git
 WORKDIR /root/athrill-target-v850e2m/build_linux
 RUN make clean && \
     make timer32=true serial_fifo_enable=true vdev_disable=true enable_bt_serial=true
+WORKDIR /root/athrill-device/device/ev3com/build
+RUN bash build.bash all
 
 RUN echo 'export PATH=/root/athrill/bin/linux:${PATH}' >> ~/.bashrc
 RUN mkdir workspace
