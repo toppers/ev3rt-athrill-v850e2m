@@ -23,16 +23,16 @@ void main_task(intptr_t unused) {
 #if 1
         char *p = fgets(buffer, sizeof(buffer), bt);
         if ((p != NULL) && (*p != '\0')) {
-#if 1
+#if 0
             int j;
             int len = strlen(buffer) + 1;
             for (j = 0; j < len; j++) {
                 syslog(LOG_NOTICE, "%c[0x%x]", buffer[j], buffer[j]);
             }
 #endif
-            syslog(LOG_NOTICE,"Input was=%s\n",buffer);
-            syslog(LOG_NOTICE,"Output is=%s\n",buffer);
-            fprintf(bt, "Output is=%s", buffer);
+            syslog(LOG_NOTICE,"RECV DATA: %s\n",buffer);
+            syslog(LOG_NOTICE,"SEND DATA: %s\n",buffer);
+            fprintf(bt, "%s", buffer);//echo back
             i++;
         }
 #else
