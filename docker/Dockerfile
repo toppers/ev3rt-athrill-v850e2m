@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
 	git \
 	vim \
 	gem \
+	net-tools \
 	build-essential \
 	libssl-dev libreadline-dev zlib1g-dev \
 	wget 
