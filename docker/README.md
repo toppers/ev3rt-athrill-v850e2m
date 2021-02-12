@@ -28,6 +28,8 @@
    * \# bash clean_build.bash base_practice_1
 * 端末A(docker)で，Athrillのコンフィグ設定してください(利用しているETHERがeth0の場合)．
    * \# bash config/create_config.bash base_practice_1 eth0
+* Bluetoothデバイスを使用する場合は，create_config.bash の代わりに，create_config_bt.bashを使ってください
+   * \# bash config/create_config_bt.bash base_practice_1 eth0
 
 ## シミュレーション実行
 * 端末B(WSL2)で，Unity側のシミュレータを起動してください(利用しているETHERがeth0の場合)．
