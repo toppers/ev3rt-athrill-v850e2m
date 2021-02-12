@@ -33,7 +33,7 @@
 
 ## シミュレーション実行
 * 端末B(WSL2)で，Unity側のシミュレータを起動してください(利用しているETHERがeth0の場合)．
-   * $ $ bash unity/start.bash single-robot eth0
+   * $ bash unity/start.bash single-robot eth0
 * 端末A(docker)で，athrill を実行してください．
    * \# bash start-athrill.bash base_practice_1
 
