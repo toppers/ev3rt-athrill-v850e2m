@@ -24,7 +24,7 @@
    * 端末B：Unity側のシミュレーション実行用
 * 端末Aで，以下のように docker コンテナを起動してください．
    * $ bash run.bash
-* 端末Aで，EV3RTのサンプルアプリ(base_practice_1)をビルドしてください．
+* 端末A(docker)で，EV3RTのサンプルアプリ(base_practice_1)をビルドしてください．
    * \# bash clean_build.bash base_practice_1
 * 端末A(docker)で，Athrillのコンフィグ設定してください(利用しているETHERがeth0の場合)．
    * \# bash config/create_config.bash base_practice_1 eth0
