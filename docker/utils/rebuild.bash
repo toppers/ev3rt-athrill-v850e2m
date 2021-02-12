@@ -10,5 +10,5 @@ EV3RT_DIR=ev3rt-athrill-v850e2m/sdk/workspace
 APL_NAME=${1}
 
 cd ${EV3RT_DIR}
-make -f ../../../../Makefile.workspace img=${APL_NAME}
+make -f ../../../make/Makefile.workspace img=${APL_NAME}
 
