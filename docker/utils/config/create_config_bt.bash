@@ -34,15 +34,17 @@ export IFCONFIG_IPADDR=`ifconfig | grep -A 1 ${ETH} | grep inet | awk '{print $2
 export RESOLVE_IPADDR=`cat /etc/resolv.conf | grep nameserver | awk '{print $2}'`
 
 UNITY_CFG_TMPL=config/config_udp_json.mo
-DEV_CFG_TMPL=config/device_config_udp_txt.mo
+DEV_CFG_TMPL=config/device_config_udp_bt_txt.mo
 DEV_CFG_FILE=device_config.txt
 
 bash config/mo ${DEV_CFG_TMPL} > ${DEV_CFG_FILE}
-bash config/mo $UNITY_CFG_TMPL > config.json
+bash config/mo ${UNITY_CFG_TMPL} > config.json
 
 cp config.json ${UNITY_PRJ_PATH}/
 mv config.json ${UNITY_PRJ_PATH}/Build/
 mv ${DEV_CFG_FILE} ${EV3RT_PRJ_PATH}/
-cp config/memory.txt ${EV3RT_PRJ_PATH}/
+cp config/memory_bt.txt ${EV3RT_PRJ_PATH}/memory.txt
+touch ${EV3RT_PRJ_PATH}/__ev3rt_bt_in
+touch ${EV3RT_PRJ_PATH}/__ev3rt_bt_out
 
 exit 0
