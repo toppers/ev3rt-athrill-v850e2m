@@ -38,7 +38,7 @@ RUN git clone --depth 1 https://github.com/toppers/athrill.git && \
     git clone --depth 1 https://github.com/toppers/athrill-target-v850e2m.git
 WORKDIR /root/athrill-target-v850e2m/build_linux
 RUN make clean && \
-    make timer32=true skip_clock_bugfix=true supress_detect_error=true
+    make timer32=true skip_clock_bugfix=true supress_detect_error=true etrobo_optimize=true
 
 RUN echo 'export PATH=/root/athrill/bin/linux:${PATH}' >> ~/.bashrc
 RUN mkdir workspace
