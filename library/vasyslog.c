@@ -64,7 +64,7 @@ syslog(uint_t prio, const char *format, ...)
 	i = 1U;
 	va_start(ap, format);
 
-#define SYSLOG_IMPLEMENT_AS_PRINTF
+
 #ifdef SYSLOG_IMPLEMENT_AS_PRINTF
 	vprintf(format,ap);
 	va_end(ap);
