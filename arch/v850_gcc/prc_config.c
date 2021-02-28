@@ -47,6 +47,9 @@
 #include "check.h"
 #include "task.h"
 
+// for v850 optimize
+#include "athrill_syscall.h"
+
 /*
  *  プロセッサ依存部で用いる変数
  */
@@ -133,6 +136,10 @@ extern const uint16_t imr_table[][IMR_SIZE];
 void
 set_intpri(uint8_t intpri)
 {
+	athrill_v850_set_intpri((sys_addr)imr_table[intpri],(sys_addr)disint_table);
+	return;
+
+
 	sil_wrh_mem((void *)(IMR0) , imr_table[intpri][0] | disint_table[0]);
 	sil_wrh_mem((void *)(IMR1) , imr_table[intpri][1] | disint_table[1]);
 	sil_wrh_mem((void *)(IMR2) , imr_table[intpri][2] | disint_table[2]);
