@@ -46,6 +46,7 @@
 #include <t_stddef.h>
 #include <t_syslog.h>
 #include <stdarg.h>
+#include <stdio.h>
 
 #ifndef TOPPERS_OMIT_SYSLOG
 
@@ -63,6 +64,13 @@ syslog(uint_t prio, const char *format, ...)
 	i = 1U;
 	va_start(ap, format);
 
+
+#ifdef SYSLOG_IMPLEMENT_AS_PRINTF
+	vprintf(format,ap);
+	va_end(ap);
+	printf("\n");
+	
+#else
 	while ((c = *format++) != '\0' && i < TNUM_LOGPAR) {
 		if (c != '%') {
 			continue;
@@ -110,6 +118,7 @@ syslog(uint_t prio, const char *format, ...)
 	}
 	va_end(ap);
 	(void) tSysLog_eSysLog_write(prio, &logbuf);
+#endif
 }
 
 #endif /* TOPPERS_OMIT_SYSLOG */
