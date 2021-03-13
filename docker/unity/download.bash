@@ -6,6 +6,12 @@ then
     exit 1
 fi
 
+which unzip > /dev/null
+if [ $? -eq 1 ]
+then
+	sudo apt install unzip
+fi
+
 PROJ_NAME=${1}
 BINARY_NAME=${2}
 
