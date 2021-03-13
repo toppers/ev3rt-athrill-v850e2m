@@ -30,6 +30,8 @@
 * 端末Aで，以下のように docker コンテナを起動してください．
    * $ bash run.bash
    * [mruby] $ bash run-mruby.bash
+   * [mruby] dockerの初回起動時のみ，mrubyのインストールコマンドを以下のように実行してください．
+   * [mruby] # bash mruby/install.bash
 * 端末A(docker)で，EV3RTのサンプルアプリ(base_practice_1)をビルドしてください．
    * \# bash clean_build.bash base_practice_1
    * [mruby] \# bash clean_build.bash base_practice_1_mruby.bash
