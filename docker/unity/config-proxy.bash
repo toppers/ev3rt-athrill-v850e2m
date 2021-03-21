@@ -28,6 +28,6 @@ export IFCONFIG_IPADDR=`ifconfig | grep -A 1 ${ETH} | grep inet | awk '{print $2
 export RESOLVE_IPADDR=`cat /etc/resolv.conf | grep nameserver | awk '{print $2}'`
 
 UNITY_CFG_TMPL=utils/config/config_proxy_udp_json.mo
-bash utils/config/mo ${UNITY_CFG_TMPL} > config.json
-mv config.json ${UNITY_PRJ_PATH}/
+bash utils/config/mo ${UNITY_CFG_TMPL} > core_config.json
+mv core_config.json ${UNITY_PRJ_PATH}/
 
