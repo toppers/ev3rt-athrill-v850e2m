@@ -23,13 +23,13 @@
         "pdu_writers":  [
 	       	{
 	        	"name": "Ev3SensorPdu",
-	        	"class_name": "Ev3PduWriter",
+	        	"class_name": "Ev3PduProtobufWriter",
         	}
         ],
         "pdu_readers":  [
 	       	{
 	        	"name": "Ev3ActuatorPdu",
-	        	"class_name": "Ev3PduReader",
+	        	"class_name": "Ev3PduProtobufReader",
         	}
         ],
         "udp_methods":  [
@@ -46,6 +46,13 @@
 	        	"portno": 54001,
 	        	"iosize": 1024,
 	        	"is_read": true,
+        	},
+	       	{
+	        	"method_name": "UdpMethod3",
+	        	"ipaddr": "{{IFCONFIG_IPADDR}}",
+	        	"portno": 54003,
+	        	"iosize": 1024,
+	        	"is_read": false,
         	}
         ],
         "mmap_methods": null,
@@ -61,6 +68,11 @@
 	        	"name": "writer_connector1",
 	        	"pdu_name": "Ev3SensorPdu",
 	        	"method_name": "UdpMethod1",
+        	},
+	       	{
+	        	"name": "writer_connector2",
+	        	"pdu_name": "Ev3SensorPdu",
+	        	"method_name": "UdpMethod3",
         	}
         ],
         "pdu_channel_connectors":  [
@@ -68,6 +80,12 @@
 	        	"outside_asset_name": "Athrill",
 	        	"reader_connector_name": "reader_connector1",
 	        	"writer_connector_name": "writer_connector1",
+        	},
+	       	{
+	        	"outside_asset_name": null,
+	        	"reader_connector_name": null,
+	        	"writer_connector_name": "writer_connector2",
         	}
+
         ],
 }

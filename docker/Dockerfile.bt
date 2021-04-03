@@ -74,7 +74,8 @@ WORKDIR /root
 RUN  mkdir -p /root/athrill-device
 RUN git clone --depth 1 https://github.com/toppers/athrill.git && \
     git clone --depth 1 https://github.com/toppers/athrill-device.git && \
-    git clone --depth 1 https://github.com/toppers/athrill-target-v850e2m.git
+    git clone --depth 1 https://github.com/toppers/athrill-target-v850e2m.git && \
+    git clone --recursive https://github.com/toppers/hakoniwa-core.git
 
 WORKDIR /root/athrill
 RUN git pull
