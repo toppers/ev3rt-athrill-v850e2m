@@ -28,6 +28,8 @@
    * 端末A：箱庭アセット・プロキシ起動用
    * 端末B：マイコン側のプログラム開発用
    * 端末C：Unity側のシミュレーション実行用
+* 端末Aでdockerを起動してください．
+  * $ sudo service docker start 
 * 端末Aで，proxy/proxy_param.jsonの`target_options`を，開発対象のアプリケーション名にしてください．
    * 例：base_practice_1
    * [mruby] base_practice_1_mruby
