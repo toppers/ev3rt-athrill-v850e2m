@@ -38,7 +38,7 @@
    * $ bash run-proxy.bash
 * 端末Bで，以下のように 端末Aで起動したdocker コンテナに入ります．
    * $ bash attach.bash
-   * [mruby] $ bash run-mruby.bash
+   * [mruby] $ bash attach-mruby.bash
    * [mruby] dockerの初回起動時のみ，mrubyのインストールコマンドを以下のように実行してください．
    * [mruby] # bash mruby/install.bash
 * 端末B(docker)で，EV3RTのサンプルアプリ(base_practice_1)をビルドしてください．
