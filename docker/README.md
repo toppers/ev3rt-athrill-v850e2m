@@ -44,11 +44,6 @@
 * 端末B(docker)で，EV3RTのサンプルアプリ(base_practice_1)をビルドしてください．
    * \# bash clean_build.bash base_practice_1
    * [mruby] \# bash clean_build.bash base_practice_1_mruby.bash
-* 端末B(docker)で，Athrillのコンフィグ設定してください(利用しているETHERがeth0の場合)．
-   * \# bash config/create_config.bash base_practice_1 eth0
-* Bluetoothデバイスを使用する場合は，create_config.bash の代わりに，create_config_bt.bashを使ってください
-   * \# bash config/create_config_bt.bash base_practice_1 eth0
-   * [mruby] 現時点では未対応．．．
 
 ## シミュレーション実行
 * 端末C(WSL2)で，Unity側のシミュレータを起動してください(利用しているETHERがeth0, アプリケーション名が base_practice_1の場合)．
