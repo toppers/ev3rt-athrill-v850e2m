@@ -4,6 +4,9 @@
    * Windows 10/home
  * 利用する端末
    * WSL2 および WSL2/docker
+    * WSL2/Ubuntuにdocker をインストールしてください．
+      * sudo apt-get update 
+      * sudo apt-get install docker-ce
     * WSL2環境に ifconfig をインストールしてください．
       * sudo apt install net-tools 
   * mruby を利用する方も基本的には同じ方法でインストール/シミュレーションできます．
