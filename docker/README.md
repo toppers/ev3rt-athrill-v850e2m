@@ -24,28 +24,31 @@
    * $ bash unity/download.bash single-robot WindowsBinary.zip
 
 ## シミュレーション環境の準備
-* WSL2 の端末を2個起動して，ev3rt-athrill-v850e2m/docker　に移動してください．
-   * 端末A：マイコン側の開発用
-   * 端末B：Unity側のシミュレーション実行用
+* WSL2 の端末を3個起動して，ev3rt-athrill-v850e2m/docker　に移動してください．
+   * 端末A：箱庭アセット・プロキシ起動用
+   * 端末B：マイコン側のプログラム開発用
+   * 端末C：Unity側のシミュレーション実行用
+* 端末Aで，proxy/proxy_param.jsonの`target_options`を，開発対象のアプリケーション名にしてください．
+   * 例：base_practice_1
+   * [mruby] base_practice_1_mruby
+
 * 端末Aで，以下のように docker コンテナを起動してください．
-   * $ bash run.bash
+   * $ bash run-proxy.bash
+* 端末Bで，以下のように 端末Aで起動したdocker コンテナに入ります．
+   * $ bash attach.bash
    * [mruby] $ bash run-mruby.bash
    * [mruby] dockerの初回起動時のみ，mrubyのインストールコマンドを以下のように実行してください．
    * [mruby] # bash mruby/install.bash
-* 端末A(docker)で，EV3RTのサンプルアプリ(base_practice_1)をビルドしてください．
+* 端末B(docker)で，EV3RTのサンプルアプリ(base_practice_1)をビルドしてください．
    * \# bash clean_build.bash base_practice_1
    * [mruby] \# bash clean_build.bash base_practice_1_mruby.bash
-* 端末A(docker)で，Athrillのコンフィグ設定してください(利用しているETHERがeth0の場合)．
+* 端末B(docker)で，Athrillのコンフィグ設定してください(利用しているETHERがeth0の場合)．
    * \# bash config/create_config.bash base_practice_1 eth0
 * Bluetoothデバイスを使用する場合は，create_config.bash の代わりに，create_config_bt.bashを使ってください
    * \# bash config/create_config_bt.bash base_practice_1 eth0
    * [mruby] 現時点では未対応．．．
 
 ## シミュレーション実行
-* 端末B(WSL2)で，Unity側のシミュレータを起動してください(利用しているETHERがeth0の場合)．
+* 端末C(WSL2)で，Unity側のシミュレータを起動してください(利用しているETHERがeth0の場合)．
    * $ bash unity/start.bash single-robot eth0
-* 端末A(docker)で，athrill を実行してください．
-   * \# bash start-athrill.bash base_practice_1
-   * [mruby] \# bash start-athrill.bash base_practice_1_mruby
-
 
