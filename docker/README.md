@@ -51,6 +51,6 @@
    * [mruby] 現時点では未対応．．．
 
 ## シミュレーション実行
-* 端末C(WSL2)で，Unity側のシミュレータを起動してください(利用しているETHERがeth0の場合)．
-   * $ bash unity/start.bash single-robot eth0
+* 端末C(WSL2)で，Unity側のシミュレータを起動してください(利用しているETHERがeth0, アプリケーション名が base_practice_1の場合)．
+   * $ bash unity/start-proxy.bash single-robot eth0 ../sdk/workspace/base_practice_1
 
