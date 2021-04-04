@@ -87,6 +87,12 @@ RUN git pull
 WORKDIR /root/athrill-target-v850e2m
 RUN git pull
 
+WORKDIR /root/hakoniwa-core/impl/asset/client/build
+RUN git pull
+RUN  bash build.bash cpp clean && \
+	bash build.bash cpp
+
+
 WORKDIR /root/athrill-target-v850e2m/build_linux
 RUN make clean && \
     make timer32=true serial_fifo_enable=true vdev_disable=true enable_bt_serial=true skip_clock_bugfix=true supress_detect_error=true etrobo_optimize=true
@@ -96,15 +102,15 @@ WORKDIR /root/athrill-device/device/ev3com/build
 RUN bash build.bash all
 
 RUN echo 'export PATH=/root/athrill/bin/linux:${PATH}' >> ~/.bashrc
+RUN echo 'export PATH=/root/hakoniwa-core/impl/asset/client/build/cpp:${PATH}' >> ~/.bashrc
 RUN mkdir workspace
 
 WORKDIR /root/workspace
 RUN  mkdir -p /root/workspace/ev3rt-athrill-v850e2m
 RUN  ln -s  /root/athrill /root/workspace/athrill
 RUN ln -s /root/workspace/ev3rt-athrill-v850e2m/docker/utils/start-athrill.bash .
-RUN ln -s  /root/workspace/ev3rt-athrill-v850e2m/docker/utils/start-athrill-mmap.bash .
 RUN ln -s /root/workspace/ev3rt-athrill-v850e2m/docker/utils/clean_build.bash .
 RUN ln -s /root/workspace/ev3rt-athrill-v850e2m/docker/utils/rebuild.bash .
 RUN ln -s /root/workspace/ev3rt-athrill-v850e2m/docker/utils/Makefile.workspace .
 ENV RUBYOPT -EUTF-8
-
+CMD ["/root/workspace/proxy/start_proxy.bash"]
