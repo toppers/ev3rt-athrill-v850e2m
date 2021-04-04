@@ -6,5 +6,5 @@ do
         echo "############ START CONNECT #################"
         ./bin/hakoniwa_proxy ./proxy_param.json ${RESOLVE_IPADDR}  50051
         echo "############ SERVER DOWN #################"
-        sleep 5
+        sleep 1
 done
