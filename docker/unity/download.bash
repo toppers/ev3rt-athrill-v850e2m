@@ -26,7 +26,7 @@ fi
 rm -f unity/${PROJ_NAME}/${BINARY_NAME}
 rm -rf unity/${PROJ_NAME}/Build
 
-wget https://github.com/toppers/hakoniwa-Unity-HackEV/releases/download/v2.1-practice/${BINARY_NAME}
+wget https://github.com/toppers/hakoniwa-Unity-HackEV/releases/download/v3.0/${BINARY_NAME}
 
 mv ${BINARY_NAME} unity/${PROJ_NAME}/
 cd unity/${PROJ_NAME}/

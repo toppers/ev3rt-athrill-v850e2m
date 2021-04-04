@@ -29,8 +29,8 @@ export RESOLVE_IPADDR=`cat /etc/resolv.conf | grep nameserver | awk '{print $2}'
 
 UNITY_CFG_TMPL=utils/config/config_proxy_udp_json.mo
 
-bash utils/config/mo ${UNITY_CFG_TMPL} > config.json
-cp config.json ${UNITY_PRJ_PATH}/
-mv config.json ${UNITY_PRJ_PATH}/Build/
+bash utils/config/mo ${UNITY_CFG_TMPL} > core_config.json
+cp core_config.json ${UNITY_PRJ_PATH}/
+mv core_config.json ${UNITY_PRJ_PATH}/Build/
 
 ./${UNITY_PRJ_PATH}/Build/${UNITY_PRJ}.exe
