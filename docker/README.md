@@ -38,7 +38,7 @@
    * [mruby] base_practice_1_mruby
 
 * 端末Aで，以下のように docker コンテナを起動してください．
-   * $ bash run-proxy.bash
+   * $ bash run-proxy.bash base_practice_1
 * 端末Bで，以下のように 端末Aで起動したdocker コンテナに入ります．
    * $ bash attach.bash
    * [mruby] $ bash attach-mruby.bash

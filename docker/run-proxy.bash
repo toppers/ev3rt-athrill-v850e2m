@@ -1,5 +1,24 @@
 #!/bin/bash
 
+if [ $# -ne 1 ]
+then
+	echo "Usage: $0 <aplname>"
+	exit 1
+fi
+
+export APLNAME=${1}
+if [ -d ../sdk/workspace/${APLNAME} ]
+then
+	:
+else
+	echo "ERROR: can not found ${APLNAME} on ../sdk/workspace/"
+	exit 1
+fi
+
+bash utils/config/mo utils/config/start_proxy_bash.mo > proxy/start_proxy.bash
+bash utils/config/mo utils/config/proxy_param_json.mo > proxy/proxy_param.json
+
+
 WORKSPACE_DIR=$(cd .. && pwd)
 DOCKER_IMAGE=single-robot/ev3rt-v850:v1.0.0
 

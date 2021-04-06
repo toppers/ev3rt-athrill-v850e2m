@@ -3,6 +3,6 @@
     "target_exec_dir": ".",
     "target_bin_path": "./start_athrill.bash",
     "target_options": [
-        "base_practice_1"
+        "park_ride00"
     ]
 }
