@@ -8,11 +8,13 @@ fi
 
 UNITY_PRJ=${1}
 ETH=${2}
+UNITY_CFG_TMPL=utils/config/config_proxy_udp_json.mo
 if [ $# -eq 3 ]
 then
 	TMPDIR=$(cd ${3} && pwd)
 	DIR=`echo "${TMPDIR}/unity.csv" | sed 's/\/mnt\/c\//C:\\\\\\\\/g' | sed 's/\//\\\\\\\\/g'`
 	export SYMTIME_MEASURE_FILEPATH=${DIR}
+	UNITY_CFG_TMPL=utils/config/config_proxy_udp_dbg_json.mo
 fi
 UNITY_PRJ_PATH=unity/${UNITY_PRJ}
 
@@ -27,10 +29,11 @@ fi
 export IFCONFIG_IPADDR=`ifconfig | grep -A 1 ${ETH} | grep inet | awk '{print $2}'`
 export RESOLVE_IPADDR=`cat /etc/resolv.conf | grep nameserver | awk '{print $2}'`
 
-UNITY_CFG_TMPL=utils/config/config_proxy_udp_json.mo
 
 bash utils/config/mo ${UNITY_CFG_TMPL} > core_config.json
 cp core_config.json ${UNITY_PRJ_PATH}/
 mv core_config.json ${UNITY_PRJ_PATH}/Build/
 
-./${UNITY_PRJ_PATH}/Build/${UNITY_PRJ}.exe
+cd ${UNITY_PRJ_PATH}/Build/
+
+./${UNITY_PRJ}.exe

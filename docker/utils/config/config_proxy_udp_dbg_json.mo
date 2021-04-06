@@ -2,7 +2,7 @@
     "core_ipaddr": "{{RESOLVE_IPADDR}}",
     "core_portno": 50051,
     "asset_timeout": 3,
-    "SymTimeMeasureFilePath": null,
+    "SymTimeMeasureFilePath": "{{SYMTIME_MEASURE_FILEPATH}}",
     "inside_assets": [
         {
             "name": "RoboModel",

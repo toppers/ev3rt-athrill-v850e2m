@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [ $# -ne 1 ]
+if [ $# -ne 1 -a $# -ne 2 ]
 then
-	echo "Usage: $0 <aplname>"
+	echo "Usage: $0 <aplname> [dbg]"
 	exit 1
 fi
 
@@ -15,7 +15,12 @@ else
 	exit 1
 fi
 
-bash utils/config/mo utils/config/start_proxy_bash.mo > proxy/start_proxy.bash
+if [ $# -eq 1 ]
+then
+	bash utils/config/mo utils/config/start_proxy_bash.mo > proxy/start_proxy.bash
+else
+	bash utils/config/mo utils/config/start_proxy_dbg_bash.mo > proxy/start_proxy.bash
+fi
 bash utils/config/mo utils/config/proxy_param_json.mo > proxy/proxy_param.json
 
 
