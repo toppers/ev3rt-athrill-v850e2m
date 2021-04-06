@@ -50,7 +50,7 @@
 
 ## シミュレーション実行
 * 端末C(WSL2)で，Unity側のシミュレータを起動してください(利用しているETHERがeth0, アプリケーション名が base_practice_1の場合)．
-   * $ bash unity/start-proxy.bash single-robot eth0 ../sdk/workspace/base_practice_1
+   * $ bash unity/start-proxy.bash single-robot eth0
 
 ## Athrillとロボット間の通信パケットのビジュアライズ
 箱庭環境では，Athrillとロボット間の通信仕様は，[プロトコルバッファ](https://ja.wikipedia.org/wiki/Protocol_Buffers)で定義しています．
