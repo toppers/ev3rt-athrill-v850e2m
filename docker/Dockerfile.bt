@@ -113,4 +113,5 @@ RUN ln -s /root/workspace/ev3rt-athrill-v850e2m/docker/utils/clean_build.bash .
 RUN ln -s /root/workspace/ev3rt-athrill-v850e2m/docker/utils/rebuild.bash .
 RUN ln -s /root/workspace/ev3rt-athrill-v850e2m/docker/utils/Makefile.workspace .
 ENV RUBYOPT -EUTF-8
+RUN apt update && apt install netcat -y
 CMD ["/root/workspace/proxy/start_proxy.bash"]
