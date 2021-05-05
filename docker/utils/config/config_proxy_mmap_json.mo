@@ -101,15 +101,5 @@
             "reader_connector_name": "reader_connector1",
             "writer_connector_name": "writer_connector1"
         },
-        {
-            "outside_asset_name": null,
-            "reader_connector_name": null,
-            "writer_connector_name": "writer_connector2"
-        },
-        {
-            "outside_asset_name": null,
-            "reader_connector_name": null,
-            "writer_connector_name": "writer_connector3"
-        }
     ]
 }
