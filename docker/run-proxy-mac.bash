@@ -24,8 +24,8 @@ else
 	bash utils/config/mo utils/config/start_proxy_mmap_bash.mo > proxy/start_proxy.bash
 fi
 chmod +x proxy/start_proxy.bash
-chmod +x proxy/start_athrill.bash
-bash utils/config/mo utils/config/proxy_param_json.mo > proxy/proxy_param.json
+chmod +x proxy/start_athrill-mac.bash
+bash utils/config/mo utils/config/proxy_param-mac_json.mo > proxy/proxy_param-mac.json
 
 
 function run_docker()
@@ -46,8 +46,13 @@ function run_docker()
 
 if [ ${EXEC_ENV} = "native" ]
 then
-	cd proxy
-	bash start_proxy.bash
+	if [ -d ../../athrill-device ]
+	then
+		bash proxy/start_proxy.bash
+	else
+		echo "ERROR: can not found ../../athrill-device" ]
+		exit 1
+	fi
 else
 	run_docker
 fi
