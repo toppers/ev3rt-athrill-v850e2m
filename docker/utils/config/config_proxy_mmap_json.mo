@@ -60,13 +60,13 @@
     "mmap_methods": [
 	{
             "method_name": "MmapMethod1",
-            "filepath": "/Users/tmori/project/toppers/ev3rt-athrill-v850e2m/sdk/workspace/base_practice_1/unity_mmap.bin",
+            "filepath": "{{APL_PROJECT_PATH}}/unity_mmap.bin",
             "iosize": 1024,
             "is_read": false
 	},
 	{
             "method_name": "MmapMethod2",
-            "filepath": "/Users/tmori/project/toppers/ev3rt-athrill-v850e2m/sdk/workspace/base_practice_1/athrill_mmap.bin",
+            "filepath": "{{APL_PROJECT_PATH}}/athrill_mmap.bin",
             "iosize": 1024,
             "is_read": true
 	},
