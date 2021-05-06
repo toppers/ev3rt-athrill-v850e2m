@@ -36,6 +36,12 @@
    * ビルドします．
      * bash build.bash clean;bash build.bash all
 * hakoniwa-core をインストールしてください．
+   * 以下のファイルを編集します．
+     * ファイル：hakoniwa-core/impl/asset/client/cpp/CMakeLists.txt
+     * 変更箇所：
+       * get_filename_component(hakoniwa_proto "/root/hakoniwa-core/spec/hakoniwa_core.proto" ABSOLUTE)
+     * 変更内容：
+       * get_flename_compoent の第二引数の `/root/hakoniwa-core` 部分をhakoniwa-core をインストールしたパスにあわせてください．
    * 以下のフォルダに移動します．
      * hakoniwa-core/impl/asset/client/build
    * ビルドします．
