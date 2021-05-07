@@ -39,6 +39,7 @@
 
 * 端末Aで，以下のように docker コンテナを起動してください．
    * $ bash run-proxy.bash base_practice_1
+    * bluetooth 通信を有効化する場合は，第二引数に `bt` を追加してください．
 * 端末Bで，以下のように 端末Aで起動したdocker コンテナに入ります．
    * $ bash attach.bash
    * [mruby] $ bash attach-mruby.bash
