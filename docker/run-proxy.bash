@@ -2,7 +2,7 @@
 
 if [ $# -ne 1 -a $# -ne 2 ]
 then
-	echo "Usage: $0 <aplname> [dbg]"
+	echo "Usage: $0 <aplname> [bt]"
 	exit 1
 fi
 
@@ -19,7 +19,7 @@ if [ $# -eq 1 ]
 then
 	bash utils/config/mo utils/config/start_proxy_bash.mo > proxy/start_proxy.bash
 else
-	bash utils/config/mo utils/config/start_proxy_dbg_bash.mo > proxy/start_proxy.bash
+	bash utils/config/mo utils/config/start_proxy_bt_bash.mo > proxy/start_proxy.bash
 fi
 bash utils/config/mo utils/config/proxy_param_json.mo > proxy/proxy_param.json
 
