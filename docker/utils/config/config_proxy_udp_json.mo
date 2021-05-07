@@ -7,11 +7,10 @@
         {
             "name": "RoboModel",
             "pdu_writer_names": [
-                "Ev3SensorPdu"
+                "RoboModel_Ev3SensorPdu"
             ],
             "pdu_reader_names": [
-                "Ev3ActuatorPdu",
-                "Ev3ActuatorPdu"
+                "RoboModel_Ev3ActuatorPdu",
             ]
         }
     ],
@@ -23,13 +22,13 @@
     ],
     "pdu_writers": [
         {
-            "name": "Ev3SensorPdu",
+            "name": "RoboModel_Ev3SensorPdu",
             "class_name": "Ev3PduProtobufWriter"
         }
     ],
     "pdu_readers": [
         {
-            "name": "Ev3ActuatorPdu",
+            "name": "RoboModel_Ev3ActuatorPdu",
             "class_name": "Ev3PduProtobufReader"
         }
     ],
@@ -67,24 +66,24 @@
     "reader_connectors": [
         {
             "name": "reader_connector1",
-            "pdu_name": "Ev3ActuatorPdu",
+            "pdu_name": "RoboModel_Ev3ActuatorPdu",
             "method_name": "UdpMethod2"
         }
     ],
     "writer_connectors": [
         {
             "name": "writer_connector1",
-            "pdu_name": "Ev3SensorPdu",
+            "pdu_name": "RoboModel_Ev3SensorPdu",
             "method_name": "UdpMethod1"
         },
         {
             "name": "writer_connector2",
-            "pdu_name": "Ev3SensorPdu",
+            "pdu_name": "RoboModel_Ev3SensorPdu",
             "method_name": "UdpMethod3"
         },
         {
             "name": "writer_connector3",
-            "pdu_name": "Ev3ActuatorPdu",
+            "pdu_name": "RoboModel_Ev3ActuatorPdu",
             "method_name": "UdpMethod4"
         }
     ],
