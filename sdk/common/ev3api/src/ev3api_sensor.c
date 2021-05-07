@@ -62,7 +62,12 @@ void uart_sensor_fetch_data(sensor_port_t port, uint8_t mode, void *dest, SIZE s
 			}
 			break;
 		case COLOR_SENSOR:
-			uart_dri_get_data_color(mode, dest, size);
+			{
+				uint8_t index = get_sensor_index(port, type);
+				if (index != -1) {
+					uart_dri_get_data_color(index, mode, dest, size);
+				}
+			}
 			break;
 		case INFRARED_SENSOR:
 			uart_dri_get_data_ir(mode, dest, size);

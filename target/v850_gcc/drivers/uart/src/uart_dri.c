@@ -80,22 +80,22 @@ typedef enum {
 	DRI_COL_RGBRAW  = 4,
 } DRI_COLOR_SENSOR_MODES;
 
-void uart_dri_get_data_color(uint8_t mode, void *dest, SIZE size)
+void uart_dri_get_data_color(uint8_t index, uint8_t mode, void *dest, SIZE size)
 {
 	uint8_t *data8 = (uint8_t*)dest;
 	uint16_t *array = (uint16_t*)dest;
 	DRI_COLOR_SENSOR_MODES dri_mode = mode;
 	if (dri_mode == DRI_COL_REFLECT) {
-		*data8 = (uint8_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_REFLECT);
+		*data8 = (uint8_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_REFLECT(index));
 	}
 	else if (dri_mode == DRI_COL_AMBIENT) {
-		*data8 = (uint8_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_AMBIENT);
+		*data8 = (uint8_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_AMBIENT(index));
 	} else if ( dri_mode == DRI_COL_COLOR ) {
-		*data8 = (uint8_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_COLOR);
+		*data8 = (uint8_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_COLOR(index));
 	} else {
-		array[0] = (uint16_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_RGB_R);
-		array[1] = (uint16_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_RGB_G);
-		array[2] = (uint16_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_RGB_B);
+		array[0] = (uint16_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_RGB_R(index));
+		array[1] = (uint16_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_RGB_G(index));
+		array[2] = (uint16_t)sil_rew_mem( (const uint32_t *)EV3_SENSOR_ADDR_RGB_B(index));
 	}
 	return;
 }

@@ -21,12 +21,85 @@
  * 2byte Sensor(RX)
  */
 #define EV3_SENSOR_ADDR_INX(index)	(VDEV_RX_DATA_BASE + EV3_SENSOR_OFF_TYPE(index))
-#define EV3_SENSOR_ADDR_AMBIENT		EV3_SENSOR_ADDR_INX(EV3_SENSOR_INX_AMBIENT)
-#define EV3_SENSOR_ADDR_COLOR		EV3_SENSOR_ADDR_INX(EV3_SENSOR_INX_COLOR)
-#define EV3_SENSOR_ADDR_REFLECT		EV3_SENSOR_ADDR_INX(EV3_SENSOR_INX_REFLECT)
-#define EV3_SENSOR_ADDR_RGB_R		EV3_SENSOR_ADDR_INX(EV3_SENSOR_INX_RGB_R)
-#define EV3_SENSOR_ADDR_RGB_G		EV3_SENSOR_ADDR_INX(EV3_SENSOR_INX_RGB_G)
-#define EV3_SENSOR_ADDR_RGB_B		EV3_SENSOR_ADDR_INX(EV3_SENSOR_INX_RGB_B)
+
+static inline int EV3_SENSOR_ADDR_AMBIENT(int index)
+{
+    uint32_t off_type = EV3_SENSOR_INX_AMBIENT_0;
+    switch (index) {
+        case 1:
+            off_type = EV3_SENSOR_INX_AMBIENT_1;
+            break;
+        case 0:
+        default:
+            break;
+    }
+    return EV3_SENSOR_ADDR_INX(off_type);
+}
+static inline int EV3_SENSOR_ADDR_COLOR(int index)
+{
+    uint32_t off_type = EV3_SENSOR_INX_COLOR_0;
+    switch (index) {
+        case 1:
+            off_type = EV3_SENSOR_INX_COLOR_1;
+            break;
+        case 0:
+        default:
+            break;
+    }
+    return EV3_SENSOR_ADDR_INX(off_type);
+}
+static inline int EV3_SENSOR_ADDR_REFLECT(int index)
+{
+    uint32_t off_type = EV3_SENSOR_INX_REFLECT_0;
+    switch (index) {
+        case 1:
+            off_type = EV3_SENSOR_INX_REFLECT_1;
+            break;
+        case 0:
+        default:
+            break;
+    }
+    return EV3_SENSOR_ADDR_INX(off_type);
+}
+static inline int EV3_SENSOR_ADDR_RGB_R(int index)
+{
+    uint32_t off_type = EV3_SENSOR_INX_RGB_R_0;
+    switch (index) {
+        case 1:
+            off_type = EV3_SENSOR_INX_RGB_R_1;
+            break;
+        case 0:
+        default:
+            break;
+    }
+    return EV3_SENSOR_ADDR_INX(off_type);
+}
+static inline int EV3_SENSOR_ADDR_RGB_G(int index)
+{
+    uint32_t off_type = EV3_SENSOR_INX_RGB_G_0;
+    switch (index) {
+        case 1:
+            off_type = EV3_SENSOR_INX_RGB_G_1;
+            break;
+        case 0:
+        default:
+            break;
+    }
+    return EV3_SENSOR_ADDR_INX(off_type);
+}
+static inline int EV3_SENSOR_ADDR_RGB_B(int index)
+{
+    uint32_t off_type = EV3_SENSOR_INX_RGB_B_0;
+    switch (index) {
+        case 1:
+            off_type = EV3_SENSOR_INX_RGB_B_1;
+            break;
+        case 0:
+        default:
+            break;
+    }
+    return EV3_SENSOR_ADDR_INX(off_type);
+}
 #define EV3_SENSOR_ADDR_ANGLE		EV3_SENSOR_ADDR_INX(EV3_SENSOR_INX_ANGLE)
 #define EV3_SENSOR_ADDR_RATE		EV3_SENSOR_ADDR_INX(EV3_SENSOR_INX_RATE)
 #define EV3_SENSOR_ADDR_IR_D		EV3_SENSOR_ADDR_INX(EV3_SENSOR_INX_IR_D)
