@@ -8,7 +8,9 @@
 ## native版単体ロボットシミュレータ適用手順
 * gRPC/C++ をインストールしてください．
    * https://grpc.io/docs/languages/cpp/quickstart/
-   * 補足：third_party/abseil-cpp　のインストールは不要
+   * 補足1：third_party/abseil-cpp　のインストールは不要
+   * 補足2：cmake でエラー(CMake Error: Could not find CMAKE_ROOT !!!)発生する場合があります．この場合は，以下を参照・ご対応ください．
+   * https://qiita.com/gorou/items/747493ffa15a30b29f5c
 * 以下を同一フォルダ上で clone してください．
    * https://github.com/toppers/athrill-target-v850e2m
    * https://github.com/toppers/athrill
