@@ -40,6 +40,7 @@
 * 端末Aで，以下のように docker コンテナを起動してください．
    * $ bash run-proxy.bash base_practice_1
     * bluetooth 通信を有効化する場合は，第二引数に `bt` を追加してください．
+    * 起動するとdocker コンテナ内でエラーログが連続出力されますが，無視してください(シミュレーション実行時に正常になります)．
 * 端末Bで，以下のように 端末Aで起動したdocker コンテナに入ります．
    * $ bash attach.bash
    * [mruby] $ bash attach-mruby.bash
@@ -52,6 +53,8 @@
 ## シミュレーション実行
 * 端末C(WSL2)で，Unity側のシミュレータを起動してください(利用しているETHERがeth0, アプリケーション名が base_practice_1の場合)．
    * $ bash unity/start-proxy.bash single-robot eth0
+* 初回起動時は，single-robot は起動できますが，通信ができない状態になっている可能性があります．
+* そのため，Windows Defender の[詳細設定]⇒[受信規則]に存在するsingle-robotに対する操作を「許可」にしてください．
 
 ## Athrillとロボット間の通信パケットのビジュアライズ
 箱庭環境では，Athrillとロボット間の通信仕様は，[プロトコルバッファ](https://ja.wikipedia.org/wiki/Protocol_Buffers)で定義しています．
