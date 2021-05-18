@@ -15,7 +15,7 @@
 ## docker版単体ロボットシミュレータ適用手順
 * docker を WSL2(Ubuntu 20.04.1 LTS) にインストールしてください．
 * ev3rt-athrill-v850e2m を WSL2 上の任意のフォルダで clone してください．
-   * 例. $ git clone https://github.com/toppers/ev3rt-athrill-v850e2m.git .
+   * 例. $ git clone https://github.com/toppers/ev3rt-athrill-v850e2m.git
 * ev3rt-athrill-v850e2m/docker　に移動してください．
    * 例．$ cd ev3rt-athrill-v850e2m/docker
 * 以下のコマンド実行して，docker image を作成してください．
