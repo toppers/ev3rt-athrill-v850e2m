@@ -19,6 +19,7 @@
 * ev3rt-athrill-v850e2m/docker　に移動してください．
    * 例．$ cd ev3rt-athrill-v850e2m/docker
 * 以下のコマンド実行して，docker image を作成してください．
+   * $ sudo service docker start 
    * $ bash create-image-bt.bash
    * [mruby] $ bash create-image-mruby.bash
 * 以下のコマンドを実行して，Unity プロジェクトを single-robot として，新規作成してください．
